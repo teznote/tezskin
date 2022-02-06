@@ -1,0 +1,2 @@
+# tezskin
+theme for jekyll
