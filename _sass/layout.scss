@@ -43,6 +43,7 @@ html, body, .layout {
       top: 0;
       left: 0;
       right: 0;
+      z-index: 99;
     }
     @media (min-width: $bp-width) {
       flex: 0 0 $sb-width;
