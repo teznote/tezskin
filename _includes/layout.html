@@ -1,0 +1,81 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      'use strict';
+
+      // button click
+      var btn = document.querySelector('.sidebar .menu-button');
+      var sidebar = document.querySelector('.sidebar');
+      btn.addEventListener('click', function() {
+          sidebar.classList.toggle('full-expand');
+      });
+
+      // set body height fit to window.innerHeight
+      var layout = document.querySelector('.layout');
+
+      function set_position() {
+          layout.style.height = window.innerHeight + 'px';
+      }
+      set_position();
+      window.addEventListener('resize', function() {
+          set_position();
+      });
+  });
+</script>
+<div class="layout">
+  <div class="sidebar">
+      <div class="sb">
+          <div class="sb-head">
+              <div class="site-title"><a href="#">SITE TITLE</a></div>
+              <div class="menu-button">
+                  {% include button.html %}
+              </div>
+          </div>
+          <div class="sb-nav">Navigation</div>
+          <div class="sb-foot">
+              <div class="msg">Footer</div>
+          </div>
+      </div>
+  </div>
+  <div class="content">
+      <div class="ct">
+          <div class="ct-desc">
+              <div class="msg">Site desc</div>
+          </div>
+          <div class="ct-head">
+              <h1 class="page-title">Page Title</h1>
+              <div class="page-meta">page updated 21-02-08</div>
+          </div>
+          <div class="ct-body">
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+              <p>paragraph</p>
+          </div>
+      </div>
+  </div>
+</div>

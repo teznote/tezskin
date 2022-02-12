@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script>
+      if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        window.location = 'microsoft-edge:' + window.location;
+        setTimeout(function() {
+          window.location = 'https://support.microsoft.com/ko-kr/topic/%EC%9D%B4-%EC%9B%B9-%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%8A%94-microsoft-edge%EC%97%90%EC%84%9C-%EB%8D%94-%EC%9E%98-%EC%9E%91%EB%8F%99%ED%95%A9%EB%8B%88%EB%8B%A4-160fa918-d581-4932-9e4e-1075c4713595';
+        }, 1);
+      }
+    </script>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/res/style.css' | relative_url }}"/>
+  </head>
+  <body>
+    {% include layout.html %}
+  </body>
+</html>
