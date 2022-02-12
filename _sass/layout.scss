@@ -1,26 +1,4 @@
-// vars
-$h1-size: 34px;
-$h2-size: 24px;
-$base-size: 16px;
-$small-size: 14px;
-$base-color: #333333;
-$bp-width: 960px;
-$max-width: 1400px;
-$sb-width: 330px;
-$sb-head-height: 60px;
-$sb-foot-height: 60px;
-$sb-bg-color: #eeeeee;
-$normal: 400;
-$bold: 800;
-
-@mixin container {
-  padding: 5px 15px;
-}
-
-// global css
-@import "https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css";
-@import "https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css";
-
+// globals
 *::-webkit-scrollbar {
   display: none;
 }
@@ -40,6 +18,9 @@ a, a:link, a:visited, a:hover, a:active {
 }
 img, svg {
   vertical-align: bottom;
+}
+ul, li {
+  list-style: none;
 }
 
 // layout structure
@@ -131,18 +112,14 @@ html, body, .layout {
         flex: 1 0 0;
         overflow: auto;
       }
-      // .ct-head {
-      //   flex: 0 0 ($sb-head-height * 2);
-      // }
-      // .ct-body {
-      //   flex: 1 0 0;
-      //   overflow: auto;
-      // }
     }
   }
 }
 
 // layout styling
+pre, code, kbd, samp {
+  font-family: 'Hack', 'NanumSquareRound', monospace; font-weight: $normal;
+}
 .layout {
   font-family: 'Hack', 'NanumSquareRound', monospace; font-weight: $normal;
   font-size: $base-size;

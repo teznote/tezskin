@@ -1,0 +1,30 @@
+// vars
+$h1-size: 34px;
+$h2-size: 24px;
+$base-size: 16px;
+$small-size: 14px;
+$base-color: #333333;
+$bp-width: 960px;
+$max-width: 1400px;
+$sb-width: 330px;
+$sb-head-height: 60px;
+$sb-foot-height: 60px;
+$sb-bg-color: #eeeeee;
+$box-bg-color: #eeeeee;
+$normal: 400;
+$bold: 800;
+$mm: 24px;
+$a-color: #0366d6;
+$b-color: #b52b27;
+
+@mixin container {
+  padding: 5px 15px;
+}
+
+@mixin box {
+  position: relative; padding: ($mm * 3 / 4) ($mm / 2) ($mm / 2) ($mm / 2); margin: $mm 0;
+  font-size: $small-size; line-height: ($mm * 3 / 4); background-color: $box-bg-color;
+}
+
+@import "https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css";
+@import "https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css";
