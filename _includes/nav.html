@@ -1,0 +1,47 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+   'use strict';
+
+    // cat-head click
+    var cat_heads = document.querySelectorAll('nav .cat-head');
+    cat_heads.forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.currentTarget.parentNode.classList.toggle('opened');
+      });
+    });
+  });
+</script>
+
+<nav>
+  <div class="cats">
+    {% for cat in site.cats %}
+      {% assign check0 = page.path | split:"/" %}
+      <div class="cat{% if check0[1] == cat %} opened{% endif %}">
+        <div class="cat-head">
+          <div class="cat-title">
+            {{ cat }}
+          </div>
+          <div class="cat-button">
+            <svg viewBox="0 0 100 100" width="20" height="20">
+              <path d="M25 14 L75 50 L25 86" stroke-width="8" fill="none" stroke="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <ul class="cat-body">
+          {% for md in site.html_pages %}
+            {% assign check1 = md.path | split:"/" %}
+            {% if check1[0] == "docs" %}
+              {% if check1[1] == cat %}
+                {% if md.path == page.path %}
+                  <li class="cat-item active"><span>+ {{ md.title }}</span></li>
+                {% else %}
+                  <li class="cat-item"><a href="{{ md.permalink | relative_url }}">+ {{ md.title }}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+    </div>
+</nav>

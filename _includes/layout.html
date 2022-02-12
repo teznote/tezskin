@@ -25,14 +25,16 @@
   <div class="sidebar">
       <div class="sb">
           <div class="sb-head">
-              <div class="site-title"><a href="#">SITE TITLE</a></div>
+              <div class="site-title"><a href="{{ '/' | relative_url }}">SITE TITLE</a></div>
               <div class="menu-button">
                   {% include button.html %}
               </div>
           </div>
-          <div class="sb-nav">Navigation</div>
+          <div class="sb-nav">
+            {% include nav.html %}
+          </div>
           <div class="sb-foot">
-              <div class="msg">Footer</div>
+              <div class="msg">{{ site.footer }}</div>
           </div>
       </div>
   </div>

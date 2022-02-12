@@ -143,6 +143,12 @@ pre, code, kbd, samp {
       }
       .sb-foot {
         border-top: 1px solid darken($sb-bg-color, 10%);
+        .msg {
+          font-size: $small-size;
+          a {
+            border-bottom: 1px solid darken($sb-bg-color, 10%);
+          }
+        }
       }
     }
   }

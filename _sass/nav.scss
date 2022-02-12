@@ -1,0 +1,56 @@
+nav {
+  .cats {
+    margin: $nav-mm 0;
+    .cat {
+      .cat-head {
+        line-height: $nav-mm; height: $nav-mm;
+        overflow: hidden; text-overflow: ellipsis;
+        margin: 0 -15px; padding: 0 15px;
+        display: flex;
+        &:hover {
+          background-color: darken($sb-bg-color, 10%);
+        }
+        .cat-title {
+          flex: 1 0 0;
+          cursor: pointer;
+        }
+        .cat-button {
+          flex: 0 0 $nav-mm;
+          text-align: right;
+          cursor: pointer;
+          svg {
+            vertical-align: middle;
+          }
+        }
+      }
+      .cat-body {
+        display: none;
+        .cat-item {
+          line-height: $nav-mm; height: $nav-mm;
+          overflow: hidden; text-overflow: ellipsis;
+          margin: 0 -15px; padding: 0 15px;
+          cursor: pointer;
+          &:hover {
+            background-color: darken($sb-bg-color, 10%);
+          }
+          &.active {
+            background-color: darken($sb-bg-color, 10%);
+            font-weight: $bold;
+            cursor: default;
+          }
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+    .opened {
+      .cat-head .cat-button svg {
+        transform: rotate(90deg);
+      }
+      .cat-body {
+        display: block;
+      }
+    }
+  }
+}

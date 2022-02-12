@@ -9,13 +9,14 @@ $max-width: 1400px;
 $sb-width: 330px;
 $sb-head-height: 60px;
 $sb-foot-height: 60px;
-$sb-bg-color: #eeeeee;
-$box-bg-color: #eeeeee;
+$sb-bg-color: #F0F8FF;
+$box-bg-color: #F0F8FF;
 $normal: 400;
 $bold: 800;
 $mm: 24px;
 $a-color: #0366d6;
 $b-color: #b52b27;
+$nav-mm: 32px;
 
 @mixin container {
   padding: 5px 15px;

@@ -1,6 +1,8 @@
 title: "Tezskin 사이트"
 desc: "이 사이트는 Jekyll 의 테마를 제작해보는 연습용 사이트 입니다."
+footer: "This site is powered by <a href='https://github.com'>Github</a>."
 url: "https://github.com/teznote/tezskin"
+cats: ["cat 1", "cat 2", "cat 3 long long long long ~~ very very long category"]
 
 markdown: kramdown
 kramdown:
