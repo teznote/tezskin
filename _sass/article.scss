@@ -44,8 +44,9 @@ main {
     }
     pre {
       @include box;
-      overflow-x: auto;
+      overflow: hidden;
       code {
+        display: block; overflow-x: auto;
         margin: 0;
         font-size: $small-size; line-height: ($mm * 3 / 4);
         background-color: transparent;
