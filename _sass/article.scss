@@ -55,15 +55,15 @@ main {
     & > p, & > ul, pre {
       &[class]:after {
         content: attr(class); position: absolute; top: 0; left: 0;
-        font-size: ($mm / 2); padding: 0 10px; line-height: ($mm * 2 / 3); color: #ffffff; background-color: darken($box-bg-color, 50%);
+        font-size: ($mm / 2); font-weight: $bold; padding: 0 10px; line-height: ($mm * 2 / 3); color: $base-color; background-color: darken($box-bg-color, 10%);
         display: inline-block; width: 80px; text-align: center;
       }
     }
     b, strong {
-      font-weight: $bold; color: $b-color; border-bottom: 2px solid $b-color;
+      font-weight: $bold; color: $b-color; border-bottom: 1px solid $b-color;
     }
     a, a:link, a:visited, a:hover, a:active {
-      font-weight: $bold; color: $a-color; border-bottom: 2px solid $a-color;
+      font-weight: $bold; color: $a-color; border-bottom: 1px solid $a-color;
     }
   }
 }

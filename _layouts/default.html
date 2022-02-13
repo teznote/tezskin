@@ -14,8 +14,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}"/>
+    <link rel="stylesheet" href="{{ '/assets/highlightjs-custom.css' | relative_url }}"/>
   </head>
   <body>
     {% include layout.html %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js" integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/excel.min.js" integrity="sha512-ZXv5yV55jV/5v8ytZ73A34dX3dAUcOld7h6lsdrdonCg0mKIZQBmGlLWSWVYFzTwidld2tR7QY+IJ2cNk7S5vA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/vbnet.min.js" integrity="sha512-EZpOtKpNXr/u15BgttgwjANF5L9lFvmhhDEd/SmxzHDpMpCG9DaDFNBsJ2WU+99+rjKV8tcP4LtQMxmmCQcYrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ 'assets/pseudo.js' | relative_url }}"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>
