@@ -13,11 +13,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}"/>
-    <link rel="stylesheet" href="{{ '/assets/highlightjs-custom.css' | relative_url }}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ '/assets/style.css' | relative_url }}" rel="stylesheet"/>
+    <link href="{{ '/assets/highlightjs-custom.css' | relative_url }}" rel="stylesheet"/>
   </head>
   <body>
     {% include layout.html %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js" integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/excel.min.js" integrity="sha512-ZXv5yV55jV/5v8ytZ73A34dX3dAUcOld7h6lsdrdonCg0mKIZQBmGlLWSWVYFzTwidld2tR7QY+IJ2cNk7S5vA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/vbnet.min.js" integrity="sha512-EZpOtKpNXr/u15BgttgwjANF5L9lFvmhhDEd/SmxzHDpMpCG9DaDFNBsJ2WU+99+rjKV8tcP4LtQMxmmCQcYrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
