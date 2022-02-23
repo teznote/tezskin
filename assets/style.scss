@@ -4,8 +4,17 @@
 @import "https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css";
 @import "https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css)";
 
+*::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 html, body {
     width: 100%;
-    height: 100%;
+    height: var(--vh, 100vh);
     font-family: 'Hack', 'NanumSquareRound', monospace;
+    overflow: hidden;
 }
