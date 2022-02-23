@@ -7,11 +7,6 @@ cats:
 - main: cat_2
   child: [subcat_2_1,subcat_2_2]
 
-sass:
-   sass_dir: bootstrap/scss
-exclude:
-- bootstrap/scss
-
 markdown: kramdown
 kramdown:
     syntax_highlighter_opts:

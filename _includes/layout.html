@@ -1,21 +1,18 @@
 <div class="layout">
-    <div class="sb-layout">
-        <div class="sb">
-            <div class="sb-head">
+    <div class="sb-layout collapsed">
+        <div class="sb con">
+            <div class="sb-head pad">
                 <h2 class="site-title">
                     {{ site.title }}
                 </h2>
-                <div class="site-desc">
-                    {{ site.desc }}
-                </div>
                 <button class="menu-button">
                     <svg viewBox="0 0 100 100" width="25" height="25">
-                        <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" fill="currentColor"></path>
+                        <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" stroke="currentColor" fill="currentColor"></path>
                     </svg>
                 </button>
             </div>
-            <nav class="sb-main">
-                Nav Here...
+            <nav class="sb-main pad">
+                &nbsp;
             </nav>
             <script>
                 var target = '{{ '/assets/nav.html' | relative_url  }}';
@@ -27,14 +24,16 @@
                         document.querySelector('nav.sb-main').innerHTML = body;
                     });
             </script>
-            <div class="sb-foot">
-                footer
+            <div class="sb-foot pad">
+                <div class="msg">
+                    {{ site.desc }}
+                </div>
             </div>
         </div>
     </div>
     <div class="ct-layout">
-        <div class="ct">
-            <header class="ct-head">
+        <div class="ct con">
+            <header class="ct-head pad">
                 <h1 class="page-title">
                     {{ page.title }}
                 </h1>
@@ -42,9 +41,16 @@
                     Last udpated: {{ page.updated }}
                 </div>
             </header>
-            <main class="ct-main">
+            <main class="ct-main pad">
                 {{ content }}
             </main>
         </div>
     </div>
 </div>
+<script>
+    var sb_layout = document.querySelector('.sb-layout');
+    var btn = document.querySelector('button.menu-button');
+    btn.addEventListener('click', function() {
+        sb_layout.classList.toggle('collapsed');
+    });
+</script>
