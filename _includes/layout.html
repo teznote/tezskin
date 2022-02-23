@@ -1,1 +1,40 @@
-Layout
+<div class="layout">
+    <div class="sb-layout">
+        <div class="sb">
+            <div class="sb-head">
+                <h2 class="site-title">
+                    {{ site.title }}
+                </h2>
+                <div class="site-desc">
+                    {{ site.desc }}
+                </div>
+                <button class="menu-button">
+                    <svg viewBox="0 0 100 100" width="25" height="25">
+                        <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sb-main">
+                Nav Here...
+            </nav>
+            <div class="sb-foot">
+                footer
+            </div>
+        </div>
+    </div>
+    <div class="ct-layout">
+        <div class="ct">
+            <header class="ct-head">
+                <h1 class="page-title">
+                    {{ page.title }}
+                </h1>
+                <div class="page-meta">
+                    Last udpated: {{ page.updated }}
+                </div>
+            </header>
+            <main class="ct-main">
+                {{ content }}
+            </main>
+        </div>
+    </div>
+</div>
