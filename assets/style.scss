@@ -11,6 +11,7 @@ $b-color: #dd672c;
 $base-size: 16px;
 $bold: 800;
 $normal: 400;
+$bp-width: 768px;
 
 *::-webkit-scrollbar {
     display: none;
@@ -188,5 +189,38 @@ a, a:link, a:visited, a:hover, a:active {
                 }
 	        }
 	    }
+    }
+}
+
+nav .nav-wrapper {
+    @media (max-width: $bp-width) {
+        display: flex;
+        flex-direction: column;
+        .nav-cat {
+            flex: 1 0 0;
+        }
+        .nav-post {
+            flex: 2 0 0;
+        }
+    }
+    @media (min-width: $bp-width) {
+        display: flex;
+        flex-direction: row;
+        .nav-cat {
+            flex: 1 0 0;
+        }
+        .nav-post {
+            flex: 2 0 0;
+        }
+    }
+    .nav-cat {
+        @include pad;
+        background-color: #ffffff;
+        border-radius: 4px;
+    }
+    .nav-post {
+        @include pad;
+        background-color: #ffffff;
+        border-radius: 4px;
     }
 }

@@ -1,1 +1,30 @@
-<h1>NAV!!!</h1>
+---
+---
+<div class="nav-wrapper">
+    <div class="nav-cat">
+        {% for cats in site.cats %}
+            <div class="main-cat">
+                {{- cats.main -}}
+            </div>
+            {% for subcat in cats.child %}
+                <div class="child-cat" cat="{{ cats.main }}_{{ subcat }}">
+                    {{- subcat -}}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="nav-post">
+        {% for cats in site.cats %}
+            {% assign posts = site.categories[cats.main] | reverse %}
+            {% for subcat in cats.child %}
+            <ul class="items" cat="{{ cats.main }}_{{ subcat }}">
+                {% for p in posts %}
+                    {% if p.categories contains subcat %}
+                        <li class="item"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

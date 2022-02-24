@@ -22,6 +22,20 @@
                     })
                     .then(function(body) {
                         document.querySelector('nav.sb-main').innerHTML = body;
+                        return;
+                    })
+                    .then (function() {
+                        var cur = document.location.href.match(/(?<=post\/)[0-9a-zA-Z%_-]+/g);
+                        if (cur) {
+                            var all_items = document.querySelectorAll('nav ul.items li.item');
+                            for (var el of all_items) {
+                                var href = el.childNodes[0].getAttribute('href').match(/(?<=post\/)[0-9a-zA-Z%_-]+/g);
+                                if (href[0] === cur[0]) {
+                                    el.classList.add('current');
+                                    break;
+                                }
+                            }
+                        }
                     });
             </script>
             <div class="sb-foot pad">

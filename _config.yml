@@ -2,10 +2,14 @@ title: "Tezskin 사이트"
 desc: "이 사이트는 Jekyll 의 테마를 제작해보는 연습용 사이트 입니다."
 url: "https://github.com/teznote/tezskin"
 cats:
-- main: cat_1
-  child: [subcat_1_1,subcat_1_2,subcat_1_3]
-- main: cat_2
-  child: [subcat_2_1,subcat_2_2]
+- main: diary
+  child: [life]
+- main: study
+  child: [python,javascript,c++]
+- main: web_develop
+  child: [jekyll,wordpress]
+
+permalink: /post/:title
 
 markdown: kramdown
 kramdown:
