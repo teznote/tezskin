@@ -27,14 +27,14 @@
                     .then (function() {
                         var nav_cat_item = document.querySelectorAll('nav.sb-main li.nav-cat-item');
                         var nav_post_items = document.querySelectorAll('nav.sb-main ul.nav-post-items');
-                        var cur = document.location.href.match(/\/post\/[0-9a-zA-Z%_-]+/g);
+                        var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.]+)([a-zA-Z0-9\/%_.-]+)/);
 
 
                         if (cur) {
                             var all_posts = document.querySelectorAll('nav.sb-main li.nav-post-item');
                             for (var el of all_posts) {
                                 var href = el.childNodes[0].getAttribute('href');
-                                if (href === cur[0]) {
+                                if (href === cur[2]) {
                                     el.classList.add('current');
                                     el.parentElement.classList.remove('hidden');
                                     for (var x of nav_cat_item) {
