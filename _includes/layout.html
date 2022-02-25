@@ -3,7 +3,7 @@
         <div class="sb con">
             <div class="sb-head pad">
                 <h2 class="site-title">
-                    {{ site.title }}
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
                 </h2>
                 <button class="menu-button">
                     <svg viewBox="0 0 100 100" width="25" height="25">
@@ -25,12 +25,12 @@
                         return;
                     })
                     .then (function() {
-                        var cur = document.location.href.match(/(?<=post\/)[0-9a-zA-Z%_-]+/g);
+                        var cur = document.location.href.match(/\/post\/[0-9a-zA-Z%_-]+/g);
                         if (cur) {
-                            var all_items = document.querySelectorAll('nav ul.items li.item');
-                            for (var el of all_items) {
-                                var href = el.childNodes[0].getAttribute('href').match(/(?<=post\/)[0-9a-zA-Z%_-]+/g);
-                                if (href[0] === cur[0]) {
+                            var all_posts = document.querySelectorAll('nav.sb-main li.nav-post-item');
+                            for (var el of all_posts) {
+                                var href = el.childNodes[0].getAttribute('href');
+                                if (href === cur[0]) {
                                     el.classList.add('current');
                                     break;
                                 }

@@ -48,7 +48,6 @@ a, a:link, a:visited, a:hover, a:active {
     padding: 15px;
 }
 
-
 .con {
     margin: 0 auto;
     max-width: 1200px;
@@ -74,6 +73,7 @@ a, a:link, a:visited, a:hover, a:active {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                border-bottom: 1px solid darken($bg-color, 10%);
                 h2.site-title {
                     font-size: 1.5rem;
                 }
@@ -89,12 +89,64 @@ a, a:link, a:visited, a:hover, a:active {
 	        }
 	        nav.sb-main {
 	            flex: 1 0 0;
+                .nav-wrapper {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    @media (min-width: $bp-width) {
+                        flex-direction: row;
+                    }
+                    .nav-cat {
+                        @include pad;
+                        flex: 1 0 0;
+                        background-color: #ffffff;
+                        border-radius: 4px;
+                        display: flex;
+                        flex-direction: column;
+                        .nav-cat-title {
+                            flex: 0 0 60px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        ul.nav-cat-items {
+                            flex: 1 0 0;
+                            overflow: auto;
+                            li.nav-cat-item {
+
+                            }
+                        }
+                    }
+                    .nav-post {
+                        @include pad;
+                        flex: 2 0 0;
+                        background-color: #ffffff;
+                        border-radius: 4px;
+                        display: flex;
+                        flex-direction: column;
+                        .nav-post-title {
+                            flex: 0 0 60px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        ul.nav-post-items {
+                            flex: 1 0 0;
+                            overflow: auto;
+                            li.nav-post-item {
+
+                            }
+                        }
+                    }
+                }
 	        }
 	        .sb-foot {
 	            flex: 0 0 60px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                border-top: 1px solid darken($bg-color, 10%);
                 .msg {
                     text-align: center;
                 }
@@ -189,38 +241,5 @@ a, a:link, a:visited, a:hover, a:active {
                 }
 	        }
 	    }
-    }
-}
-
-nav .nav-wrapper {
-    @media (max-width: $bp-width) {
-        display: flex;
-        flex-direction: column;
-        .nav-cat {
-            flex: 1 0 0;
-        }
-        .nav-post {
-            flex: 2 0 0;
-        }
-    }
-    @media (min-width: $bp-width) {
-        display: flex;
-        flex-direction: row;
-        .nav-cat {
-            flex: 1 0 0;
-        }
-        .nav-post {
-            flex: 2 0 0;
-        }
-    }
-    .nav-cat {
-        @include pad;
-        background-color: #ffffff;
-        border-radius: 4px;
-    }
-    .nav-post {
-        @include pad;
-        background-color: #ffffff;
-        border-radius: 4px;
     }
 }
