@@ -25,17 +25,44 @@
                         return;
                     })
                     .then (function() {
+                        var nav_cat_item = document.querySelectorAll('nav.sb-main li.nav-cat-item');
+                        var nav_post_items = document.querySelectorAll('nav.sb-main ul.nav-post-items');
                         var cur = document.location.href.match(/\/post\/[0-9a-zA-Z%_-]+/g);
+
+
                         if (cur) {
                             var all_posts = document.querySelectorAll('nav.sb-main li.nav-post-item');
                             for (var el of all_posts) {
                                 var href = el.childNodes[0].getAttribute('href');
                                 if (href === cur[0]) {
                                     el.classList.add('current');
+                                    el.parentElement.classList.remove('hidden');
+                                    for (var x of nav_cat_item) {
+                                        if (x.getAttribute('cat') === el.getAttribute('cat')) {
+                                            x.classList.add('current');
+                                        }
+                                    }
                                     break;
                                 }
                             }
                         }
+
+                        
+                        function nav_cat_item_click_event(e) {
+                            var target = e.currentTarget.getAttribute('cat');
+                            for (var el of nav_post_items) {
+                                if (el.getAttribute('cat') === target) {
+                                    el.classList.remove('hidden');
+                                } else {
+                                    el.classList.add('hidden');
+                                }
+                            }
+                        }
+                        
+                        for (var el of nav_cat_item) {
+                            el.addEventListener('click', nav_cat_item_click_event);
+                        }
+
                     });
             </script>
             <div class="sb-foot pad">

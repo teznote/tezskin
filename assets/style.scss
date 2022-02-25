@@ -48,6 +48,9 @@ a, a:link, a:visited, a:hover, a:active {
     padding: 15px;
 }
 
+.hidden {
+    display: none !important;
+}
 .con {
     margin: 0 auto;
     max-width: 1200px;
@@ -114,7 +117,7 @@ a, a:link, a:visited, a:hover, a:active {
                             flex: 1 0 0;
                             overflow: auto;
                             li.nav-cat-item {
-
+                                cursor: pointer;
                             }
                         }
                     }
