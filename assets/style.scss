@@ -48,6 +48,11 @@ a, a:link, a:visited, a:hover, a:active {
     padding: 15px;
 }
 
+.mobile {
+    @media (min-width: 576px) {
+        display: none;
+    }
+}
 .hidden {
     display: none !important;
 }
@@ -108,10 +113,10 @@ a, a:link, a:visited, a:hover, a:active {
                         display: flex;
                         flex-direction: column;
                         .nav-cat-title {
-                            flex: 0 0 60px;
+                            flex: 0 0 30px;
                             display: flex;
                             justify-content: center;
-                            align-items: center;
+                            //align-items: center;
                         }
                         ul.nav-cat-items {
                             flex: 1 0 0;
@@ -129,10 +134,10 @@ a, a:link, a:visited, a:hover, a:active {
                         display: flex;
                         flex-direction: column;
                         .nav-post-title {
-                            flex: 0 0 60px;
+                            flex: 0 0 30px;
                             display: flex;
                             justify-content: center;
-                            align-items: center;
+                            //align-items: center;
                         }
                         ul.nav-post-items {
                             flex: 1 0 0;
