@@ -1,6 +1,29 @@
 # tezskin
 
-## 사용법
+## v2.0.0 사용법
+
+_config.yaml 파일에 아래 내용을 포함합니다.
+
+```yaml
+title: "사이트 타이틀"
+desc: "사이트에 대한 설명"
+url: "사이트 주소"
+cats: [카테고리로 출력되기 원하는 post 안 포매터의 categories 를 순서대로 기입]
+
+permalink: /post/:title
+
+markdown: kramdown
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
+
+future: true
+```
+{:.yaml}
+
+그리고 v1.0.0 에서 사용했던 docs 폴더는 이제 사용하지 않습니다. _posts 폴더 안에 yyyy-mm-dd-[filename].md 형태로 포스팅을 합니다.
+
+## v1.0.0 사용법
 
 Github Pages 를 생성하고, _config.yaml 파일에 아래 내용을 포함합니다.
 
