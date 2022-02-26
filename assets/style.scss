@@ -123,6 +123,20 @@ a, a:link, a:visited, a:hover, a:active {
                             overflow: auto;
                             li.nav-cat-item {
                                 cursor: pointer;
+                                margin: 10px 0 10px 1rem;
+                                &:before {
+                                    content: "-";
+                                    width: 1rem;
+                                    display: inline-block;
+                                    margin-left: -1rem;
+                                }
+                            }
+                            li.current {
+                                font-weight: $bold;
+                                &:before {
+                                    content: "+";
+                                    font-weight: $bold;
+                                }
                             }
                         }
                     }
@@ -143,7 +157,20 @@ a, a:link, a:visited, a:hover, a:active {
                             flex: 1 0 0;
                             overflow: auto;
                             li.nav-post-item {
-
+                                margin: 10px 0 10px 1rem;
+                                &:before {
+                                    content: "-";
+                                    width: 1rem;
+                                    display: inline-block;
+                                    margin-left: -1rem;
+                                }
+                            }
+                            li.current {
+                                font-weight: $bold;
+                                &:before {
+                                    content: "+";
+                                    font-weight: $bold;
+                                }
                             }
                         }
                     }
