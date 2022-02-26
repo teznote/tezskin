@@ -8,7 +8,11 @@ _config.yaml 파일에 아래 내용을 포함합니다.
 title: "사이트 타이틀"
 desc: "사이트에 대한 설명"
 url: "사이트 주소"
-cats: [카테고리로 출력되기 원하는 post 안 포매터의 categories 를 순서대로 기입]
+cats:
+- id: Post 포매터의 categories 에 들어가는 카테고리 (ex. web)
+  title: 블로그 네비게이션 메뉴에 표시되는 이름 (ex. Web and Develop)
+- id: ...
+  title: ...
 
 permalink: /post/:title
 
