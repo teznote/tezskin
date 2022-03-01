@@ -1,6 +1,16 @@
 # tezskin
 
-## v2.0.0 사용법
+## v2.2.0
+
+카테고리에 속한 포스팅들이 디폴트로 오름차순으로 정렬되는데, 아래와 같이 `order: desc` 옵션을 주게 되면 내림차순으로 정렬이 되도록 하였다.
+
+- id: cat_id
+  title: "Title of cat_id"
+  order: desc
+
+order 옵션이 없거나 "desc" 가 아니라면 오름차순으로 나오게 된다.
+
+## v2.1.0 사용법
 
 _config.yaml 파일에 아래 내용을 포함합니다.
 

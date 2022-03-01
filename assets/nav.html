@@ -17,7 +17,11 @@
             <h2>[ POST ]</h2>
         </div>
         {% for cat in site.cats %}
-            {% assign posts = site.categories[cat.id] | reverse %}
+            {% if cat.order == "desc" %}
+                {% assign posts = site.categories[cat.id] %}
+            {% else %}
+                {% assign posts = site.categories[cat.id] | reverse %}
+            {% endif %}
             <ul class="nav-post-items hidden" cat="{{ cat.id }}">
                 {% for post in posts %}
                     <li class="nav-post-item" cat="{{ cat.id }}"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>

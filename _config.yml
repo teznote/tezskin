@@ -4,6 +4,7 @@ url: "https://github.com/teznote/tezskin"
 cats:
 - id: diary
   title: My Diary
+  order: desc
 - id: study
   title: Programming Study
 - id: web_develop
