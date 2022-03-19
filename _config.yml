@@ -10,6 +10,24 @@ cats:
 - id: web_develop
   title: Web Development
 
+tags:
+- id: study
+  title: Programming Study
+  subs:
+  - id: python
+    title: Python
+  - id: javascript
+    title: Javascript
+  - id: web
+    title: Web Development
+- id: diary
+  title: My Diary
+  subs:
+  - id: todo
+    title: To-do Lists
+  - id: home
+    title: Homework
+
 permalink: /post/:title
 
 markdown: kramdown
