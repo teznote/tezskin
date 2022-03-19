@@ -1,0 +1,70 @@
+<div class="sidebar">
+    <div class="sb">
+        <header>
+            HEADER
+        </header>
+        <nav>
+            Now Loading...
+        </nav>
+        <script>
+            var target = '{{ '/assets/nav3.html' | relative_url  }}';
+            fetch(target)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(body) {
+                    document.querySelector('nav').innerHTML = body;
+                    return;
+                })
+                .then (function() {
+                    // var nav_sub_items = document.querySelectorAll('nav ul.nav-sub-items');
+                    // var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.]+)([a-zA-Z0-9\/%_.-]+)/);
+
+                    // if (cur) {
+                    //     var nav_sub_item = document.querySelectorAll('nav li.nav-sub-item');
+                    //     for (var el of all_posts) {
+                    //         var href = el.childNodes[0].getAttribute('href');
+                    //         if (href === cur[2]) {
+                    //             el.classList.add('current');
+                    //             el.parentElement.classList.remove('hidden');
+                    //         }
+                    //     }
+                    // }
+
+                    // function nav_sub_title_click_event(e) {
+                    //     for (var el of nav_sub_items) {
+                    //         el.classList.add('hidden');
+                    //     }
+                    //     e.currentTarget.classList.remove('hidden');
+                    // }
+                    
+                    // for (var el of nav_sub_items) {
+                    //     el.addEventListener('click', nav_sub_title_click_event);
+                    // }
+                });
+        </script>
+        <footer>
+            FOOTER
+        </footer>
+    </div>
+</div>
+<div class="content">
+    <div class="ct">
+        <main>
+            {{ content }}
+        </main>
+    </div>
+</div>
+<div class="controls">
+    <button class="menubtn">
+        X
+    </button>
+</div>
+<script>
+    var sidebar = document.querySelector('.sidebar');
+    var menubtn = document.querySelector('.menubtn');
+
+    menubtn.addEventListener('click', function() {
+        sidebar.classList.toggle('show');
+    });
+</script>

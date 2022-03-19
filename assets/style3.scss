@@ -1,0 +1,155 @@
+---
+---
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+@import "https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css";
+@import "https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css";
+
+@mixin pad {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html {
+    --color: #333333;
+    --a-color: #3333ff;
+    --b-color: #ff3333;
+    --body-bg-color: #eeeeff;
+    --sidebar-bg-color: var(--body-bg-color);
+    --sb-line-color: #d5d5ff;
+    --sb-bg-color: transparent;
+    --content-bg-color: transparent;
+    --ct-bg-color: #ffffff;
+    --box-bg-color: #eeeeee;
+}
+html[data-theme="night"] {
+    --color: #ffffff;
+}
+
+html, body {
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    font-family: 'Hack', 'NanumSquareRound', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color);
+    background-color: var(--body-bg-color);
+    overflow: hidden;
+}
+html, body, div, p, pre, ul, li, h1, h2, h3, h4, h5, h6, header, aside, main, footer, section, article {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: 800;
+}
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: var(--a-color);
+}
+
+.controls {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    button {
+        cursor: pointer;
+    }
+    @media (min-width: 1220px) {
+        display: none;
+    }
+}
+.show {
+    @media (max-width: 1219px) {
+        left: 0 !important;
+    }
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100%;
+    z-index: 99;
+    overflow: hidden;
+    background-color: var(--sidebar-bg-color);
+    @media (min-width: 1220px) {
+        left: 0;
+        width: calc(320px + (100vw - 1220px) / 2);
+    }
+    .sb {
+        height: 100%;
+        width: 320px;
+        overflow: hidden;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--sb-bg-color);
+        header {
+            flex: 0 0 60px;
+            @include pad;
+        }
+        nav {
+            flex: 1 0 0;
+            @include pad;
+            overflow: scroll;
+        }
+        footer {
+            flex: 0 0 60px;
+            @include pad;
+        }
+    }
+}
+.content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 9;
+    overflow: hidden;
+    background-color: var(--content-bg-color);
+    @media (min-width: 1220px) {
+        left: calc(320px + (100vw - 1220px) / 2);
+    }
+    .ct {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--ct-bg-color);
+        @media (min-width: 1220px) {
+            max-width: 900px;
+        }
+        main {
+            height: 100%;
+            @include pad;
+            overflow: scroll;
+        }
+    }
+}
+
+.sidebar {
+    .sb {
+        border-right: 1px solid var(--sb-line-color);
+        header {
+            border-bottom: 1px solid var(--sb-line-color);
+        }
+        nav {
+            color: inherit;
+        }
+        footer {
+            border-top: 1px solid var(--sb-line-color);
+        }
+    }
+}

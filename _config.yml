@@ -10,12 +10,13 @@ cats:
 - id: web_develop
   title: Web Development
 
-tags:
+navtags:
 - id: study
   title: Programming Study
   subs:
   - id: python
     title: Python
+    order: desc
   - id: javascript
     title: Javascript
   - id: web
