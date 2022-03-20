@@ -16,7 +16,6 @@ navtags:
   subs:
   - id: python
     title: Python
-    order: desc
   - id: javascript
     title: Javascript
   - id: web
@@ -28,6 +27,7 @@ navtags:
     title: To-do Lists
   - id: home
     title: Homework
+    order: desc
 
 permalink: /post/:title
 

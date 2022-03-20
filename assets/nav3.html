@@ -10,8 +10,13 @@
                 <div class="nav-subs">
                     <h3 class="nav-sub-title">{{ sub.title }}</h3>
                     <ul class="nav-sub-items hidden">
-                        {%- for post in posts -%}
-                            {%- if post.tags contains sub.id -%}
+                        {%- if sub.order == "desc" -%}
+                            {%- assign subposts = site.tags[sub.id] -%}
+                        {% else %}
+                            {%- assign subposts = site.tags[sub.id] | reverse -%}
+                        {% endif %}
+                        {%- for post in subposts -%}
+                            {%- if post.tags contains tag.id -%}
                                 <li class="nav-sub-item">
                                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                                 </li>
