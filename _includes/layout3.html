@@ -1,10 +1,10 @@
 <div class="sidebar">
     <div class="sb">
-        <header>
+        <aside>
             <h2 class="site-title">
                 <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
             </h2>
-        </header>
+        </aside>
         <nav>
             Now Loading...
         </nav>
@@ -36,13 +36,16 @@
 
                     function nav_sub_title_click_event(e) {
                         var target = e.currentTarget.nextElementSibling;
-                        for (var el of nav_sub_items) {
-                            if (el === target) {
-                                el.classList.remove('hidden');
-                            } else {
-                                el.classList.add('hidden');
-                            }
-                        }
+                        target.classList.toggle('hidden');
+
+                        // nav-sub-title 클릭하면 해당 ul 만 나타내기
+                        // for (var el of nav_sub_items) {
+                        //     if (el === target) {
+                        //         el.classList.remove('hidden');
+                        //     } else {
+                        //         el.classList.add('hidden');
+                        //     }
+                        // }
                     }
                     
                     for (var el of nav_sub_title) {
@@ -59,6 +62,14 @@
 </div>
 <div class="content">
     <div class="ct">
+        <header>
+            <h1>
+                {{ page.title }}
+            </h1>
+            <div class="page-meta">
+                Last Updated: {{ page.updated }}
+            </div>
+        </header>
         <main>
             {{ content }}
         </main>

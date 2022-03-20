@@ -20,6 +20,7 @@
 
 html {
     --color: #333333;
+    --light-color: #999999;
     --a-color: #3333ff;
     --b-color: #ff3333;
     --body-bg-color: #eeeeff;
@@ -53,6 +54,15 @@ html, body, div, p, pre, ul, li, h1, h2, h3, h4, h5, h6, header, aside, main, fo
 }
 h1, h2, h3, h4, h5, h6, b, strong {
     font-weight: 800;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1rem;
 }
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
@@ -101,7 +111,7 @@ a, a:link, a:visited, a:hover, a:active {
         display: flex;
         flex-direction: column;
         background-color: var(--sb-bg-color);
-        header {
+        aside {
             flex: 0 0 60px;
             @include pad;
         }
@@ -131,13 +141,17 @@ a, a:link, a:visited, a:hover, a:active {
     .ct {
         height: 100%;
         width: 100%;
-        overflow: hidden;
+        overflow: scroll;
         background-color: var(--ct-bg-color);
         @media (min-width: 1220px) {
             max-width: 900px;
         }
+        header {
+            margin: 1rem 0;
+            @include pad;
+        }
         main {
-            height: 100%;
+            margin: 1rem 0;
             @include pad;
             overflow: scroll;
         }
@@ -147,7 +161,7 @@ a, a:link, a:visited, a:hover, a:active {
 .sidebar {
     .sb {
         border-right: 1px solid var(--sb-line-color);
-        header {
+        aside {
             border-bottom: 1px solid var(--sb-line-color);
             display: flex;
             justify-content: center;
@@ -189,6 +203,96 @@ a, a:link, a:visited, a:hover, a:active {
             align-items: center;
             .msg {
                 text-align: center;
+            }
+        }
+    }
+}
+.content {
+    .ct {
+        header {
+            h1 {
+                font-size: 2rem;
+                margin: 1.5rem 0;
+                line-height: 1.2;
+            }
+            .page-meta {
+                margin: -1.5rem 0 1.5rem 0;
+                color: var(--light-color);
+            }
+        }
+        main {
+            line-height: 1.5rem;
+            img {
+                display: block;
+                margin: 1.5rem auto;
+                max-width: 100%;
+                & ~ em {
+                    display: block;
+                    margin: -1rem 1.5rem 1.5rem 1.5rem;
+                    color: var(--light-color);
+                }
+            }
+            a, a:link, a:visited, a:hover, a:active {
+                color: var(--a-color);
+                border-bottom: 1px dotted;
+            }
+            b, strong {
+                color: var(--b-color);
+                border-bottom: 1px dotted;
+                font-weight: 400;
+            }
+            pre, code, kdb, samp {
+                font-family: 'Hack', 'NanumSquareRound', monospace;
+            }
+            & > h2 {
+                font-size: 1.5rem;
+                margin: 3rem 0 1.5rem 0;
+                &:before {
+                    content: "#";
+                    display: inline-block;
+                    width: 1.5rem;
+                }
+            }
+            & > h3 {
+                font-size: 1rem;
+                margin: 1.5rem 0;
+            }
+            & > div, & > p, & > pre, & > ul {
+                margin: 1.5rem 0;
+            }
+            & > p[class], & > pre, & > ul {
+                @include pad;
+                background-color: var(--box-bg-color);
+                border-radius: 4px;
+                position: relative;
+                &:before {
+                    content: attr(class);
+                    display: block;
+                    position: absolute;
+                    top: -0.8rem;
+                    color: var(--light-color);
+                    background-color: var(--box-bg-color);
+                    border-radius: 4px;
+                    padding: 0 1rem;
+                }
+            }
+            & > pre {        
+                code {
+                    display: block;
+                    overflow: auto;
+                    background-color: transparent;
+                }
+            }
+            & > ul {
+                li {
+                    margin-left: 1.5rem;
+                    &:before {
+                        content: "+";
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
+                }
             }
         }
     }
