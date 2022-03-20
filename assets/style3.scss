@@ -23,12 +23,12 @@ html {
     --light-color: #999999;
     --a-color: #3333ff;
     --b-color: #ff3333;
-    --body-bg-color: #eeeeff;
+    --body-bg-color: #f0f8ff;
     --sidebar-bg-color: var(--body-bg-color);
     --sb-line-color: #d5d5ff;
     --sb-bg-color: transparent;
     --content-bg-color: transparent;
-    --ct-bg-color: #ffffff;
+    --ct-bg-color: #fffafa;
     --box-bg-color: #eeeeee;
 }
 html[data-theme="night"] {
@@ -77,6 +77,9 @@ a, a:link, a:visited, a:hover, a:active {
     z-index: 9999;
     button {
         cursor: pointer;
+        svg {
+            vertical-align: bottom;
+        }
     }
     @media (min-width: 1220px) {
         display: none;
@@ -160,7 +163,6 @@ a, a:link, a:visited, a:hover, a:active {
 
 .sidebar {
     .sb {
-        border-right: 1px solid var(--sb-line-color);
         aside {
             border-bottom: 1px solid var(--sb-line-color);
             display: flex;
@@ -209,11 +211,18 @@ a, a:link, a:visited, a:hover, a:active {
 }
 .content {
     .ct {
+        border-left: 1px solid var(--sb-line-color);
+        border-right: 1px solid var(--sb-line-color);
         header {
             h1 {
                 font-size: 2rem;
                 margin: 1.5rem 0;
                 line-height: 1.2;
+                &:before {
+                    content: "#";
+                    display: inline-block;
+                    width: 1.5rem;
+                }
             }
             .page-meta {
                 margin: -1.5rem 0 1.5rem 0;
@@ -261,7 +270,9 @@ a, a:link, a:visited, a:hover, a:active {
                 margin: 1.5rem 0;
             }
             & > p[class], & > pre, & > ul {
-                @include pad;
+                font-size: 0.9rem;
+                line-height: 1.2;
+                padding: 1rem;
                 background-color: var(--box-bg-color);
                 border-radius: 4px;
                 position: relative;
@@ -278,6 +289,8 @@ a, a:link, a:visited, a:hover, a:active {
             }
             & > pre {        
                 code {
+                    font-size: 0.9rem;
+                    line-height: 1.2;
                     display: block;
                     overflow: auto;
                     background-color: transparent;
