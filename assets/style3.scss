@@ -163,6 +163,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .sidebar {
     .sb {
+        border-right: 1px solid var(--sb-line-color);
         aside {
             border-bottom: 1px solid var(--sb-line-color);
             display: flex;
@@ -211,7 +212,6 @@ a, a:link, a:visited, a:hover, a:active {
 }
 .content {
     .ct {
-        border-left: 1px solid var(--sb-line-color);
         border-right: 1px solid var(--sb-line-color);
         header {
             h1 {
