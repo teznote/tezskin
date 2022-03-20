@@ -2,20 +2,24 @@
 ---
 
 <div class="nav">
-    {% for tag in site.navtags %}
-        {% assign posts = site.tags[tag.id] %}
-        <h2 class="nav-tag-title">{{ tag.title }}</h2>
-        {% for sub in tag.subs %}
-            <h3 class="nav-sub-title">{{ sub.title }}</h3>
-            <ul class="nav-sub-items">
-                {% for post in posts %}
-                    {% if post.tags contains sub.id %}
-                        <li class="nav-sub-item">
-                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endfor %}
+    {%- for tag in site.navtags -%}
+        {%- assign posts = site.tags[tag.id] -%}
+        <div class="nav-tags">
+            <h2 class="nav-tag-title">{{ tag.title }}</h2>
+            {%- for sub in tag.subs -%}
+                <div class="nav-subs">
+                    <h3 class="nav-sub-title">{{ sub.title }}</h3>
+                    <ul class="nav-sub-items hidden">
+                        {%- for post in posts -%}
+                            {%- if post.tags contains sub.id -%}
+                                <li class="nav-sub-item">
+                                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
     {% endfor %}
 </div>

@@ -40,6 +40,7 @@ html, body {
     font-family: 'Hack', 'NanumSquareRound', monospace;
     font-weight: 400;
     font-size: 16px;
+    line-height: 1.4;
     color: var(--color);
     background-color: var(--body-bg-color);
     overflow: hidden;
@@ -56,6 +57,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     color: var(--a-color);
+    // border-bottom: 1px dotted;
 }
 
 .controls {
@@ -74,6 +76,9 @@ a, a:link, a:visited, a:hover, a:active {
     @media (max-width: 1219px) {
         left: 0 !important;
     }
+}
+.hidden {
+    display: none;
 }
 .sidebar {
     position: fixed;
@@ -144,12 +149,47 @@ a, a:link, a:visited, a:hover, a:active {
         border-right: 1px solid var(--sb-line-color);
         header {
             border-bottom: 1px solid var(--sb-line-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2.site-title {
+                font-size: 1.5rem;
+            }
         }
         nav {
-            color: inherit;
+            .nav-tags {
+                margin: 1.5rem 0 1.5rem 0;
+                .nav-subs {
+                    margin: 1rem 0 1rem 1rem;
+                    .nav-sub-title {
+                        cursor: pointer;
+                    }
+                    ul.nav-sub-items {
+                        li.nav-sub-item {
+                            margin: 0.5rem 0.5rem 0 1rem;
+                            letter-spacing: -1rem;
+                            &:before {
+                                content: "+";
+                                display: inline-block;
+                                width: 1rem;
+                                margin-left: -1rem;
+                            }
+                            a {
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
         footer {
             border-top: 1px solid var(--sb-line-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .msg {
+                text-align: center;
+            }
         }
     }
 }
