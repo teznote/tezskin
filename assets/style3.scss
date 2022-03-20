@@ -19,17 +19,19 @@
 }
 
 html {
-    --color: #333333;
-    --light-color: #999999;
-    --a-color: #3333ff;
-    --b-color: #ff3333;
-    --body-bg-color: #f0f8ff;
+    --color: #000000;
+    --light-color: #6a737d;
+    --a-color: #005cc5;
+    --b-color: #d73a49;
+    --c-color: #6f42c1;
+    --body-bg-color: #f3f4f6;
     --sidebar-bg-color: var(--body-bg-color);
-    --sb-line-color: #d5d5ff;
+    --sb-line-color: #cccccc;
     --sb-bg-color: transparent;
     --content-bg-color: transparent;
     --ct-bg-color: #fffafa;
-    --box-bg-color: #eeeeee;
+    --box-bg-color: var(--body-bg-color);
+    --box-line-color: var(--sb-line-color);
 }
 html[data-theme="night"] {
     --color: #ffffff;
@@ -67,7 +69,8 @@ h3 {
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     color: var(--a-color);
-    // border-bottom: 1px dotted;
+    border-bottom: 1px dotted;
+    font-weight: 800;
 }
 
 .controls {
@@ -244,14 +247,24 @@ a, a:link, a:visited, a:hover, a:active {
             a, a:link, a:visited, a:hover, a:active {
                 color: var(--a-color);
                 border-bottom: 1px dotted;
+                font-weight: 800;
             }
             b, strong {
                 color: var(--b-color);
                 border-bottom: 1px dotted;
-                font-weight: 400;
+                font-weight: 800;
             }
-            pre, code, kdb, samp {
+            pre, code, kbd, samp {
                 font-family: 'Hack', 'NanumSquareRound', monospace;
+            }
+            p > code, kbd, samp {
+                font-size: 0.9rem;
+                font-weight: 400;
+                color: var(--c-color);
+                border: 1px solid var(--box-line-color);
+                border-radius: 4px;
+                padding: 0.1rem;
+                background-color: var(--box-bg-color);
             }
             & > h2 {
                 font-size: 1.5rem;
@@ -275,15 +288,21 @@ a, a:link, a:visited, a:hover, a:active {
                 padding: 1rem;
                 background-color: var(--box-bg-color);
                 border-radius: 4px;
+                border: 1px solid var(--box-line-color);
                 position: relative;
                 &:before {
                     content: attr(class);
                     display: block;
                     position: absolute;
-                    top: -0.8rem;
-                    color: var(--light-color);
+                    top: -1.12rem;
+                    font-weight: 800;
+                    color: var(--c-color);
                     background-color: var(--box-bg-color);
-                    border-radius: 4px;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    border-left: 1px solid var(--box-line-color);
+                    border-top: 1px solid var(--box-line-color);
+                    border-right: 1px solid var(--box-line-color);
                     padding: 0 1rem;
                 }
             }
@@ -294,6 +313,7 @@ a, a:link, a:visited, a:hover, a:active {
                     display: block;
                     overflow: auto;
                     background-color: transparent;
+                    padding: 0 !important;
                 }
             }
             & > ul {
