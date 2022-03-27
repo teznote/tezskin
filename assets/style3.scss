@@ -258,12 +258,12 @@ a, a:link, a:visited, a:hover, a:active {
                 font-family: 'Hack', 'NanumSquareRound', monospace;
             }
             p > code, kbd, samp {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 font-weight: 400;
                 color: var(--c-color);
                 border: 1px solid var(--box-line-color);
                 border-radius: 4px;
-                padding: 0.1rem;
+                padding: 1 0.2rem;
                 background-color: var(--box-bg-color);
             }
             & > h2 {
