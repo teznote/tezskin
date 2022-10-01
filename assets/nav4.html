@@ -11,7 +11,15 @@
     </ul>
 </div>
 <div class="posts">
-    Posts...
+    {%- for cat in site.cats -%}
+    <ul class="posts-wrapper" cat="{{ cat.id }}">
+        {%- for post in site.categories[cat.id] -%}
+        <li class="posts-item">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
 </div>
 
 <!--
