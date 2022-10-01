@@ -36,8 +36,11 @@ header, aside, nav, main, footer, section, article {
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 5px;
+    padding: 0 5px;
     box-sizing: border-box;
+}
+img, svg {
+    vertical-align: bottom;
 }
 
 // Layout
