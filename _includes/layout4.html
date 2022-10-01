@@ -4,7 +4,7 @@
             <h2 class="site-title">
                 <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
             </h2>
-            <button class="menubtn">
+            <button class="menu-btn">
                 <svg viewBox="0 0 100 100" width="25" height="25">
                     <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" stroke="currentColor" fill="currentColor"></path>
                 </svg>
@@ -24,6 +24,21 @@
             }).then(function(body) {
                 document.querySelector('nav').innerHTML = body;
                 return;
+            }).then(function() {
+                //var slected_cat = document.querySelectorAll('nav .cats-item');
+                //var selected_post = document.querySelectorAll('nav .posts-item');
+                var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
+                
+                if (cur) {
+                    var items = document.querySelectorAll('nav .posts-item a');
+                    for (var el of items) {
+                        var href = el.firstElementChild.getAttribute('href');
+                        if (href === cur[2]) {
+                            el.classList.add('current');
+                            el.parentElement.classList.remove('hide');
+                        }
+                    }
+                }
             });
         </script>
         <main>
