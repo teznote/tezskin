@@ -10,12 +10,6 @@ cats:
 - id: web_develop
   title: Web Development
 
-cats:
-- id: study
-  title: Programming Study
-- id: diary
-  title: My Diary
-
 navtags:
 - id: study
   title: Programming Study
