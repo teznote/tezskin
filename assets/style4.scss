@@ -1,9 +1,11 @@
 ---
 ---
 
+// Global
 html {
     --color: #2c3e50;
     --body-bg-color: #ffffff;
+    --max-width: 1200px;
 }
 html, body {
     width: 100%;
@@ -15,14 +17,23 @@ html, body {
     color: var(--color);
     background-color: var(--body-bg-color);
 }
+html, body, div, p, pre, ul, li, h1, h2, h3, h4, h5, h6 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, aside, nav, main, footer, section, article {
+    display: block;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
 
-.layout-outer {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    .layout-inner {
-        padding: 60px;
-    }
+// Layout
+.layout {
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
 
