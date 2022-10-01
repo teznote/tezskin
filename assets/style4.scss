@@ -55,8 +55,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 // Layout
 .hide {
-    height: 0px;
-    overflow: hidden;
+    display: none;
 }
 .layout {
     width: 100%;
