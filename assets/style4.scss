@@ -17,6 +17,7 @@ html {
     --a-color: #005cc5;
     --b-color: #d73a49;
     --c-color: #6a737d;
+    --box-bg-color: #f3f5f7;
 }
 html, body {
     width: 100%;
@@ -74,7 +75,7 @@ a, a:link, a:visited, a:hover, a:active {
                 
             }
             .menu-btn {
-            
+                cursor: pointer;
             }
         }
     }
@@ -95,6 +96,20 @@ a, a:link, a:visited, a:hover, a:active {
 
 // Design
 .content {
+    h1 {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+        line-height: 1.2;
+        &:before {
+            content: "≫";
+            display: inline-block;
+            width: 1.5rem;
+        }
+    }
+    .page-meta {
+        margin: -1.5rem 0 1.5rem 0;
+        color: var(--c-color);
+    }
     h2 {
         font-size: 1.5rem;
         margin: 3rem 0 1.5rem 0;
@@ -130,8 +145,8 @@ a, a:link, a:visited, a:hover, a:active {
         & > code, kbd, samp {
             font-size: 1rem;
             font-weight: 400;
-            color: var(--color);
-            background-color: var(--c-color);
+            color: var(--a-color);
+            background-color: var(--box-bg-color);
         }
     }
 }
