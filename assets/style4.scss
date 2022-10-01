@@ -6,6 +6,7 @@ html {
     --color: #2c3e50;
     --body-bg-color: #ffffff;
     --max-width: 1200px;
+    --fixed-height: 60px;
 }
 html, body {
     width: 100%;
@@ -25,6 +26,7 @@ html, body, div, p, pre, ul, li, h1, h2, h3, h4, h5, h6 {
 }
 header, aside, nav, main, footer, section, article {
     display: block;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 5px;
@@ -39,8 +41,9 @@ header, aside, nav, main, footer, section, article {
     display: flex;
     flex-direction: column;
     .layout-fixed {
-        flex: 0 0 60px;
+        flex: 0 0 var(--fixed-height);
         header {
+            height: var(--fixed-height);
             display: flex;
             justify-content: space-between;
             .site-title {
@@ -54,10 +57,10 @@ header, aside, nav, main, footer, section, article {
     .layout-fluid {
         flex: 1 0 0;
         nav {
-
+            
         }
         main {
-
+            
         }
         footer {
 
