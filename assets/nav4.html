@@ -16,7 +16,7 @@
         {%- for post in site.categories[cat.id] -%}
         <li class="posts-item">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
-            <span class="posts-item-tags">Last updated: {{ post.updated }}, Tags: {%- for tag in post.tags -%}tag{% if tags.last == tag %} {% else %},{% endif %}{% endfor %}</span>
+            <span class="posts-item-tags">Last updated: {{ post.updated }}, Tags: {{ post.tags | join: ", " }}</span>
         </li>
         {% endfor %}
     </ul>
