@@ -24,7 +24,7 @@ html, body, div, p, pre, ul, li, h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 header, aside, nav, main, footer, section, article {
-    dsiplay: block;
+    display: block;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 5px;
@@ -41,7 +41,14 @@ header, aside, nav, main, footer, section, article {
     .layout-fixed {
         flex: 0 0 60px;
         header {
+            display: flex;
+            justify-content: space-between;
+            .site-title {
+                
+            }
+            .menu-btn {
             
+            }
         }
     }
     .layout-fluid {
