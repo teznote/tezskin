@@ -12,7 +12,7 @@
         </header>
     </div>
     <div class="layout-fluid">
-        <nav>
+        <nav class="hide">
             Now Loading....
         </nav>
         <script>
@@ -41,6 +41,20 @@
         </footer>
     </div>
 </div>
+<script>
+    'use strict';
+    
+    var nav = document.querySelector('nav');
+    var main = document.querySelector('main');
+    var footer = document.querySelector('footer');
+    var menubtn = document.querySelector('.menubtn');
+
+    menubtn.addEventListener('click', function() {
+        nav.classList.toggle('hide');
+        main.classList.toggle('hide');
+        footer.classList.toggle('hide');
+    });
+</script>
 
 <!--
 <div class="sidebar">
