@@ -43,9 +43,10 @@ header, aside, nav, main, footer, section, article {
     .layout-fixed {
         flex: 0 0 var(--fixed-height);
         header {
-            height: var(--fixed-height);
+            height: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             .site-title {
                 
             }
@@ -56,6 +57,7 @@ header, aside, nav, main, footer, section, article {
     }
     .layout-fluid {
         flex: 1 0 0;
+        overflow: scroll;
         nav {
             
         }
