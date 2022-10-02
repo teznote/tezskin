@@ -41,10 +41,9 @@
                 }
                 
                 function cats_event(e) {
-                    var target = document.querySelectorAll('.posts-wrapper[cat=' + e.currentTarget.getAttribute('cat') + ']');
-                    target.classList.toggle('hide');
+                    var targets = document.querySelectorAll('.posts-wrapper[cat=' + e.currentTarget.getAttribute('cat') + ']');
+                    targets.forEach(x => x.classList.toggle('hide'));
                 }
-
                 for (var el of cats) {
                     el.addEventListener('click', cats_event);
                 }
