@@ -82,7 +82,23 @@ a, a:link, a:visited, a:hover, a:active {
         flex: 1 0 0;
         overflow: scroll;
         nav {
-            
+            .cats-wrapper {
+                margin: 2rem 0;
+                .cats-item {
+                    display: inline-block;
+                    margin-right: 1.5rem;
+                    color: var(--a-color);
+                    border-bottom: 1px dotted;
+                    font-weight: 800;
+                    cursor: pointer;
+                }
+            }
+            .posts-wrapper {
+                margin: 2rem 0;
+                .posts-item {
+                    margin: .5rem 0;
+                }
+            }
         }
         main {
             
@@ -152,7 +168,6 @@ a, a:link, a:visited, a:hover, a:active {
     }
     p[class], pre, ul {
         background-color: var(--box-bg-color);
-        margin: .5em 0;
         padding: .5rem 1.5rem;
         border-left-width: .5rem;
         border-left-style: solid;
