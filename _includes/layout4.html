@@ -41,8 +41,15 @@
                 }
                 
                 function cats_event(e) {
-                    var targets = document.querySelectorAll('.posts-wrapper[cat=' + e.currentTarget.getAttribute('cat') + ']');
-                    targets.forEach(x => x.classList.toggle('hide'));
+//                     var targets = document.querySelectorAll('.posts-wrapper[cat=' + e.currentTarget.getAttribute('cat') + ']');
+//                     targets.forEach(x => x.classList.toggle('hide'));
+                    document.querySelectorAll('.posts-wrapper').forEach(x => {
+                        if (x.getAttribute('cat') === e.currentTarget.getAttribute('cat')) {
+                            x.classList.remove('hide');
+                        } else {
+                            x.classList.add('hide');
+                        }
+                    });
                 }
                 for (var el of cats) {
                     el.addEventListener('click', cats_event);
