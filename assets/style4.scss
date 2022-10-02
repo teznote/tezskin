@@ -158,12 +158,13 @@ a, a:link, a:visited, a:hover, a:active {
         border-left-style: solid;
         border-color: var(--a-color);
         &:before {
-            content: ': ' attr(class);
+            content: ':' attr(class);
             display: block;
             color: var(--a-color);
             text-transform: uppercase;
             font-weight: 800;
             font-style: italic;
+            margin: .5rem 0;
         }
     }
     ul {
