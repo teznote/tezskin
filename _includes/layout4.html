@@ -30,7 +30,7 @@
                 var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
                 
                 if (cur) {
-                    var items = document.querySelectorAll('nav .posts-item a');
+                    var items = document.querySelectorAll('nav .posts-item');
                     for (var el of items) {
                         var href = el.firstElementChild.getAttribute('href');
                         if (href === cur[2]) {
@@ -68,9 +68,9 @@
     var nav = document.querySelector('nav');
     var main = document.querySelector('main');
     var footer = document.querySelector('footer');
-    var menubtn = document.querySelector('.menubtn');
+    var menu_btn = document.querySelector('.menu-btn');
 
-    menubtn.addEventListener('click', function() {
+    menu_btn.addEventListener('click', function() {
         nav.classList.toggle('hide');
         main.classList.toggle('hide');
         footer.classList.toggle('hide');
