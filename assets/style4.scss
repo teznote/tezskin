@@ -14,7 +14,7 @@ html {
     --body-bg-color: #ffffff;
     --max-width: 1200px;
     --fixed-height: 60px;
-    --a-color: #3eaf7c;
+    --a-color: #2353a0;
     --b-color: #d73a49;
     --c-color: #6a737d;
     --box-bg-color: #f3f5f7;
@@ -143,6 +143,7 @@ a, a:link, a:visited, a:hover, a:active {
     p, pre, ul {
         margin: 1.5rem 0;
         & > code, kbd, samp {
+            padding: 0 !important;
             font-size: 1rem;
             font-weight: 400;
             color: var(--a-color);
@@ -150,15 +151,30 @@ a, a:link, a:visited, a:hover, a:active {
         }
     }
     p[class], pre, ul {
-        background-color: var(--box-bg--color);
-        padding: .1rem 1.5rem;
+        background-color: var(--box-bg-color);
+        margin: .5em 0;
+        padding: .5rem 1.5rem;
         border-left-width: .5rem;
         border-left-style: solid;
         border-color: var(--a-color);
         &:before {
-            content: attr(class);
+            content: ': ' attr(class);
             display: block;
             color: var(--a-color);
+            text-transform: uppercase;
+            font-weight: 800;
+            font-style: italic;
+        }
+    }
+    ul {
+        li {
+            margin-left: 1.5rem;
+            &:before {
+                content: "+";
+                display: inline-block;
+                width: 1.5rem;
+                margin-left: -1.5rem;
+            }
         }
     }
 }
