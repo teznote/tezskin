@@ -3,6 +3,7 @@
 
 // Global
 html {
+    --sb-width: 320px;
     --color: #adbac7;
     --body-bg-color: #22272e;
     --a-color: #3aa675;
@@ -50,12 +51,13 @@ a, a:link, a:visited, a:hover, a:active {
     overflow: hidden;
     display: flex;
     .left {
-        flex: 1 0 300px;
+        flex: 1 0 var(--sb-width);
         display: flex;
         flex-direction: row-reverse;
         .sb {
-            width: 300px;
+            width: var(--sb-width);
             display: flex;
+            flex-direction: column;
             .sb-header {
                 flex: 0 0 60px;
             }
@@ -69,7 +71,8 @@ a, a:link, a:visited, a:hover, a:active {
         }
     }
     .right {
-        flex: 1 0 0;
+        flex: 1 0 900px;
+        width: 
         .ct {
             max-width: 900px;
             overflow: scroll;
