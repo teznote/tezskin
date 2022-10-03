@@ -9,10 +9,13 @@
 *::-webkit-scrollbar {
     display: none;   
 }
+
+$sb-width: 320px;
+$ct-width: 880px;
+
 html {
-    --sb-width: 320px;
-    --ct-width: 880px;
-    --media-query-width: calc(var(--sb-width) + var(--ct-width) - 1);
+    --sb-width: $sb-width;
+    --ct-width: $ct-width;
     --height: calc(var(--vh, 1vh) * 100);
     --color: #adbac7;
     --body-bg-color: #22272e;
@@ -70,7 +73,7 @@ a, a:link, a:visited, a:hover, a:active {
         bottom: 0;
         display: flex;
         flex-direction: row-reverse;
-        @media (max-width: var(--media-query-width)) {
+        @media (max-width: $sb-width + $ct-width - 1) {
             left: calc(-valc(--sb-width));
         }
         .sb {
@@ -97,7 +100,7 @@ a, a:link, a:visited, a:hover, a:active {
         width: var(--ct-width);
         right: 0;
         bottom: 0;
-        @media (max-width: var(--media-query-width)) {
+        @media (max-width: $sb-width + $ct-width - 1) {
             width: 100%;
         }
         .ct {
