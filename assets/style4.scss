@@ -63,7 +63,7 @@ a, a:link, a:visited, a:hover, a:active {
             }
             .sb-main {
                 flex: 1 0 0;
-                overflow: scroll;
+                overflow-y: scroll;
             }
             .sb-footer {
                 flex: 0 0 60px;
@@ -75,7 +75,7 @@ a, a:link, a:visited, a:hover, a:active {
         width: 
         .ct {
             max-width: 900px;
-            overflow: scroll;
+            overflow-y: scroll;
         }
     }
 }
