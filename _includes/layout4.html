@@ -1,4 +1,58 @@
 <div class="layout">
+    <div class="left">
+        <div class="sb">
+            <div class="sb-header">
+                <h2 class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </h2>
+            </div>
+            <div class="sb-main">
+                <nav class="navigation">
+                    Now Loading...
+                </nav>
+                <script>
+                    'use strict';
+                    
+                    var target = "{{ '/assets/nav4.html' | relative_url  }}";
+                    fetch(target).then(function(response) {
+                        return response.text();
+                    }).then(function(body) {
+                        document.querySelector('nav').innerHTML = body;
+                        return;
+                    });
+                </script>
+            </div>
+            <div class="sb-footer">
+                <div class="site-desc">
+                    {{ site.desc }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="ct">
+            <div class="ct-header">
+                <header class="page-title">
+                    {{ page.title }}
+                </header>
+                <div class="page-meta">
+                    Last Updated: {{ page.updated }}, Tags: {{ post.tags | join: ", " }}
+                </div>
+            </div>
+            <div class="ct-main">
+                <main class="page-main">
+                    {{ content }}
+                </main>
+            </div>
+            <div class="ct-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="layout">
     <div class="layout-fixed">
         <header>
             <h2 class="site-title">
@@ -89,3 +143,4 @@
         footer.classList.toggle('hide');
     });
 </script>
+-->
