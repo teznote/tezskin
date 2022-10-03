@@ -69,7 +69,7 @@ a, a:link, a:visited, a:hover, a:active {
         bottom: 0;
         display: flex;
         flex-direction: row-reverse;
-        @media (max-width: calc(var(--sb-width + var(--ct-width) - 1)) {
+        @media (max-width: calc(var(--sb-width) + var(--ct-width) - 1)) {
             left: calc(-valc(--sb-width));
         }
         .sb {
@@ -96,7 +96,7 @@ a, a:link, a:visited, a:hover, a:active {
         width: var(--ct-width);
         right: 0;
         bottom: 0;
-        @media (max-width: calc(var(--sb-width + var(--ct-width) - 1)) {
+        @media (max-width: calc(var(--sb-width) + var(--ct-width) - 1)) {
             width: 100%;
         }
         .ct {
