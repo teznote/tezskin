@@ -3,9 +3,9 @@
 
 // Global
 html {
-    --color: #ffffff;
-    --body-bg-color: #121212;
-    -a-color: #3aa675;
+    --color: #adbac7;
+    --body-bg-color: #22272e;
+    --a-color: #3aa675;
 }
 html, body {
     width: 100%;
@@ -51,9 +51,29 @@ a, a:link, a:visited, a:hover, a:active {
     display: flex;
     .left {
         flex: 1 0 300px;
+        display: flex;
+        flex-direction: row-reverse;
+        .sb {
+            width: 300px;
+            display: flex;
+            .sb-header {
+                flex: 0 0 60px;
+            }
+            .sb-main {
+                flex: 1 0 0;
+                overflow: scroll;
+            }
+            .sb-footer {
+                flex: 0 0 60px;
+            }
+        }
     }
     .right {
         flex: 1 0 0;
+        .ct {
+            max-width: 900px;
+            overflow: scroll;
+        }
     }
 }
 
