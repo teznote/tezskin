@@ -1,6 +1,22 @@
 ---
 ---
 
+{%- for cat in site.cats -%}
+<ul class="nav-cat">
+    <li class="nav-cat-item" cat="{{ cat.id }}">
+        {{ cat.title }}
+    </li>
+    {%- for post in site.categories[cat.id] -%}
+    <ul class="nav-post hidden">
+        <li class="nav-post-item">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+<!--
 <div class="cats">
     <ul class="cats-wrapper">
     {%- for cat in site.cats -%}
@@ -22,3 +38,4 @@
     </ul>
     {% endfor %}
 </div>
+-->
