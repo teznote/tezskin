@@ -9,6 +9,16 @@
                     <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" stroke="currentColor" fill="currentColor"></path>
                 </svg>
             </button>
+            <script>
+                'use strict';
+    
+                var menu_btn = document.querySelector('.menu-btn');
+                var nav = document.querySelector('.nav');
+
+                menu_btn.addEventListener('click', function() {
+                    nav.classList.toggle('nav-hidden');
+                });
+            </script>
         </aside>
         <nav class="nav">
             ...Now Loading
