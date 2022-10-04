@@ -83,6 +83,7 @@ b, strong {
         .nav {
             padding: 0 5px;
             height: calc(var(--vh, 1vh) * 100 - 60px);
+            overflow: hidden;
             transition: height 1s;
             display: flex;
             flex-direction: column;
@@ -91,6 +92,8 @@ b, strong {
             }
             .posts {
                 flex: 1 0 0;
+                height: 100%;
+                overflow: scroll;
             }
         }
         .nav-hidden {
