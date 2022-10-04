@@ -11,14 +11,14 @@
     </ul>
 </div>
 <div class="posts">
+    <ul class="posts-wrapper">
     {%- for cat in site.cats -%}
-    <ul class="posts-wrapper hidden" cat="{{ cat.id }}">
         {%- for post in site.categories[cat.id] -%}
-        <li class="posts-item">
+        <li class="posts-item hidden" cat="{{ cat.id }}">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
             <span class="posts-item-tags">Last updated: {{ post.updated }}, Tags: {{ post.tags | join: ", " }}</span>
         </li>
         {% endfor %}
-    </ul>
     {% endfor %}
+    </ul>
 </div>
