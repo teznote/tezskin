@@ -71,7 +71,7 @@ b, strong {
         max-width: #{$content-width};
         margin: 0 auto;
         .aside {
-            padding: 5px;
+            padding: 0 5px;
             height: 60px;
             display: flex;
             justify-content: space-between;
@@ -81,7 +81,7 @@ b, strong {
             }
         }
         .nav {
-            padding: 5px;
+            padding: 0 5px;
             height: calc(var(--vh, 1vh) * 100 - 60);
         }
     }
@@ -94,13 +94,13 @@ b, strong {
         max-width: #{$content-width};
         margin: 0 auto;
         .header {
-            padding: 5px;
+            padding: 0 5px;
         }
         .main {
-            padding: 5px;
+            padding: 0 5px;
         }
         .footer {
-            padding: 5px;
+            padding: 0 5px;
         }
     }
 }
