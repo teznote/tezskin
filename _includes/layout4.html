@@ -1,53 +1,51 @@
-<div class="layout">
-    <div class="sidebar">
-        <div class="sb">
-            <aside class="aside">
-                <h2 class="site-title">
-                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-                </h2>
-                <button class="menu-btn">
-                    <svg viewBox="0 0 100 100" width="25" height="25">
-                        <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" stroke="currentColor" fill="currentColor"></path>
-                    </svg>
-                </button>
-            </aside>
-            <nav class="nav">
-                ...Now Loading
-            </nav>
-            <script>
-                'use strict';
+<div class="sidebar">
+    <div class="sb">
+        <aside class="aside">
+            <h2 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h2>
+            <button class="menu-btn">
+                <svg viewBox="0 0 100 100" width="25" height="25">
+                    <path d="M0 14 h100 M0 50 h100 M0 86 h100" stroke-width="8" stroke="currentColor" fill="currentColor"></path>
+                </svg>
+            </button>
+        </aside>
+        <nav class="nav">
+            ...Now Loading
+        </nav>
+        <script>
+            'use strict';
 
-                var target = "{{ '/assets/nav4.html' | relative_url  }}";
-                fetch(target).then(function(response) {
-                    return response.text();
-                }).then(function(body) {
-                    document.querySelector('nav').innerHTML = body;
-                    return;
-                });
-            </script>
-        </div>
+            var target = "{{ '/assets/nav4.html' | relative_url  }}";
+            fetch(target).then(function(response) {
+                return response.text();
+            }).then(function(body) {
+                document.querySelector('nav').innerHTML = body;
+                return;
+            });
+        </script>
     </div>
-    <div class="content">
-        <div class="ct">
-            <header class="header">
-                <h1 class="page-title">
-                    {{ page.title }}
-                </h1>
-                <div class="page-meta">
-                    Last Updated: {{ page.updated }}, Tags: {{ page.tags | join: ", " }}
-                </div>
-            </header>
-            <main class="main">
-                <div class="article">
-                    {{ content }}
-                </div>
-            </main>
-            <footer>
-                <div class="page-footer">
-                    {{ site.desc }}
-                </div>
-            </footer>
-        </div>
+</div>
+<div class="content">
+    <div class="ct">
+        <header class="header">
+            <h1 class="page-title">
+                {{ page.title }}
+            </h1>
+            <div class="page-meta">
+                Last Updated: {{ page.updated }}, Tags: {{ page.tags | join: ", " }}
+            </div>
+        </header>
+        <main class="main">
+            <div class="article">
+                {{ content }}
+            </div>
+        </main>
+        <footer>
+            <div class="page-footer">
+                {{ site.desc }}
+            </div>
+        </footer>
     </div>
 </div>
 
