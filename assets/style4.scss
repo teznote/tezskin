@@ -82,7 +82,19 @@ b, strong {
         }
         .nav {
             padding: 0 5px;
-            height: calc(var(--vh, 1vh) * 100 - 60);
+            height: calc(var(--vh, 1vh) * 100 - 60px);
+            transition: height 1s;
+            display: flex;
+            flex-direction: column;
+            .cats {
+                flex: 0 0 0;
+            }
+            .posts {
+                flex: 1 0 0;
+            }
+        }
+        .nav-hidden {
+            height: 0;  
         }
     }
 }
