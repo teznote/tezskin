@@ -1,6 +1,15 @@
 ---
 ---
 
+// Vars
+@mixin sbct-width {
+    max-width: 900px;
+}
+$color: #adbac7;
+$bg-color: #22272e;
+$a-color: #61dafb;
+$b-color: #d73a49;
+
 // Global
 * {
     -ms-overflow-style: none;
@@ -9,33 +18,26 @@
 *::-webkit-scrollbar {
     display: none;   
 }
-
-$sb-width: 320px;
-$ct-width: 880px;
-
-html {
-    --sb-width: #{$sb-width};
-    --ct-width: #{$ct-width};
-    --height: calc(var(--vh, 1vh) * 100);
-    --color: #adbac7;
-    --body-bg-color: #22272e;
-    --a-color: #61dafb;
-}
 html, body {
     width: 100%;
-    height: var(--height);
+    height: calc(var(--vh, 1vh) * 100);
     font-family: 'Hack', 'NanumSquareRound', monospace;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
-    color: var(--color);
-    background-color: var(--body-bg-color);
+    color: #{$color};
+    background-color: #{$bg-color};
 }
 img, svg {
     vertical-align: bottom;
 }
 ul, li {
     display: block;
+}
+header, aside, nav, main, footer, section, article {
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 h1, h2, h3, h4, h5, h6, b, strong {
     font-weight: 800;
@@ -51,65 +53,49 @@ h3 {
 }
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color: var(--a-color);
+    color: #{$a-color};
     border-bottom: 1px dotted;
     font-weight: 800;
 }
-
+b, strong {
+    color: #{$b-color};
+    font-weight: 800;
+}
 
 // Layout
 .layout {
-    max-width: 100%;
-    width: calc(var(--sb-width) + var(--ct-width));
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
     overflow: hidden;
-    position: relative;
-    .left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: var(--sb-width);
-        bottom: 0;
-        display: flex;
-        flex-direction: row-reverse;
-        @media (max-width: #{$sb-width + $ct-width - 1px}) {
-            left: calc(-1 * valc(--sb-width));
-        }
+    .sidebar {
         .sb {
-            padding: 0 8px;
-            width: var(--sb-width);
-            display: flex;
-            flex-direction: column;
-            .sb-header {
-                flex: 0 0 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            .aside {
+                padding: 5px;
             }
-            .sb-main {
-                flex: 1 0 0;
-                overflow-y: scroll;
-                height: 100%;
-            }
-            .sb-footer {
-                flex: 0 0 60px;
+            .nav {
+                padding: 5px;
             }
         }
     }
-    .right {
-        position: absolute;
-        top: 0;
-        width: var(--ct-width);
-        right: 0;
-        bottom: 0;
-        @media (max-width: #{$sb-width + $ct-width - 1px}) {
-            width: 100%;
-        }
+    .content {
         .ct {
-            padding: 0 8px;
-            overflow-y: scroll;
-            height: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            .header {
+                padding: 5px;
+            }
+            .main {
+                padding: 5px;
+            }
+            .footer {
+                padding: 5px;
+            }
         }
     }
 }
+
 
 
 /*
