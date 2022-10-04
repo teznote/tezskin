@@ -2,9 +2,7 @@
 ---
 
 // Vars
-@mixin sbct-width {
-    max-width: 900px;
-}
+$content-width: 900px;
 $color: #adbac7;
 $bg-color: #22272e;
 $a-color: #61dafb;
@@ -69,7 +67,7 @@ b, strong {
     overflow: hidden;
     .sidebar {
         .sb {
-            max-width: 900px;
+            max-width: #{$content-width};
             margin: 0 auto;
             .aside {
                 padding: 5px;
@@ -81,7 +79,7 @@ b, strong {
     }
     .content {
         .ct {
-            max-width: 900px;
+            max-width: #{$content-width};
             margin: 0 auto;
             .header {
                 padding: 5px;
