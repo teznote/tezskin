@@ -61,35 +61,39 @@ b, strong {
 }
 
 // Layout
-.layout {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    .sidebar {
-        .sb {
-            max-width: #{$content-width};
-            margin: 0 auto;
-            .aside {
-                padding: 5px;
-            }
-            .nav {
-                padding: 5px;
-            }
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .sb {
+        max-width: #{$content-width};
+        margin: 0 auto;
+        .aside {
+            padding: 5px;
+            height: 60px;
+        }
+        .nav {
+            padding: 5px;
+            height: calc(var(--vh, 1vh) * 100 - 60);
         }
     }
-    .content {
-        .ct {
-            max-width: #{$content-width};
-            margin: 0 auto;
-            .header {
-                padding: 5px;
-            }
-            .main {
-                padding: 5px;
-            }
-            .footer {
-                padding: 5px;
-            }
+}
+.content {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    .ct {
+        max-width: #{$content-width};
+        margin: 0 auto;
+        .header {
+            padding: 5px;
+        }
+        .main {
+            padding: 5px;
+        }
+        .footer {
+            padding: 5px;
         }
     }
 }
