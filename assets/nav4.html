@@ -4,9 +4,9 @@
 <div class="nav-top-gutter">
 </div>
 <div class="nav-category">
-    <div class="nav-sub-title">
+    <h2 class="nav-sub-title">
         :: 카테고리
-    </div>
+    </h2>
     <ul class="nav-cats">
     {%- for cat in site.cats -%}
         <li class="cats-item" cat="{{ cat.id }}">
@@ -16,9 +16,9 @@
     </ul>
 </div>
 <div class="nav-post">
-    <div class="nav-sub-title">
+    <h2 class="nav-sub-title">
         :: 포스트
-    </div>
+    </h2>
     <ul class="nav-posts">
     {%- for cat in site.cats -%}
         {%- for post in site.categories[cat.id] -%}
