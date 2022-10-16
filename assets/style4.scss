@@ -5,7 +5,7 @@ $top-height: 60px;
 $max-width: 900px;
 $color: #121212;
 $bg-color: #ffffff;
-$nav-bg-color: #edf1ff;
+$nav-bg-color: #f6f9ff;
 $a-color: #005cc5;
 $b-color: #d73a49;
 $c-color: #cccccc;
@@ -160,7 +160,7 @@ b, strong {
     }
     p[class], pre, ul {
         background-color: #{$nav-bg-color};
-        padding: .5rem 1.5rem;
+        padding: 1rem 1.5rem;
         border-left-width: .5rem;
         border-left-style: solid;
         border-color: #{$a-color};
@@ -171,7 +171,7 @@ b, strong {
             text-transform: uppercase;
             font-weight: 800;
             font-style: italic;
-            margin: .5rem 0;
+            margin-bottom: 1rem;
         }
     }
     ul {
