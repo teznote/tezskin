@@ -142,11 +142,6 @@ b, strong {
             color: var(--c-color);
         }
     }
-    b, strong {
-        color: var(--b-color);
-        border-bottom: 1px dotted;
-        font-weight: 800;
-    }
     pre, code, kbd, samp {
         font-family: 'Hack', 'NanumSquareRound', monospace;
     }
