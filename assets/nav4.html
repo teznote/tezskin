@@ -5,13 +5,30 @@
 </div>
 <div class="nav-category">
     <div class="nav-sub-title">
-        카테고리:
+        :: 카테고리
     </div>
+    <ul class="nav-cats">
+    {%- for cat in site.cats -%}
+        <li class="cats-item" cat="{{ cat.id }}">
+            <h3>{{ cat.title }}</h3>
+        </li>
+    {% endfor %}
+    </ul>
 </div>
 <div class="nav-post">
     <div class="nav-sub-title">
-        포스트:
+        :: 포스트
     </div>
+    <ul class="nav-posts">
+    {%- for cat in site.cats -%}
+        {%- for post in site.categories[cat.id] -%}
+        <li class="posts-item hidden" cat="{{ cat.id }}">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/>
+            <span class="posts-item-tags">Last updated: {{ post.updated }}, Tags: {{ post.tags | join: ", " }}</span>
+        </li>
+        {% endfor %}
+    {% endfor %}
+    </ul>
 </div>
 
 
