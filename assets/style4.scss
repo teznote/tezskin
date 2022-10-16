@@ -151,20 +151,20 @@ b, strong {
             padding: 0 !important;
             font-size: 1rem;
             font-weight: 400;
-            color: var(--a-color);
-            background-color: var(--box-bg-color);
+            color: #{$a-color};
+            background-color: #{$nav-bg-color};
         }
     }
     p[class], pre, ul {
-        background-color: var(--box-bg-color);
+        background-color: #{$nav-bg-color};
         padding: .5rem 1.5rem;
         border-left-width: .5rem;
         border-left-style: solid;
-        border-color: var(--a-color);
+        border-color: #{$a-color};
         &:before {
-            content: ':' attr(class);
+            content: ':: ' attr(class);
             display: block;
-            color: var(--a-color);
+            color: #{$a-color};
             text-transform: uppercase;
             font-weight: 800;
             font-style: italic;
