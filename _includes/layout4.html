@@ -1,7 +1,7 @@
 <div class="site-header">
     <div class="grid">
         <h2 class="site-title">
-            <a href="#">{{ Site-Title }}</a>
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
         </h2>
         <svg class="menu-button" xmlns="http://www.w3.org/2000/svg" version="1.1" width="35" height="35" viewBox="0 0 40 40">
             <g stroke-width="5" stroke-linecap="round">
@@ -24,24 +24,35 @@
         fetch(target).then(function(response) {
             return response.text();
         }).then(function(body) {
-            document.querySelector('nav').innerHTML = body;
+            document.querySelector('.nav .grid').innerHTML = body;
             return;
-        }).then(function() {
-            var menu_btn = document.querySelector('.menu-button');
-            var nav = document.querySelector('.nav');
-
-            menu_btn.addEventListener('click', function() {
-                menu_btn.classList.toggle('clicked');
-                nav.classList.toggle('opened');
-            });
         });
     </script>
 </div>
 <div class="article">
     <div class="grid">
+        <h1 class="page-title">
+            {{ page.title }}
+        </h1>
+        <div class="page-meta">
+            Last Updated: {{ page.updated }}, Tags: {{ page.tags | join: ", " }}
+        </div>
+        <div class="page-main">
+            {{ content }}
+        </div>
     </div>
 </div>
+<script>
+    'use strict';
+    
+    var menu_btn = document.querySelector('.menu-button');
+    var nav = document.querySelector('.nav');
 
+    menu_btn.addEventListener('click', function() {
+        menu_btn.classList.toggle('clicked');
+        nav.classList.toggle('opened');
+    });
+</script>
 
 
 
