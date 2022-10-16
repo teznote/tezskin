@@ -5,10 +5,10 @@ $top-height: 60px;
 $max-width: 900px;
 $color: #121212;
 $bg-color: #ffffff;
-$nav-bg-color: #f6f9ff;
+$nav-bg-color: #f3f3f3;
 $a-color: #005cc5;
 $b-color: #d73a49;
-$c-color: #cccccc;
+$c-color: #666666;
 
 * {
     scrollbar-width: none;
@@ -20,6 +20,7 @@ html, body {
     font-family: 'Hack', 'NanumSquareRound', monospace;
     font-weight: 400;
     font-size: 16px;
+    line-height: 1.5rem;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -154,7 +155,7 @@ b, strong {
             padding: 0 !important;
             font-size: 1rem;
             font-weight: 400;
-            color: #{$a-color};
+            color: #{$c-color};
             background-color: #{$nav-bg-color};
         }
     }
@@ -163,11 +164,11 @@ b, strong {
         padding: 1rem 1.5rem;
         border-left-width: .5rem;
         border-left-style: solid;
-        border-color: #{$a-color};
+        border-color: #{$c-color};
         &:before {
             content: ':: ' attr(class);
             display: block;
-            color: #{$a-color};
+            color: #{$c-color};
             text-transform: uppercase;
             font-weight: 800;
             font-style: italic;
@@ -178,7 +179,7 @@ b, strong {
         li {
             margin-left: 1.5rem;
             &:before {
-                content: "+";
+                content: "\2219";
                 display: inline-block;
                 width: 1.5rem;
                 margin-left: -1.5rem;
