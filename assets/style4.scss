@@ -6,8 +6,8 @@ $max-width: 900px;
 $color: #eeeeee;
 $bg-color: #121212;
 $nav-bg-color: #282d3c;
-$a-color: #678090;
-$b-color: #8b008b;
+$a-color: #3dd5ff;
+$b-color: #ff7b72;
 $c-color: #cccccc;
 
 * {
@@ -35,9 +35,16 @@ ul, li {
     margin: 0;
     padding: 0;
 }
-a, a:link, a:visited, a:hover, :active {
+a, a:link, a:visited, a:hover, a:active {
     color: #{$a-color};
     text-decoration: none;
+    font-weight: 800;
+    border-bottom: 1px dotted;
+}
+b, strong {
+    color: #{$b-color};
+    font-weight: 800;
+    border-bottom: 1px dotted;
 }
 .grid {
     padding: .1px 5px;
