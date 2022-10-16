@@ -87,6 +87,9 @@ b, strong {
     }
 }
 
+.nav-sub-title {
+    font-style: italic;
+}
 .nav {
     position: fixed;
     z-index: 150;
@@ -102,6 +105,15 @@ b, strong {
     }
     .nav-top-gutter {
         height: #{$top-height};
+    }
+    .nav-cats {
+        display: flex;
+        gap: 2.5rem;
+    }
+    .nav-posts {
+        .posts-item {
+            margin: 1rem 0;
+        }
     }
 }
 .article {
