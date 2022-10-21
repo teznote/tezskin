@@ -24,6 +24,12 @@ a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     border-bottom: 1px dotted;
     color: #{$a-color};
+    font-weight: 800;
+}
+b, strong {
+    color: #{$b-color};
+    font-weight: 800;
+    border-bottom: 1px dotted;
 }
 h1, h2, h3, h4, h5, h6, div, p, pre, ul, li {
     display: block;
@@ -181,6 +187,71 @@ img, svg {
                 span {
                     color: #{$layout-bg-color};
                     background-color: #{$c-color};
+                }
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin: 3rem 0 1.5rem 0;
+                &:before {
+                    content: "\0023";
+                    font: var(--fa-font-solid);
+                    display: inline-block;
+                    width: 1.5rem;
+                }
+            }
+            h3 {
+                font-size: 1rem;
+                margin: 1.5rem 0;
+            }
+            img {
+                display: block;
+                margin: 1.5rem auto;
+                max-width: 100%;
+                & ~ em {
+                    display: block;
+                    margin: -1rem 1.5rem 1.5rem 1.5rem;
+                    color: var(--c-color);
+                }
+            }
+            pre, code, kbd, samp {
+                font-family: 'Hack', 'NanumSquareRound', monospace;
+            }
+            p, pre, ul {
+                margin: 1.5rem 0;
+                & > code, kbd, samp {
+                    padding: 0 !important;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #{$c-color};
+                    background-color: #{$body-bg-color};
+                }
+            }
+            p[class], pre, ul {
+                background-color: #{$body-bg-color};
+                padding: 1rem 1.5rem;
+                border-left-width: .5rem;
+                border-left-style: solid;
+                border-color: #{$c-color};
+                &:before {
+                    content: "\f121" attr(class);
+                    font: var(--fa-font-solid);
+                    display: block;
+                    color: #{$c-color};
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-style: italic;
+                    margin-bottom: 1rem;
+                }
+            }
+            ul {
+                li {
+                    margin-left: 1.5rem;
+                    &:before {
+                        content: "\2219";
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
                 }
             }
         }
