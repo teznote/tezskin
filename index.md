@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: post
 title: Tezskin 테마입니다.
 updated: 2021-02-12
+tags: frontpage
 ---
 
 ## Teznote 는요...
