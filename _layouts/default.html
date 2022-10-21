@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
         <title>{{ site.title }}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css"/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" integrity="sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -13,7 +14,92 @@
         <link rel="stylesheet" href="{{ '/assets/style4.css' | relative_url }}"/>
     </head>
     <body>
-        {% include layout4.html %}
+        <div class="layout">
+            <div class="area-header">
+                <div class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </div>
+                <div class="site-desc">
+                    :: {{ site.desc }}
+                </div>
+            </div>
+        <div class="area-nav">
+        <div class="nav-title">CATEGORIES:</div>
+        <ul class="cat-list">
+        <li> <a href="#">leetcode_easy</a></li>
+        <li><a href="#">MS_office</a></li>
+        <li><a href="#">my_diary</a></li>
+        </ul>
+        <div class="nav-title">POSTS:</div>
+        <ul class="post-list">
+        <li>
+        <div><a href="#">안녕하세요 1번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 2번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 3번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 4번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 5번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 6번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 7번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 8번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 9번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        <li>
+        <div><a href="#">안녕하세요 10번째 포스트입니다.</a></div>
+        <div class="updated">Last-Updated: 2020-00-00</div>
+        <div class="tags">Tags: <span>#젠장</span>, <span>#간장</span></div>
+        </li>
+        </ul>
+        </div>
+        <div class="area-main">
+        <h1 class="page-title">안녕하세요, 새롭게 만드는 블로그 디자인입니다. 반갑습니다. Let's Start!! 시작합니다.</h1>
+        <div class="page-desc">
+        <div class="updated">Last-Updated: 2022-10-20</div>
+        <div class="tags">Tags: <span>#안녕</span>, <span>#아이고</span>, <span>#only</span></div>
+        </div>
+        <div class="page-main">{{ content }}</div>
+        <div class="page-ad">{{ page-ad }}</div>
+        <div class="page-reply">{{ page-reply }}</div>
+        </div>
+        <div class="area-footer">
+        <div class="site-footer">This blog is powered by 
+        <div class="inline"><i class="fa-brands fa-github"></i> <a href="https://github.com">Github Pages</a></div>
+        </div>
+        </div>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" integrity="sha512-gU7kztaQEl7SHJyraPfZLQCNnrKdaQi5ndOyt4L4UPL/FHDd/uB9Je6KDARIqwnNNE27hnqoWLBq+Kpe4iHfeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/excel.min.js" integrity="sha512-V7I7SdhDhJxPhPrvIHpy+FBERbKPihUHkDOiuxC+rG+knFAIcT2DGj5VLUZVJCwa4NNjHkBVH8GMCt32HyiMPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/vbnet.min.js" integrity="sha512-LNPAc119nGOqL6purcvlWX0dBb+KGz+ylhJJ3h6Pv+6ots12zKj2fYsTYfHgE6sMTowvpMc8uwqoo0mntHn/rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
