@@ -143,6 +143,7 @@ img, svg {
         }
     }
     .area-main {
+        border-top: 1px solid #{$body-bg-color};
         margin: 3rem 0;
         .page-title, .page-main, .page-desc, .page-ad, .page-reply {
             margin: 3rem 0;
