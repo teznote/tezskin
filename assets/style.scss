@@ -219,11 +219,13 @@ img, svg {
                 margin: 1.5rem 0;
                 & > code, kbd, samp {
                     padding: 0 !important;
-                    font-size: 1rem;
                     font-weight: 400;
-                    color: #{$c-color};
+                    color: #{$color};
                     background-color: #{$body-bg-color};
                 }
+            }
+            pre > code {
+                font-size: 0.8rem;   
             }
             p[class], pre, ul {
                 background-color: #{$body-bg-color};
