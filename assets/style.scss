@@ -83,11 +83,9 @@ img, svg {
     background-color: #{$layout-bg-color};
     min-height: 100%;
     .area-header, .area-nav, .area-main, .area-footer {
-        margin: 3rem 0;
-        padding: 0 10px;
+        padding: 1.5rem 10px;
     }
     .area-header {
-        margin-top: 1.5rem;
         .site-title {
             font-size: 1.5rem;
             display: inline-block;
@@ -115,9 +113,7 @@ img, svg {
         }
     }
     .area-nav {
-        margin: 3rem 0;
         .nav-title {
-            margin: 3rem 0 1rem 0;
             font-weight: 700;
             &:before {
                 content: "\f802";
@@ -144,7 +140,6 @@ img, svg {
     }
     .area-main {
         border-top: 1px solid #{$body-bg-color};
-        margin: 3rem 0;
         .page-title, .page-main, .page-desc, .page-ad, .page-reply {
             margin: 3rem 0;
         }
@@ -263,7 +258,6 @@ img, svg {
     }
     .area-footer {
         border-top: 1px solid #{$body-bg-color};
-        margin-bottom: 1.5rem;
         .site-footer {
             text-align: center;
         }
