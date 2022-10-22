@@ -2,3 +2,12 @@
 layout: nav
 permalink: /cats
 ---
+
+<script>
+    'use strict';
+    
+    var url = new URL(window.location.href);
+    console.log(url);
+    var q = url.searchParams.get('q');
+    console.log(q);
+</script>
