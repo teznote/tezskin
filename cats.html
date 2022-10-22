@@ -7,7 +7,7 @@ permalink: /cats
     'use strict';
     
     var url = new URL(window.location.href);
-    console.log(url);
     var q = url.searchParams.get('q');
-    console.log(q);
+    
+    document.querySelector('.area-nav .post-list[cat="' + q + '"]').classList.remove('hidden');
 </script>
