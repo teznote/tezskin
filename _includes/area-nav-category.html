@@ -3,6 +3,6 @@
 </div>
 <ul class="cat-list">
     {%- for cat in site.cats -%}
-        <li><a href="/cats?cats={{ cat.id }} | relative_url ">{{ cat.title }}</a></li>
+        <li><a href="{{ '/cats?cats=' + cat.id | relative_url }}">{{ cat.title }}</a></li>
     {% endfor %}
 </ul>
