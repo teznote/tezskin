@@ -41,6 +41,9 @@ img, svg {
 }
 
 // common classes
+.hidden {
+    display: none;
+}
 .updated, .tags {
     font-size: 0.8rem;
     color: #{$c-color};
