@@ -25,6 +25,7 @@ a, a:link, a:visited, a:hover, a:active {
     border-bottom: 1px dotted;
     color: #{$a-color};
     font-weight: 800;
+    word-break: break-all;
 }
 b, strong {
     color: #{$b-color};
