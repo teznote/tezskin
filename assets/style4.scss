@@ -262,6 +262,7 @@ img, svg {
         }
     }
     .area-footer {
+        border-top: 1px solid #{$body-bg-color};
         margin-bottom: 1.5rem;
         .site-footer {
             text-align: center;
