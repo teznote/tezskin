@@ -15,7 +15,7 @@ layout: default
                 <div class="nav-cat-title">
                     {{ cat.title }}
                 </div>
-                {%- for post in page.categories[cat.id] -%}
+                {%- for post in site.categories[cat.id] -%}
                 <li class="nav-post" cat="{{ cat.id }}">
                     <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
                 </li>
