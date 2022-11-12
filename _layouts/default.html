@@ -14,26 +14,7 @@
         <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}"/>
     </head>
     <body>
-        <div class="layout">
-            <div class="area-header">
-                <div class="site-title">
-                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-                </div>
-                <div class="site-desc">
-                    :: {{ site.desc }}
-                </div>
-            </div>
-            
-            {{ content }}
-            
-            <div class="area-footer">
-                <div class="site-footer">
-                    This blog is powered by 
-                    <div class="inline">
-                        <i class="fa-brands fa-github"></i> <a href="https://github.com">Github Pages</a>
-                    </div>
-                </div>
-            </div>
+        {{ content }}
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" integrity="sha512-gU7kztaQEl7SHJyraPfZLQCNnrKdaQi5ndOyt4L4UPL/FHDd/uB9Je6KDARIqwnNNE27hnqoWLBq+Kpe4iHfeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/excel.min.js" integrity="sha512-V7I7SdhDhJxPhPrvIHpy+FBERbKPihUHkDOiuxC+rG+knFAIcT2DGj5VLUZVJCwa4NNjHkBVH8GMCt32HyiMPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
