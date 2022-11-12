@@ -42,3 +42,15 @@ layout: default
         </div>
     </div>
 </div>
+<button class="btn">
+    X
+</button>
+<script>
+    'use strict';
+
+    var btn = document.querySelector('.btn');
+    var area_sidebar = document.querySelector('.area-sidebar');
+    btn.addEventListener('click', e => {
+        area_sidebar.classList.toggle('opened');
+    });
+</script>
