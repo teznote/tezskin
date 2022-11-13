@@ -202,3 +202,49 @@ img, svg {
         }
     }
 }
+
+// layout
+.area-sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    .area-sb {
+        width: #{$sb-width};
+        display: flex;
+        .site-header {
+            flex: 0 0 60px;
+        }
+        .nav {
+            flex: 1 0 0;
+            overflow-y: scroll;
+        }
+        .site-footer {
+            flex: 0 0 60px;
+        }
+    }
+}
+@media (max-width: #{$sb-width + $ct-width - 1px}) {
+    .btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+    .area-sidebar {
+        left: -#{$sb-width};
+        &.opened {
+            left: 0;
+        }
+    }
+}
+@media (min-width: #{$sb-width + $ct-width}) {
+    .btn {
+        display: none;
+    }
+    .area-sidebar {
+        left: 0;
+        width: clac((100vw - #{$sb-width + $ct-width}/2) + #{$sb-width});
+    }
+    .area-content {
+
+    }
+}
