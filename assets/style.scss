@@ -243,11 +243,11 @@ img, svg {
     }
     .area-sidebar {
         left: 0;
-        width: clac((100vw - #{$sb-width + $ct-width})/2 + #{$sb-width});
+        width: calc(50vw - #{$sb-width/2 + $ct-width/2} + #{$sb-width});
         display: flex;
         flex-direction: row-reverse;
     }
     .area-content {
-
+        margin-left: calc(50vw - #{$sb-width/2 + $ct-width/2} + #{$sb-width});
     }
 }
