@@ -216,24 +216,30 @@ img, svg {
         left: #{-$sb-width};
         width: #{$sb-width};
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        .site-header {
-            flex: 0 0 60px;
-        }
-        .nav {
-            flex: 1 0 0;
-            overflow: scroll;
-        }
-        .site-footer {
-            flex: 0 0 60px;
+        .area-sb {
+            width: #{$sb-width};
+            display: flex;
+            flex-direction: column;
+            .site-header {
+                flex: 0 0 60px;
+            }
+            .nav {
+                flex: 1 0 0;
+                overflow: scroll;
+            }
+            .site-footer {
+                flex: 0 0 60px;
+            }
         }
     }
     .area-sidebar.opened {
         left: 0;
     }
     .area-content {
-
+        width: 100%;
+        .area-ct {
+            width: 100%;
+        }
     }
 }
 
@@ -241,5 +247,20 @@ img, svg {
 @media (min-width: #{$sb-width + $ct-width}) {
     .btn {
         display: none;
+    }
+    .area-outer {
+        display: flex;
+        .area-sidebar {
+            position: static;
+            flex: 1 0 #{$sb-width};
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .area-content {
+            flex: 1 0 #{$ct-width};
+            .area-ct {
+                width: #{$ct-width};
+            }
+        }
     }
 }

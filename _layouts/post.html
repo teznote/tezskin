@@ -4,41 +4,45 @@ layout: default
 
 <div class="area-outer">
     <div class="area-sidebar">
-        <div class="site-header">
-            <div class="site-title">
-                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-            </div>
-        </div>
-        <div class="nav">
-            {%- for cat in site.cats -%}
-            <ul class="nav-cat" cat="{{ cat.id }}">
-                <div class="nav-cat-title">
-                    {{ cat.title }}
+        <div class="area-sb">
+            <div class="site-header">
+                <div class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
                 </div>
-                {%- for post in site.categories[cat.id] -%}
-                <li class="nav-post" cat="{{ cat.id }}">
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </li>
+            </div>
+            <div class="nav">
+                {%- for cat in site.cats -%}
+                <ul class="nav-cat" cat="{{ cat.id }}">
+                    <div class="nav-cat-title">
+                        {{ cat.title }}
+                    </div>
+                    {%- for post in site.categories[cat.id] -%}
+                    <li class="nav-post" cat="{{ cat.id }}">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% endfor %}
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="site-footer">
-            <div class="site-desc">
-                {{ site.desc }}
+            </div>
+            <div class="site-footer">
+                <div class="site-desc">
+                    {{ site.desc }}
+                </div>
             </div>
         </div>
     </div>
     <div class="area-content">
-        <h1 class="page-title">
-            {{ page.title }}
-        </h1>
-        <div class="page-desc">
-            <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
-            <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
-        </div>
-        <div class="page-main">
-            {{ content }}
+        <div class="area-ct">
+            <h1 class="page-title">
+                {{ page.title }}
+            </h1>
+            <div class="page-desc">
+                <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+                <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
+            </div>
+            <div class="page-main">
+                {{ content }}
+            </div>
         </div>
     </div>
 </div>
