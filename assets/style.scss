@@ -201,7 +201,7 @@ img, svg {
     }
 }
 
-// layout
+// layout - mobile
 .btn {
     position: fixed;
     top: 10px;
@@ -234,5 +234,12 @@ img, svg {
     }
     .area-content {
 
+    }
+}
+
+// layout - desktop
+@media (min-width: #{$sb-width + $ct-width}) {
+    .btn {
+        display: none;
     }
 }
