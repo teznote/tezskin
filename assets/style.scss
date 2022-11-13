@@ -242,7 +242,9 @@ img, svg {
     }
     .area-sidebar {
         left: 0;
-        width: clac((100vw - #{$sb-width + $ct-width}/2) + #{$sb-width});
+        width: clac((100vw - #{$sb-width + $ct-width})/2 + #{$sb-width});
+        display: flex;
+        flex-direction: row-reverse;
     }
     .area-content {
 
