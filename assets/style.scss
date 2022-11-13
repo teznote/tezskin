@@ -211,6 +211,7 @@ img, svg {
     .area-sb {
         width: #{$sb-width};
         display: flex;
+        flex-direction: column;
         .site-header {
             flex: 0 0 60px;
         }
