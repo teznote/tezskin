@@ -69,11 +69,11 @@ img, svg {
 .layout-content {
     max-width: #{$content-width};
     margin: 0 auto;
+    &::before, &::after {
+        content: " ";
+        display: table-cell;
+    }
     .layout-content-buffer {
         margin: 5px;
-        &::before, &::after {
-            content: " ";
-            display: table-cell;
-        }
     }
 }
