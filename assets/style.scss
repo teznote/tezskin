@@ -101,7 +101,7 @@ img, svg {
             transition: transform 0.4s;
         }
         & .clicked {
-            button i {
+            i {
                 transform: rotate(-90deg);
             }
         }
