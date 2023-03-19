@@ -5,9 +5,9 @@ $color: #111;
 $a-color: #00f;
 $b-color: #f00;
 $c-color: #999;
-$header-bg-color: #eee;
+$header-bg-color: #fee;
 $main-bg-color: #fff;
-$footer-bg-color: #eee;
+$footer-bg-color: #{$header-bg-color};
 $content-width: 1200px;
 
 // globals
@@ -61,7 +61,7 @@ img, svg {
 
 // layout
 .layout-header, .layout-main, .layout-footer {
-    width: 100wh;
+    width: 100vw;
 }
 .layout-header {
     background-color: #{$header-bg-color};
