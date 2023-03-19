@@ -65,6 +65,8 @@ img, svg {
 }
 .layout-header {
     background-color: #{$header-bg-color};
+    position: sticky;
+    top: 0;
 }
 .layout-main {
     background-color: #{$main-bg-color};
@@ -90,6 +92,10 @@ img, svg {
     justify-content: space-between;
     & > * {
         display: inline-block;
+    }
+    .btn {
+        border: none;
+        cursor: pointer;
     }
 }
 .footer {
