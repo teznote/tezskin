@@ -209,7 +209,7 @@ img, svg {
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: #{$c-color};
+            border-color: darken($header-bg-color, 10%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
