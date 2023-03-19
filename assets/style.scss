@@ -92,3 +92,10 @@ img, svg {
         display: inline-block;
     }
 }
+.footer {
+    display: flex;
+    justify-content: center;
+    .footer-msg {
+        margin: 0 20px;
+    }
+}
