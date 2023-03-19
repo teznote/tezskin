@@ -97,12 +97,12 @@ img, svg {
         border: none;
         cursor: pointer;
         font-size: 2rem;
-        button i {
+        i {
             transition: transform 0.4s;
         }
-        & .clicked {
+        &.clicked {
             i {
-                transform: rotate(-90deg);
+                transform: rotate(-45deg);
             }
         }
     }
