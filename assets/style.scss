@@ -77,3 +77,12 @@ img, svg {
         margin: 5px;
     }
 }
+
+// header
+.header {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+        display: inline-block;
+    }
+}
