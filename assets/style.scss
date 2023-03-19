@@ -97,8 +97,11 @@ img, svg {
         border: none;
         cursor: pointer;
         font-size: 2rem;
-        &:hover {
-            button.i {
+        button i {
+            transition: transform 0.4s;
+        }
+        & .clicked {
+            button i {
                 transform: rotate(-90deg);
             }
         }
