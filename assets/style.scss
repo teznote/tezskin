@@ -1,0 +1,79 @@
+---
+---
+
+$color: #111;
+$a-color: #00f;
+$b-color: #f00;
+$c-color: #999;
+$header-bg-color: #eee;
+$main-bg-color: #fff;
+$footer-bg-color: #eee;
+$content-width: 1200px;
+
+// globals
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Hack", "NanumSquareRound", monospace;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #{$color};
+    background-color: #{$main-bg-color};
+}
+code, kbd, samp {
+    font-family: "Hack", "NanumSquareRound", monospace;
+}
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    color: #{$a-color};
+    font-weight: 800;
+    word-break: break-all;
+}
+b, strong {
+    color: #{$b-color};
+    font-weight: 800;
+    border-bottom: 1px dotted;
+}
+h1, h2, h3, h4, h5, h6, div, p, pre, ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+img, svg {
+    vertical-align: bottom;
+}
+
+// layout
+.layout-header, .layout-main, .layout-footer {
+    width: 100wh;
+}
+.layout-header {
+    background-color: #{$header-bg-color};
+}
+.layout-main {
+    background-color: #{$main-bg-color};
+}
+.layout-footer {
+    background-color: #{$footer-bg-color};
+}
+.layout-content {
+    max-width: #{$content-width};
+    margin: 0 auto;
+    .layout-content-buffer {
+        margin: 5px;
+        &::before, &::after {
+            content: " ";
+            display: table-cell;
+        }
+    }
+}
