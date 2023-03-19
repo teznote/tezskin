@@ -105,3 +105,124 @@ img, svg {
         margin: 0 20px;
     }
 }
+
+// main
+.main {
+    .page-title, .page-main, .page-desc, .page-ad, .page-reply {
+        margin: 3rem 0;
+    }
+    .page-title {
+        &:before {
+            content: "\f10d";
+            font: var(--fa-font-solid);
+            position: relative;
+            top: -0.5rem;
+            width: 2.5rem;
+            display: inline-block;
+        }
+        &:after {
+            content: "\f10e";
+            font: var(--fa-font-solid);
+            position: relative;
+            top: -0.5rem;
+            width: 2.5rem;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+    .page-desc {
+        margin-top: -3rem; 
+    }
+    .page-main {
+        .page-updated {
+            &:before {
+                content: "\f1da";
+                font: var(--fa-font-solid);
+                transform: scale(-1, 1);
+                display: inline-block;
+                width: 1rem;
+                text-align: right;
+            }
+        }
+        .page-tags {
+            &:before {
+                content: "\f02b";
+                font: var(--fa-font-solid);
+                display: inline-block;
+                width: 1rem;
+            }
+            span {
+                color: #{$area-bg-color};
+                background-color: #{$c-color};
+            }
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 3rem 0 1.5rem 0;
+            &:before {
+                content: "\0023";
+                font: var(--fa-font-solid);
+                display: inline-block;
+                width: 2rem;
+            }
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 1.5rem 0;
+        }
+        img {
+            display: block;
+            margin: 1.5rem auto;
+            max-width: 100%;
+            & ~ em {
+                display: block;
+                margin: -1rem 1.5rem 1.5rem 1.5rem;
+                color: var(--c-color);
+            }
+        }
+        pre, code, kbd, samp {
+            font-family: 'Hack', 'NanumSquareRound', monospace;
+        }
+        p, pre, ul {
+            margin: 1.5rem 0;
+            & > code, kbd, samp {
+                padding: 0 !important;
+                font-weight: 400;
+                color: #{$color};
+                background-color: #{$body-bg-color};
+            }
+        }
+        pre > code {
+            font-size: 0.8rem;
+        }
+        p[class], pre, ul {
+            background-color: #{$body-bg-color};
+            padding: 1rem 1.5rem;
+            border-left-width: .5rem;
+            border-left-style: solid;
+            border-color: #{$c-color};
+            &:before {
+                content: "\f120\00a0" attr(class);
+                font: var(--fa-font-solid);
+                font-family: 'NanumSquareRound', 'FontAwesome';
+                display: block;
+                color: #{$c-color};
+                text-transform: uppercase;
+                font-weight: 800;
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+        }
+        ul {
+            li {
+                margin-left: 1.5rem;
+                &:before {
+                    content: "\2219";
+                    display: inline-block;
+                    width: 1.5rem;
+                    margin-left: -1.5rem;
+                }
+            }
+        }
+    }
+}
