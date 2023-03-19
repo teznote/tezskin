@@ -9,9 +9,9 @@ layout: default
                 <h1 class="site-title">
                     <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
                 </h1>
-                <div class="btn">
-                    <button>X</button>
-                </div>
+                <button class="btn">
+                    X
+                </button>
             </div>
         </div>
     </div>
@@ -20,7 +20,16 @@ layout: default
     <div class="layout-content">
         <div class="layout-content-buffer">
             <div class="main">
-
+                <h1 class="page-title">
+                    {{ page.title }}
+                </h1>
+                <div class="page-desc">
+                    <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+                    <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
+                </div>
+                <div class="page-main">
+                    {{ content }}
+                </div>
             </div>
         </div>
     </div>
@@ -29,7 +38,7 @@ layout: default
     <div class="layout-content">
         <div class="layout-content-buffer">
             <div class="footer">
-
+                {{ site.desc }}
             </div>
         </div>
     </div>
