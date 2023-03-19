@@ -97,6 +97,11 @@ img, svg {
         border: none;
         cursor: pointer;
         font-size: 2rem;
+        &:hover {
+            button.i {
+                transform: rotate(-90deg);
+            }
+        }
     }
 }
 .footer {
