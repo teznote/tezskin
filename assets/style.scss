@@ -152,7 +152,7 @@ img, svg {
                 width: 1rem;
             }
             span {
-                color: #{$area-bg-color};
+                color: #{$color};
                 background-color: #{$c-color};
             }
         }
@@ -189,14 +189,14 @@ img, svg {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
-                background-color: #{$body-bg-color};
+                background-color: #{$header-bg-color};
             }
         }
         pre > code {
             font-size: 0.8rem;
         }
         p[class], pre, ul {
-            background-color: #{$body-bg-color};
+            background-color: #{$header-bg-color};
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
