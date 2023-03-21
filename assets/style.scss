@@ -67,6 +67,7 @@ img, svg {
     background-color: #{$header-bg-color};
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 .layout-main {
     background-color: #{$main-bg-color};
