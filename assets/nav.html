@@ -1,0 +1,12 @@
+{%- for cat in site.cats -%}
+<ul class="nav-cat" cat="{{ cat.id }}">
+    <div class="nav-cat-title">
+        {{ cat.title }}
+    </div>
+    {%- for post in site.categories[cat.id] -%}
+    <li class="nav-post" cat="{{ cat.id }}">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}

@@ -131,6 +131,34 @@ img, svg {
     }
 }
 
+// nav
+.nav {
+    .nav-title {
+        font-weight: 700;
+        &:before {
+            content: "\f802";
+            font: var(--fa-font-solid);
+            width: 1.5rem;
+            display: inline-block;
+        }
+    }
+    ul.cat-list {
+        margin: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+        li {
+            
+        }
+    }
+    ul.post-list {
+        margin: 1rem;
+        li {
+            margin: 1rem 0;
+        }
+    }
+}
+
 // main
 .main {
     .page-title, .page-main, .page-desc, .page-ad, .page-reply {
