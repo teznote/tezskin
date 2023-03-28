@@ -101,6 +101,29 @@ img, svg {
     }
 }
 
+// commons
+.updated {
+    &:before {
+        content: "\f1da";
+        font: var(--fa-font-solid);
+        transform: scale(-1, 1);
+        display: inline-block;
+        width: 1rem;
+        text-align: right;
+    }
+}
+.tags {
+    &:before {
+        content: "\f02b";
+        font: var(--fa-font-solid);
+        display: inline-block;
+        width: 1rem;
+    }
+    span {
+        background-color: #{$header-bg-color};
+    }
+}
+
 // header
 .header {
     display: flex;
@@ -186,27 +209,6 @@ img, svg {
     .page-desc {
         margin-top: -3rem;
         color: #{$c-color};
-        .page-updated {
-            &:before {
-                content: "\f1da";
-                font: var(--fa-font-solid);
-                transform: scale(-1, 1);
-                display: inline-block;
-                width: 1rem;
-                text-align: right;
-            }
-        }
-        .page-tags {
-            &:before {
-                content: "\f02b";
-                font: var(--fa-font-solid);
-                display: inline-block;
-                width: 1rem;
-            }
-            span {
-                background-color: #{$header-bg-color};
-            }
-        }
     }
     .page-main {
         h2 {

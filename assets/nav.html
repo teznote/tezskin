@@ -9,6 +9,9 @@
         <li><a href="{{ '/cats?q=' | append: cat.id | relative_url }}">{{ cat.title }}</a></li>
     {% endfor %}
 </ul>
+<div class="nav-title">
+    POSTS:
+</div>
 {%- for cat in site.cats -%}
 <ul class="post-list hidden" cat="{{ cat.id }}">
     {%- for post in site.categories[cat.id] %}
