@@ -1,15 +1,22 @@
 ---
 ---
 
+<div class="nav-title">
+    CATEGORIES:
+</div>
+<ul class="cat-list">
+    {%- for cat in site.cats -%}
+        <li><a href="{{ '/cats?q=' | append: cat.id | relative_url }}">{{ cat.title }}</a></li>
+    {% endfor %}
+</ul>
 {%- for cat in site.cats -%}
-<ul class="nav-cat" cat="{{ cat.id }}">
-    <div class="nav-cat-title">
-        {{ cat.title }}
-    </div>
-    {%- for post in site.categories[cat.id] -%}
-    <li class="nav-post" cat="{{ cat.id }}">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
+<ul class="post-list hidden" cat="{{ cat.id }}">
+    {%- for post in site.categories[cat.id] %}
+        <li>
+            <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+            <div class="updated">Last updated:&nbsp;{{ post.updated }}</div>
+            <div class="tags">Tags:&nbsp;{%- for tag in post.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
+        </li> 
     {% endfor %}
 </ul>
 {% endfor %}
