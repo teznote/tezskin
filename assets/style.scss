@@ -60,7 +60,7 @@ img, svg {
 }
 
 // layout
-.layout-header, .layout-main, .layout-footer {
+.layout-header, .layout-nav, .layout-main, .layout-footer {
     width: 100vw;
 }
 .layout-header {
@@ -68,6 +68,20 @@ img, svg {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+.layout-nav {
+    background-color: #{$header-bg-color};
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    overflow-y: scroll;
+    display: none;
+    &.clicked {
+        display: block;
+    }
 }
 .layout-main {
     background-color: #{$main-bg-color};
