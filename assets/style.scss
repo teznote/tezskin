@@ -97,9 +97,10 @@ img, svg {
     justify-content: space-between;
     align-items: center;
     .site-title {
-        
+        height: auto;
     }
     .btn {
+        height: auto;
         outline: none;
         border: none;
         cursor: pointer;
