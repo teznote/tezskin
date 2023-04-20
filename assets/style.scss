@@ -64,6 +64,7 @@ img, svg {
 .layout-outer {
     height: 100%;
     overflow: hidden;
+    margin: 0 auto;
     max-width: #{$max-width};
     display: flex;
     flex-direction: column;
@@ -81,7 +82,7 @@ img, svg {
             padding: 15px 15px;
         }
     }
-    .layout-innter-bottom {
+    .layout-inner-bottom {
         flex: 0 0 60px;
         border-top: 1px solid darken($bg-color, 10%);
         .buffer {
