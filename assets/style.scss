@@ -85,7 +85,7 @@ img, svg {
         width: 1rem;
     }
     span {
-        background-color: lighten($c-color, 80%);
+        background-color: #{$bg-color};
     }
 }
 
@@ -260,18 +260,18 @@ img, svg {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
-                background-color: #{$header-bg-color};
+                background-color: #{$bg-color};
             }
         }
         pre > code {
             font-size: 0.8rem;
         }
         p[class], pre, ul {
-            background-color: #{$header-bg-color};
+            background-color: #{$bg-color};
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($header-bg-color, 10%);
+            border-color: darken($bg-color, 10%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
