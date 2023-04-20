@@ -179,7 +179,7 @@ img, svg {
                 cursor: pointer;
                 margin-left: 1rem;
                 &:before {
-                    content: "-"
+                    content: "-";
                     display: inline-block;
                     width: 1rem;
                     margin-left: -1rem;
@@ -205,7 +205,7 @@ img, svg {
             li {
                 margin-left: 1rem;
                 &:before {
-                    content: "-"
+                    content: "-";
                     display: inline-block;
                     width: 1rem;
                     margin-left: -1rem;
