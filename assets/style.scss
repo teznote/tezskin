@@ -180,6 +180,17 @@ img, svg {
                 margin-left: 1rem;
                 &:before {
                     content: "-";
+                    font: var(--fa-font-solid);
+                    display: inline-block;
+                    width: 1rem;
+                    margin-left: -1rem;
+                }
+                &.current {
+                    font-weight: 800;
+                }
+                &.current:before {
+                    content: "+";
+                    font: var(--fa-font-solid);
                     display: inline-block;
                     width: 1rem;
                     margin-left: -1rem;
@@ -206,6 +217,14 @@ img, svg {
                 margin-left: 1rem;
                 &:before {
                     content: "-";
+                    font: var(--fa-font-solid);
+                    display: inline-block;
+                    width: 1rem;
+                    margin-left: -1rem;
+                }
+                &.current:before {
+                    content: "+";
+                    font: var(--fa-font-solid);
                     display: inline-block;
                     width: 1rem;
                     margin-left: -1rem;
