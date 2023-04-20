@@ -78,7 +78,6 @@ img, svg {
     }
 }
 .tags {
-    color: #{$c-color};
     &:before {
         content: "\f02b";
         font: var(--fa-font-solid);
@@ -86,7 +85,7 @@ img, svg {
         width: 1rem;
     }
     span {
-        background-color: #{$c-color};
+        background-color: lighten($c-color, 80%);
     }
 }
 
