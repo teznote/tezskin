@@ -87,9 +87,10 @@ img, svg {
     .layout-inner-main {
         flex: 1 0 0;
         height: 100%;
-        overflow-y: scroll;
+        overflow: hidden;
         .buffer {
             padding: 15px 15px;
+            height: 100%;
         }
     }
     .layout-inner-bottom {
@@ -132,13 +133,18 @@ img, svg {
 // nav
 .nav {
     display: none;
+    height: 100%;
     .category {
         flex: 1 0 0;
+        height: 100%;
+        overflow-y: scroll;
         padding: 15px;
         background-color: #ffffff;
     }
     .post {
         flex: 2 0 0;
+        height: 100%;
+        overflow-y: scroll;
         padding: 15px;
         background-color: #ffffff;
     }
@@ -150,6 +156,8 @@ img, svg {
 
 // content
 .content {
+    overflow-y: scroll;
+    height: 100%;
     background-color: #ffffff;
     &.btn-clicked {
         display: none;
