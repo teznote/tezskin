@@ -52,16 +52,20 @@ layout: default
                     }
 
                     if (cur) {
+                        var find = false;
                         for (var el of posts) {
                             var href = el.firstElementChild.getAttribute('href');
                             if (href === cur[2]) {
                                 el.classList.add('current');
+                                find = true;
+                                break;
                             }
                         }
-                        // document.querySelector('.nav .category ul li.currnet').dispatchEvent(new Event('click', {bubbles: true}));
-                    } else {
-                        console.log('home!!');
-                        document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
+                        if (find) {
+                            // document.querySelector('.nav .category ul li.currnet').dispatchEvent(new Event('click', {bubbles: true}));
+                        }  else {
+                            document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
+                        }
                     }
 
                     
