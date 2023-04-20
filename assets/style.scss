@@ -175,6 +175,16 @@ img, svg {
             flex: 1 0 0;
             height: 100%;
             overflow-y: scroll;
+            li {
+                cursor: pointer;
+                margin-left: 1rem;
+                &:before {
+                    content: "-"
+                    display: inline-block;
+                    width: 1rem;
+                    margin-left: -1rem;
+                }
+            }
         }
     }
     .post {
@@ -192,6 +202,15 @@ img, svg {
             flex: 1 0 0;
             height: 100%;
             overflow-y: scroll;
+            li {
+                margin-left: 1rem;
+                &:before {
+                    content: "-"
+                    display: inline-block;
+                    width: 1rem;
+                    margin-left: -1rem;
+                }
+            }
         }
     }
     &.btn-clicked {
