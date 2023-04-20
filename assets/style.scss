@@ -55,6 +55,11 @@ img, svg {
     max-width: 100%;
 }
 
+// commons
+.hidden {
+    display: hidden !important;
+}
+
 // layout
 .layout-outer {
     height: 100%;
@@ -114,13 +119,17 @@ img, svg {
 .nav {
     display: none;
     .category {
+        flex: 1 0 0;
+        padding: 15px;
         background-color: #ffffff;
     }
     .post {
+        flex: 2 0 0;
+        padding: 15px;
         background-color: #ffffff;
     }
     &.btn-clicked {
-        display: block;
+        display: flex;
     }
 }
 
