@@ -112,17 +112,24 @@ img, svg {
 
 // nav
 .nav {
+    display: none;
     .category {
         background-color: #ffffff;
     }
     .post {
         background-color: #ffffff;
     }
+    &.btn-clicked {
+        display: block;
+    }
 }
 
 // content
 .content {
     background-color: #ffffff;
+    &.btn-clicked {
+        display: none;
+    }
 }
 
 
