@@ -66,6 +66,29 @@ img, svg {
 .hidden {
     display: hidden !important;
 }
+.updated {
+    color: #{$c-color};
+    &:before {
+        content: "\f1da";
+        font: var(--fa-font-solid);
+        transform: scale(-1, 1);
+        display: inline-block;
+        width: 1rem;
+        text-align: right;
+    }
+}
+.tags {
+    color: #{$c-color};
+    &:before {
+        content: "\f02b";
+        font: var(--fa-font-solid);
+        display: inline-block;
+        width: 1rem;
+    }
+    span {
+        background-color: #{$header-bg-color};
+    }
+}
 
 // layout
 .layout-outer {
@@ -98,6 +121,7 @@ img, svg {
         border-top: 1px solid darken($bg-color, 10%);
         .buffer {
             padding: 0 15px;
+            height: 100%;
         }
     }
 }
@@ -167,13 +191,21 @@ img, svg {
 
 // footer
 .footer {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     .footer-msg {
-        
+        width: auto;
     }
 }
+// .footer {
+//     display: flex;
+//     justify-content: center;
+//     .footer-msg {
+//         margin: 0 20px;
+//     }
+// }
 
 // $color: #111;
 // $a-color: #00f;
