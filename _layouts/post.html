@@ -27,6 +27,36 @@ layout: default
                 }).then(function(body) {
                     document.querySelector('.nav').innerHTML = body;
                     return;
+                }).then(function() {
+                    var cats = document.querySelectorAll('.nav .category ul li');
+                    var posts = document.querySelectorAll('.nav .post ul li');
+                    var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
+
+                    for (var el of cats) {
+                        el.addEventListener('click', function(e) {
+                            for (var x of cats) {
+                                if (x === e.target) {
+                                    x.classList.add('current');
+                                } else {
+                                    x.classList.remove('current');
+                                }
+                            }
+                        });
+                    }
+
+                    if (cur) {
+                        for (var el of posts) {
+                            var href = el.firstElementChild.getAttribute('href');
+                            if (href === cur[2]) {
+                                el.classList.add('current');
+                            }
+                        }
+                    }
+
+                    
+                
+
+                
                 // }).then (function() {
                 //     var nav_sub_title = document.querySelectorAll('nav h3.nav-sub-title');
                 //     var nav_sub_items = document.querySelectorAll('nav ul.nav-sub-items');
