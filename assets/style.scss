@@ -67,6 +67,7 @@ img, svg {
     display: hidden !important;
 }
 .updated {
+    font-size: 0.9rem;
     color: #{$c-color};
     &:before {
         content: "\f1da";
@@ -78,6 +79,8 @@ img, svg {
     }
 }
 .tags {
+    font-size: 0.9rem;
+    color: #{$c-color};
     &:before {
         content: "\f02b";
         font: var(--fa-font-solid);
@@ -163,6 +166,9 @@ img, svg {
         overflow-y: scroll;
         padding: 15px;
         background-color: #ffffff;
+        h2 {
+            text-align: center;
+        }
     }
     .post {
         flex: 2 0 0;
@@ -201,6 +207,7 @@ img, svg {
 
 // article
 .article {
+    padding: 15px;
     .page-title, .page-main, .page-desc, .page-ad, .page-reply {
         margin: 3rem 0;
     }
