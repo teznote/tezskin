@@ -41,7 +41,6 @@ h1, h2, h3, h4, h5, h6, div, p, pre, ul, li {
     display: block;
     margin: 0;
     padding: 0;
-    width: 100%;
     height: 100%;
 }
 h1 {
@@ -74,6 +73,9 @@ img, svg {
         border-bottom: 1px solid darken($bg-color, 10%);
         .buffer {
             padding: 0 15px;
+            h2, div {
+                height: auto;
+            }
         }
     }
     .layout-inner-main {
