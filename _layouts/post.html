@@ -41,6 +41,13 @@ layout: default
                                     x.classList.remove('current');
                                 }
                             }
+                            for (var y of document.querySelectorAll('.nav .post ul')) {
+                                if (y.getAttribute('cat') === e.target.getAttribute('cat')) {
+                                    y.classList.remove('hidden');
+                                } else {
+                                    y.classList.add('hidden');
+                                }
+                            }
                         });
                     }
 
@@ -51,6 +58,9 @@ layout: default
                                 el.classList.add('current');
                             }
                         }
+                        document.querySelector('.nav. category ul li.currnet').dispatchEvent(new Event('click'));
+                    } else {
+                        document.querySelectorAll('.nav. category ul li')[0].dispatchEvent(new Event('click'));
                     }
 
                     
