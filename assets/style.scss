@@ -80,6 +80,7 @@ img, svg {
         flex: 0 0 60px;
         border-bottom: 1px solid darken($bg-color, 10%);
         .buffer {
+            height: 100%;
             padding: 0 15px;
         }
     }
@@ -102,6 +103,7 @@ img, svg {
 
 // header
 .header {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
