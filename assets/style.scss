@@ -162,20 +162,35 @@ img, svg {
     height: 100%;
     .category {
         flex: 1 0 0;
-        height: 100%;
-        overflow-y: scroll;
+        height: 100%;       
         padding: 15px;
         background-color: #ffffff;
+        display: flex;
         h2 {
+            flex: 0 0 60px;
             text-align: center;
+        }
+        ul {
+            flex: 1 0 0;
+            height: 100%;
+            overflow-y: scroll;
         }
     }
     .post {
         flex: 2 0 0;
         height: 100%;
-        overflow-y: scroll;
         padding: 15px;
         background-color: #ffffff;
+        display: flex;
+        h2 {
+            flex: 0 0 60px;
+            text-align: center;
+        }
+        ul {
+            flex: 1 0 0;
+            height: 100%;
+            overflow-y: scroll;
+        }
     }
     &.btn-clicked {
         display: flex;
