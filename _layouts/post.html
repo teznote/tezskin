@@ -53,16 +53,18 @@ layout: default
 
                     if (cur) {
                         var find = false;
+                        var t = '';
                         for (var el of posts) {
                             var href = el.firstElementChild.getAttribute('href');
                             if (href === cur[2]) {
                                 el.classList.add('current');
                                 find = true;
+                                t = el.parentElement.getAttribute('cat');
                                 break;
                             }
                         }
                         if (find) {
-                            document.querySelector('.nav .category ul li.current').dispatchEvent(new Event('click', {bubbles: true}));
+                            document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
                         }  else {
                             document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
                         }
