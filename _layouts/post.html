@@ -2,7 +2,64 @@
 layout: default
 ---
 
-<div class="layout-header">
+<div class="layout-outer">
+    <div class="layout-inner-top">
+        <div class="buffer">
+            <div class="header">
+                <h2 class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </h2>
+                <button class="btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <script>
+                    'use strict';
+                
+                    var btn = document.querySelector('.btn');
+                    btn.addEventListener('click', e => {
+                        btn.classList.toggle('clicked');
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="layout-inner-main">
+        <div class="buffer">
+            <div class="nav">
+                NAV...
+            </div>
+            <div class="content">
+                <div class="article">
+                    <h1 class="page-title">
+                        {{ page.title }}
+                    </h1>
+                    <div class="page-desc">
+                        <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+                        <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
+                    </div>
+                    <div class="page-main">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout-inner-bottom">
+        <div class="buffer">
+            <div class="footer">
+                <div class="footer-msg">
+                    {{ site.desc }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="layout-header">
     <div class="layout-content">
         <div class="layout-content-buffer">
             <div class="header">
@@ -118,4 +175,4 @@ layout: default
     btn.addEventListener('click', e => {
         btn.classList.toggle('clicked');
     });
-</script>
+</script> -->
