@@ -78,6 +78,7 @@ img, svg {
     }
     .layout-inner-main {
         flex: 1 0 0;
+        overflow: hidden;
         .buffer {
             padding: 15px 15px;
         }
@@ -133,6 +134,7 @@ img, svg {
     }
     &.btn-clicked {
         display: flex;
+        gap: 15px;
     }
 }
 
