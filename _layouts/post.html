@@ -54,12 +54,10 @@ layout: default
                     if (cur) {
                         var find = false;
                         var t = '';
-                        var c;
                         for (var el of posts) {
                             var href = el.firstElementChild.getAttribute('href');
                             if (href === cur[2]) {
                                 el.classList.add('current');
-                                c = el;
                                 find = true;
                                 t = el.parentElement.getAttribute('cat');
                                 break;
@@ -68,6 +66,7 @@ layout: default
                         if (find) {
                             document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
                             window.addEventListener('load', (e) => {
+                                var c = document.querySelector('.nav .post ul li.current');
                                 c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
                             });
 
