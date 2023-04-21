@@ -77,6 +77,7 @@
                 console.log('before var c = ');
                 if (c) {
                     console.log(c, c.offsetHeight, c.offsetTop);
+                    console.log(document.querySelector('.footer-msg').offsetTop);
                     c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
                 }
             
