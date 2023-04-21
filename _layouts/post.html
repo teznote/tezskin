@@ -69,6 +69,11 @@ layout: default
                             document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
                         }
                     }
+                }).then(function() {
+                    var c = document.querySelector('.nav .post ul li.current');
+                    if (c) {
+                        c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
+                    }
                 });
             </script>
             <div class="content">
@@ -107,10 +112,5 @@ layout: default
         btn.classList.toggle('btn-clicked');
         nav.classList.toggle('btn-clicked');
         content.classList.toggle('btn-clicked');
-    });
-
-    window.addEventListener('load', e => {
-        var c = document.querySelector('.nav .post ul li.current');
-        c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
     });
 </script>
