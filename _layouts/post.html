@@ -70,8 +70,10 @@ layout: default
                         }
                     }
                 }).then(function() {
+                    console.log('before window.onload');
                     window.onload = function(e) {
                         var c = document.querySelector('.nav .post ul li.current');
+                        console.log('before var c = ');
                         if (c) {
                             console.log(c, c.offsetHeight, c.offsetTop);
                             c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
