@@ -209,6 +209,9 @@ img, svg {
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
+        @media (max-width: 767px) {
+            flex-direction: row;
+        }
         h2 {
             flex: 0 0 60px;
             text-align: center;
