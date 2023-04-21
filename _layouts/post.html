@@ -72,6 +72,7 @@ layout: default
                 }).then(function() {
                     var c = document.querySelector('.nav .post ul li.current');
                     if (c) {
+                        console.log(c, c.offsetHeight);
                         c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
                     }
                 });
