@@ -177,7 +177,8 @@ img, svg {
             overflow-y: scroll;
             li {
                 cursor: pointer;
-                margin-left: 1.5rem;
+                margin: 1.5rem 0 1.5rem 1.5rem;
+                width: auto;
                 &:before {
                     content: "-";
                     font: var(--fa-font-solid);
@@ -187,6 +188,7 @@ img, svg {
                 }
                 &.current {
                     font-weight: 800;
+                    background-color: #{$bg-color};
                 }
                 &.current:before {
                     content: "\f00c";
@@ -214,13 +216,17 @@ img, svg {
             height: 100%;
             overflow-y: scroll;
             li {
-                margin-left: 1.5rem;
+                margin: 1.5rem 0 1.5rem 1.5rem;
+                width: auto;
                 &:before {
                     content: "-";
                     font: var(--fa-font-solid);
                     display: inline-block;
                     width: 1.5rem;
                     margin-left: -1.5rem;
+                }
+                &.current {
+                    background-color: #{$bg-color};
                 }
                 &.current:before {
                     content: "\f00c";
