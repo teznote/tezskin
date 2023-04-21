@@ -67,7 +67,10 @@ layout: default
                         }
                         if (find) {
                             document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
-                            c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
+                            window.addEventListener('load', (e) => {
+                                c.parentElement.scrollTo(0, c.offsetTop - c.parentElement.offsetHeight/2 - c.offsetHeight*2);
+                            });
+
                         }  else {
                             document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
                         }
