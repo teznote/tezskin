@@ -118,6 +118,7 @@ layout: default
                     await y.dispatchEvent(new Event('click', {bubbles: true}));
                     var c = y.querySelector('li.current');
                     if (c) {
+                        console.log(c, c.offsetTop, y, y.offsetHeight);
                         y.scrollTo(0, c.offsetTop - y.offsetHeight/2 - c.offsetHeight*2);
                     }
                 }  else {
