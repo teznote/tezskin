@@ -377,6 +377,29 @@ img, svg {
                 padding: 15px;
                 height: 100%;
                 overflow-y: scroll;
+                li {
+                    cursor: pointer;
+                    margin: 1rem 0 1rem 1.5rem;
+                    width: auto;
+                    &:before {
+                        content: "-";
+                        font: var(--fa-font-solid);
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
+                    &.current {
+                        font-weight: 800;
+                        background-color: #{$bg-color};
+                    }
+                    &.current:before {
+                        content: "\f00c";
+                        font: var(--fa-font-solid);
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
+                }
             }
         }
         .post {
@@ -396,6 +419,27 @@ img, svg {
                 padding: 15px;
                 height: 100%;
                 overflow-y: scroll;
+                li {
+                    margin: 1rem 0 1rem 1.5rem;
+                    width: auto;
+                    &:before {
+                        content: "-";
+                        font: var(--fa-font-solid);
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
+                    &.current {
+                        background-color: #{$bg-color};
+                    }
+                    &.current:before {
+                        content: "\f00c";
+                        font: var(--fa-font-solid);
+                        display: inline-block;
+                        width: 1.5rem;
+                        margin-left: -1.5rem;
+                    }
+                }
             }
         }
     }
