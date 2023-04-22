@@ -18,7 +18,12 @@ layout: default
         </div>
         <div class="layout-inner-main">
             <div class="buffer">
-                
+                <div class="nav">
+                    NAV LOADING...
+                </div>
+                <div class="content">
+                    CONTENT LOADING...
+                </div>
             </div>
         </div>
         <div class="layout-inner-bottom">
@@ -36,12 +41,12 @@ layout: default
     'use strict';
 
     var btn = document.querySelector('.btn');
-    // var nav = document.querySelector('.nav');
-    // var content = document.querySelector('.content');
+    var nav = document.querySelector('.nav');
+    var content = document.querySelector('.content');
     btn.addEventListener('click', e => {
         btn.classList.toggle('btn-clicked');
-        // nav.classList.toggle('btn-clicked');
-        // content.classList.toggle('btn-clicked');
+        nav.classList.toggle('btn-clicked');
+        content.classList.toggle('btn-clicked');
     });    
 </script>
 
