@@ -87,7 +87,7 @@ layout: default
         var cats = document.querySelectorAll('.nav .category ul li');
         var posts = document.querySelectorAll('.nav .post ul li');
         var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
-        var c;
+        var c = null;
         
         for (var el of cats) {
             el.addEventListener('click', function(e) {
@@ -115,16 +115,16 @@ layout: default
             for (var el of posts) {
                 var href = el.firstElementChild.getAttribute('href');
                 if (href === cur[2]) {
-                    el.classList.add('current');
+                    c = el;
+                    c.classList.add('current');
                     find = true;
                     t = el.parentElement.getAttribute('cat');
-                    c = el;
                     break;
                 }
             }
-            if (find) {
+            if (c) {
                 document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
-                console.log(c, c.offsetTop);
+                c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
             }  else {
                 document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
             }
