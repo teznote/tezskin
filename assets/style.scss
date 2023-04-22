@@ -50,7 +50,6 @@ h1, h2, h3, h4, h5, h6, div, p, pre, ul, li, button {
     display: block;
     margin: 0;
     padding: 0;
-    // width: 100%;
     box-sizing: border-box;
 }
 h1 {
@@ -117,7 +116,7 @@ img, svg {
     flex-direction: column;
     .layout-inner-top {
         flex: 0 0 45px;
-        border: 1px solid #000000;
+        border-bottom: 1px solid darken($bg-color, 20%);
         .buffer {
             width: 100%;
             height: 100%;
@@ -126,7 +125,6 @@ img, svg {
     }
     .layout-inner-main {
         flex: 1 0 0;
-        border: 1px solid #000000;
         position: relative;
         .section1 {
             background-color: #{$bg-color};
@@ -161,7 +159,7 @@ img, svg {
     }
     .layout-inner-bottom {
         flex: 0 0 45px;
-        border: 1px solid #000000;
+        border-top: 1px solid darken($bg-color, 20%);
         .buffer {
             width: 100%;
             height: 100%;
@@ -207,147 +205,6 @@ img, svg {
     }
 }
 
-
-// // layout
-// .layout-outer {
-//     overflow: hidden;
-//     margin: 0 auto;
-//     height: 100%;
-//     max-width: #{$max-width};
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     .layout-inner-top {
-//         flex: 0 0 60px;
-//         border-bottom: 1px solid darken($bg-color, 10%);
-//         .buffer {
-//             height: 100%;
-//             padding: 0 15px;
-//         }
-//     }
-//     .layout-inner-main {
-//         flex: 1 0 0;
-//         height: 100%;
-//         overflow: hidden;
-//         .buffer {
-//             padding: 15px 15px;
-//             height: 100%;
-//         }
-//     }
-//     .layout-inner-bottom {
-//         flex: 0 0 60px;
-//         border-top: 1px solid darken($bg-color, 10%);
-//         .buffer {
-//             padding: 0 15px;
-//             height: 100%;
-//         }
-//     }
-// }
-
-
-
-// // nav
-// .nav {
-//     display: none;
-//     height: 100%;
-//     .category {
-//         flex: 1 0 0;
-//         height: 100%;       
-//         padding: 15px;
-//         background-color: #ffffff;
-//         display: flex;
-//         flex-direction: column;
-//         h2 {
-//             flex: 0 0 60px;
-//             text-align: center;
-//         }
-//         ul {
-//             flex: 1 0 0;
-//             height: 100%;
-//             overflow-y: scroll;
-//             li {
-//                 cursor: pointer;
-//                 margin: 1rem 0 1rem 1.5rem;
-//                 width: auto;
-//                 &:before {
-//                     content: "-";
-//                     font: var(--fa-font-solid);
-//                     display: inline-block;
-//                     width: 1.5rem;
-//                     margin-left: -1.5rem;
-//                 }
-//                 &.current {
-//                     font-weight: 800;
-//                     background-color: #{$bg-color};
-//                 }
-//                 &.current:before {
-//                     content: "\f00c";
-//                     font: var(--fa-font-solid);
-//                     display: inline-block;
-//                     width: 1.5rem;
-//                     margin-left: -1.5rem;
-//                 }
-//             }
-//         }
-//     }
-//     .post {
-//         flex: 2 0 0;
-//         height: 100%;
-//         padding: 15px;
-//         background-color: #ffffff;
-//         display: flex;
-//         flex-direction: column;
-//         h2 {
-//             flex: 0 0 60px;
-//             text-align: center;
-//         }
-//         ul {
-//             flex: 1 0 0;
-//             height: 100%;
-//             overflow-y: scroll;
-//             li {
-//                 margin: 1rem 0 1rem 1.5rem;
-//                 width: auto;
-//                 &:before {
-//                     content: "-";
-//                     font: var(--fa-font-solid);
-//                     display: inline-block;
-//                     width: 1.5rem;
-//                     margin-left: -1.5rem;
-//                 }
-//                 &.current {
-//                     background-color: #{$bg-color};
-//                 }
-//                 &.current:before {
-//                     content: "\f00c";
-//                     font: var(--fa-font-solid);
-//                     display: inline-block;
-//                     width: 1.5rem;
-//                     margin-left: -1.5rem;
-//                 }
-//             }
-//         }
-//     }
-//     &.btn-clicked {
-//         display: flex;
-//         gap: 15px;
-//         @media (max-width: 767px) {
-//             flex-direction: column;
-//         }
-//     }
-// }
-
-// // content
-// .content {
-//     overflow-y: scroll;
-//     height: 100%;
-//     background-color: #ffffff;
-//     &.btn-clicked {
-//         display: none;
-//     }
-// }
-
-
 // nav
 .nav-outer {
     width: 100%;
@@ -362,7 +219,6 @@ img, svg {
         }
         .category {
             background-color: #fff;
-            border: 1px solid red;
             flex: 3 0 0;
             display: flex;
             flex-direction: column;
@@ -404,7 +260,6 @@ img, svg {
         }
         .post {
             background-color: #fff;
-            border: 1px solid red;
             flex: 7 0 0;
             display: flex;
             flex-direction: column;
@@ -445,14 +300,12 @@ img, svg {
     }
 }
 
-
 // article
 .article-outer {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     background-color: #fff;
-    border: 1px solid red;
     .article {
         padding: 15px;
         .page-title, .page-main, .page-desc, .page-ad, .page-reply {
