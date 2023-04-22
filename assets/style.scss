@@ -144,6 +144,31 @@ img, svg {
     }
 }
 
+// header
+.header {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    .site-title {
+
+    }
+    .btn {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        background-color: transparent;
+        i {
+            transition: transform 0.4s;
+        }
+        &.btn-clicked {
+            i {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
 
 // // layout
 // .layout-outer {
@@ -181,33 +206,7 @@ img, svg {
 //     }
 // }
 
-// // header
-// .header {
-//     height: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     .site-title {
-//         height: auto;
-//     }
-//     .btn {
-//         width: auto;
-//         height: auto;
-//         outline: none;
-//         border: none;
-//         cursor: pointer;
-//         font-size: 2rem;
-//         background-color: transparent;
-//         i {
-//             transition: transform 0.4s;
-//         }
-//         &.btn-clicked {
-//             i {
-//                 transform: rotate(-45deg);
-//             }
-//         }
-//     }
-// }
+
 
 // // nav
 // .nav {
