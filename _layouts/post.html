@@ -124,7 +124,7 @@ layout: default
             }
             if (c) {
                 document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
-                c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
+                c.parentElement.scrollTo(0, c.offsetTop-c.parentElement.offsetTop-c.offsetHeight*2);
             }  else {
                 document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
             }
