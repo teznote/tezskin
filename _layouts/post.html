@@ -100,32 +100,31 @@ layout: default
             });
         }
 
-        async function afunc() {
-            if (cur) {
-                var find = false;
-                var t = '';
-                for (var el of posts) {
-                    var href = el.firstElementChild.getAttribute('href');
-                    if (href === cur[2]) {
-                        el.classList.add('current');
-                        find = true;
-                        t = el.parentElement.getAttribute('cat');
-                        break;
-                    }
-                }
-                if (find) {
-                    var y = document.querySelector(`.nav .category ul li[cat=${t}]`);
-                    await y.dispatchEvent(new Event('click', {bubbles: true}));
-                    var c = y.querySelector('li.current');
-                    if (c) {
-                        console.log(c, c.offsetTop, y, y.offsetHeight);
-                        y.scrollTo(0, c.offsetTop - y.offsetHeight/2 - c.offsetHeight*2);
-                    }
-                }  else {
-                    document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
+        if (cur) {
+            var find = false;
+            var t = '';
+            for (var el of posts) {
+                var href = el.firstElementChild.getAttribute('href');
+                if (href === cur[2]) {
+                    el.classList.add('current');
+                    find = true;
+                    t = el.parentElement.getAttribute('cat');
+                    break;
                 }
             }
+            if (find) {
+                document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
+            }  else {
+                document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
+            }
         }
-        afunc();
+
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var c = document.querySelector('.nav .post ul li.current');
+            if (c) {
+                console.log(c, c.offsetTop);
+                c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
+            }
+        });
     });
 </script>
