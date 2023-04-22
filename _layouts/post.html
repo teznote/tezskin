@@ -17,12 +17,14 @@ layout: default
             </div>
         </div>
         <div class="layout-inner-main">
-            <div class="buffer">
-                <div class="nav">
-                    NAV LOADING...
+            <div class="section1">
+                <div class="buffer">
+                    SECTION 1
                 </div>
-                <div class="content">
-                    CONTENT LOADING...
+            </div>
+            <div class="section2">
+                <div class="buffer">
+                    section 2
                 </div>
             </div>
         </div>
@@ -41,12 +43,12 @@ layout: default
     'use strict';
 
     var btn = document.querySelector('.btn');
-    var nav = document.querySelector('.nav');
-    var content = document.querySelector('.content');
+    var section1 = document.querySelector('.section1');
+    var section2 = document.querySelector('.section2');
     btn.addEventListener('click', e => {
         btn.classList.toggle('btn-clicked');
-        nav.classList.toggle('btn-clicked');
-        content.classList.toggle('btn-clicked');
+        section1.classList.toggle('btn-clicked');
+        section2.classList.toggle('btn-clicked');
     });    
 </script>
 
