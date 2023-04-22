@@ -118,14 +118,29 @@ img, svg {
     .layout-inner-top {
         flex: 0 0 45px;
         border: 1px solid #000000;
+        .buffer {
+            width: 100%;
+            height: 100%;
+            padding: 0 15px;
+        }
     }
     .layout-inner-main {
         flex: 1 0 0;
         border: 1px solid #000000;
+        .buffer {
+            width: 100%;
+            height: 100%;
+            padding: 15px; 15px;
+        }
     }
     .layout-inner-bottom {
         flex: 0 0 45px;
         border: 1px solid #000000;
+        .buffer {
+            width: 100%;
+            height: 100%;
+            padding: 0 15px;
+        }
     }
 }
 
