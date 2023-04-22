@@ -119,8 +119,9 @@ layout: default
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function(event) { 
+        document.addEventListener('DOMContentLoaded', function(event) { 
             var c = document.querySelector('.nav .post ul li.current');
+            console.log('var c = ', c);
             if (c) {
                 console.log(c, c.offsetTop);
                 c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
