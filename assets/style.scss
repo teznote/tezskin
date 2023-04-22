@@ -170,6 +170,17 @@ img, svg {
     }
 }
 
+// footer
+.footer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .footer-msg {
+        
+    }
+}
+
 
 // // layout
 // .layout-outer {
@@ -311,16 +322,7 @@ img, svg {
 // }
 
 
-// // footer
-// .footer {
-//     height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     .footer-msg {
-//         width: auto;
-//     }
-// }
+
 
 // // article
 // .article {
