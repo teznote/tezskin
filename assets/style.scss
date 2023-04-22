@@ -367,7 +367,7 @@ img, svg {
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            div {
+            .label {
                 flex: 0 0 45px;
                 font-weight: 800;
                 text-align: center;
@@ -409,7 +409,7 @@ img, svg {
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            div {
+            .label {
                 flex: 0 0 45px;
                 font-weight: 800;
                 text-align: center;
