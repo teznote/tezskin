@@ -7,9 +7,9 @@ layout: default
         <div class="layout-inner-top">
             <div class="buffer">
                 <div class="header">
-                    <h1 class="site-title">
+                    <h2 class="site-title">
                         <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-                    </h1>
+                    </h2>
                     <button class="btn">
                         <i class="fa-solid fa-plus"></i>
                     </button>
@@ -28,6 +28,18 @@ layout: default
         </div>
     </div>
 </div>
+<script>
+    'use strict';
+
+    var btn = document.querySelector('.btn');
+    // var nav = document.querySelector('.nav');
+    // var content = document.querySelector('.content');
+    btn.addEventListener('click', e => {
+        btn.classList.toggle('btn-clicked');
+        // nav.classList.toggle('btn-clicked');
+        // content.classList.toggle('btn-clicked');
+    });    
+</script>
 
 
 <!-- <div class="layout-outer">
