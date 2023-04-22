@@ -108,6 +108,27 @@ img, svg {
     background-color: #{$bg-color};
     overflow: hidden;    
 }
+.layout-outer {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: #{$max-width};
+    display: flex;
+    flex-direction: column;
+    .layout-inner-top {
+        flex: 0 0 45px;
+        border: 1px solid #000000;
+    }
+    .layout-inner-top {
+        flex: 1 0 0;
+        border: 1px solid #000000;
+    }
+    .layout-inner-top {
+        flex: 0 0 45px;
+        border: 1px solid #000000;
+    }
+}
+
 
 // // layout
 // .layout-outer {
