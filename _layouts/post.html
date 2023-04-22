@@ -68,6 +68,63 @@ layout: default
         section2.classList.toggle('btn-clicked');
     });    
 </script>
+<script>
+    var target = "{{ '/assets/nav.html' | relative_url  }}";
+    fetch(target).then(function(response) {
+        return response.text();
+    }).then(function(body) {
+        document.querySelector('.nav').innerHTML = body;
+        return;
+    // }).then(function() {
+    //     var cats = document.querySelectorAll('.nav .category ul li');
+    //     var posts = document.querySelectorAll('.nav .post ul li');
+    //     var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
+
+    //     for (var el of cats) {
+    //         el.addEventListener('click', function(e) {
+    //             for (var x of cats) {
+    //                 if (x === e.target) {
+    //                     x.classList.add('current');
+    //                 } else {
+    //                     x.classList.remove('current');
+    //                 }
+    //             }
+    //             for (var y of document.querySelectorAll('.nav .post ul')) {
+    //                 if (y.getAttribute('cat') === e.target.getAttribute('cat')) {
+    //                     y.classList.remove('hidden');
+
+    //                     var c = y.querySelector('li.current');
+    //                     if (c) {
+    //                         y.scrollTo(0, c.offsetTop - y.offsetHeight/2 - c.offsetHeight*2);
+    //                     }
+    //                 } else {
+    //                     y.classList.add('hidden');
+    //                 }
+    //             }
+                
+    //         });
+    //     }
+
+    //     if (cur) {
+    //         var find = false;
+    //         var t = '';
+    //         for (var el of posts) {
+    //             var href = el.firstElementChild.getAttribute('href');
+    //             if (href === cur[2]) {
+    //                 el.classList.add('current');
+    //                 find = true;
+    //                 t = el.parentElement.getAttribute('cat');
+    //                 break;
+    //             }
+    //         }
+    //         if (find) {
+    //             document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
+    //         }  else {
+    //             document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
+    //         }
+    //     }
+    });
+</script>
 
 
 <!-- <div class="layout-outer">
@@ -104,63 +161,7 @@ layout: default
         </div>
     </div>
 </div>
-<script>
-    var target = "{{ '/assets/nav.html' | relative_url  }}";
-    fetch(target).then(function(response) {
-        return response.text();
-    }).then(function(body) {
-        document.querySelector('.nav').innerHTML = body;
-        return;
-    }).then(function() {
-        var cats = document.querySelectorAll('.nav .category ul li');
-        var posts = document.querySelectorAll('.nav .post ul li');
-        var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
 
-        for (var el of cats) {
-            el.addEventListener('click', function(e) {
-                for (var x of cats) {
-                    if (x === e.target) {
-                        x.classList.add('current');
-                    } else {
-                        x.classList.remove('current');
-                    }
-                }
-                for (var y of document.querySelectorAll('.nav .post ul')) {
-                    if (y.getAttribute('cat') === e.target.getAttribute('cat')) {
-                        y.classList.remove('hidden');
-
-                        var c = y.querySelector('li.current');
-                        if (c) {
-                            y.scrollTo(0, c.offsetTop - y.offsetHeight/2 - c.offsetHeight*2);
-                        }
-                    } else {
-                        y.classList.add('hidden');
-                    }
-                }
-                
-            });
-        }
-
-        if (cur) {
-            var find = false;
-            var t = '';
-            for (var el of posts) {
-                var href = el.firstElementChild.getAttribute('href');
-                if (href === cur[2]) {
-                    el.classList.add('current');
-                    find = true;
-                    t = el.parentElement.getAttribute('cat');
-                    break;
-                }
-            }
-            if (find) {
-                document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
-            }  else {
-                document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
-            }
-        }
-    });
-</script>
 <script>
     'use strict';
 

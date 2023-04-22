@@ -2,9 +2,9 @@
 ---
 
 <div class="category">
-    <h2>
-        - CATEGORIES -
-    </h2>
+    <div>
+        [ CATEGORIES ]
+    </div>
     <ul>
         {%- for cat in site.cats -%}
         <li cat="{{ cat.id }}">
@@ -14,9 +14,9 @@
     </ul>
 </div>
 <div class="post">
-    <h2>
-        - POSTS -
-    </h2>
+    <div>
+        [ POSTS ]
+    </div>
     {%- for cat in site.cats -%}
     <ul cat="{{ cat.id }}">
         {%- for post in site.categories[cat.id] %}
