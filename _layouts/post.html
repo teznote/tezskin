@@ -24,7 +24,20 @@ layout: default
             </div>
             <div class="section2">
                 <div class="buffer">
-                    section 2
+                    <div class="article-outer">
+                        <div class="article">
+                            <h1 class="page-title">
+                                {{ page.title }}
+                            </h1>
+                            <div class="page-desc">
+                                <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+                                <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
+                            </div>
+                            <div class="page-main">
+                                {{ content }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,18 +86,7 @@ layout: default
             </div>
 
             <div class="content">
-                <div class="article">
-                    <h1 class="page-title">
-                        {{ page.title }}
-                    </h1>
-                    <div class="page-desc">
-                        <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
-                        <div class="tags">Tags:&nbsp;{%- for tag in page.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
-                    </div>
-                    <div class="page-main">
-                        {{ content }}
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
