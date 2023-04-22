@@ -21,7 +21,7 @@
     <ul cat="{{ cat.id }}">
         {% assign items = site.categories[cat.id] %}
         {% if cat.orger == "asc" %}
-            {% assign items = items | reversed %}
+            {% assign items = items | reverse %}
         {% endif %}
         
         {%- for post in items %}
