@@ -140,8 +140,6 @@ img, svg {
                 width: 100%;
                 height: 100%;
                 padding: 15px 15px;
-                background-color: #fff;
-                border: 1px solid red;
             }
         }
         .section2 {
@@ -195,9 +193,6 @@ img, svg {
         }
     }
 }
-
-// nav
-
 
 // footer
 .footer {
@@ -351,6 +346,16 @@ img, svg {
 // }
 
 
+// nav
+.nav-outer {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid red;
+    .nav {
+
+    }
+}
 
 
 // article
