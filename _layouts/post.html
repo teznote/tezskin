@@ -67,14 +67,14 @@ layout: default
         section1.classList.toggle('btn-clicked');
         section2.classList.toggle('btn-clicked');
     });
-    window.addEventListener('load', function(event) { 
-        var c = document.querySelector('.nav .post ul li.current');
-        console.log('var c = ', c);
-        if (c) {
-            console.log(c, c.offsetTop);
-            c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
-        }
-    }); 
+    // window.addEventListener('load', function(event) { 
+    //     var c = document.querySelector('.nav .post ul li.current');
+    //     console.log('var c = ', c);
+    //     if (c) {
+    //         console.log(c, c.offsetTop);
+    //         c.parentElement.scrollTo(0, c.offsetTop - c.offsetHeight*2);
+    //     }
+    // }); 
 </script>
 <script>
     var target = "{{ '/assets/nav.html' | relative_url  }}";
@@ -86,7 +86,8 @@ layout: default
     }).then(function() {
         var cats = document.querySelectorAll('.nav .category ul li');
         var posts = document.querySelectorAll('.nav .post ul li');
-        var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/)
+        var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
+        var c;
         
         for (var el of cats) {
             el.addEventListener('click', function(e) {
@@ -117,11 +118,13 @@ layout: default
                     el.classList.add('current');
                     find = true;
                     t = el.parentElement.getAttribute('cat');
+                    c = el;
                     break;
                 }
             }
             if (find) {
                 document.querySelector(`.nav .category ul li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
+                console.log(c, c.offsetTop);
             }  else {
                 document.querySelectorAll('.nav .category ul li')[0].dispatchEvent(new Event('click', {bubbles: true}));
             }
