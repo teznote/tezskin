@@ -67,7 +67,7 @@ layout: default
         section1.classList.toggle('btn-clicked');
         section2.classList.toggle('btn-clicked');
     });
-    document.addEventListener('DOMContentLoaded', function(event) { 
+    window.addEventListener('load', function(event) { 
         var c = document.querySelector('.nav .post ul li.current');
         console.log('var c = ', c);
         if (c) {
