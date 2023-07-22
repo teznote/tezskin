@@ -2,7 +2,72 @@
 layout: default
 ---
 
-<div class="fixed-canvas">
+<div class="f1">
+    <div class="pad">
+        <div class="header">
+            <h2 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h2>
+            <button class="btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="f2">
+    <div class="pad">
+        <div class="article">
+            <h1 class="article-title">
+                {{ page.title }}
+            </h1>
+            <div class="article-desc">
+                <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+            </div>
+            <div class="article-main">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="f3">
+    <div class="pad">
+        <div class="nav">
+            <ul class="nav-tags">
+                {%- for cat in site.cats -%}
+                <li cat="{{ cat.id }}">
+                    {{- cat.title -}}
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="nav-posts">
+                {%- for cat in site.cats -%}
+                <ul cat="{{ cat.id }}">
+                    {% assign items = site.tags[cat.id] %}
+                    {% if cat.order == "asc" %}
+                        {% assign items = items | reverse %}
+                    {% endif %}
+                    {%- for post in items %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        <div class="updated">Last updated:&nbsp;{{ post.updated }}</div>
+                    </li> 
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    'use strict';
+
+    var btn = document.querySelector('.btn');
+    var f3 = document.querySelector('.f3');
+    btn.addEventListener('click', e => {
+        f3.classList.toggle('clicked');
+    });
+</script>
+
+<!-- <div class="fixed-canvas">
     <div class="layout-outer">
         <div class="layout-inner-top">
             <div class="buffer">
@@ -122,4 +187,4 @@ layout: default
             }
         }
     });
-</script>
+</script> -->
