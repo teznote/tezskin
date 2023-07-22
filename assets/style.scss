@@ -5,6 +5,8 @@
 $color: #111111;
 $a-color: #1267da;
 $b-color: #dd672c;
+$f2-background-color: #eeeeff;
+$f3-background-color: #eeeeee;
 
 $header-gap: 60px;
 $max-content-width: 1200px;
@@ -46,6 +48,9 @@ img, svg {
 }
 
 // layout
+.pad {
+    max-width: #{$max-content-width}; margin: 0 auto;
+}
 .f1, .f2, .f3 {
     position: fixed;
 }
@@ -59,12 +64,12 @@ img, svg {
     padding-top: #{$header-gap};
 }
 .f2 {
-    z-index: 100;
+    z-index: 100; background-color: #{$f2-background-color};
 }
 .f3 {
-    z-index: 0;
+    z-index: 0; background-color: #{$f3-background-color};
     &.clicked {
-        z-index: 150px;
+        z-index: 150;
     }
 }
 
