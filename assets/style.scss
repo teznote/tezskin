@@ -105,12 +105,12 @@ img, svg {
         text-align: center;
         &:before {
             content: "\f10d"; font: var(--fa-font-solid);
-            display: inline-block; margin-right: 0.5rem;
+            display: inline-block; margin-right: 1.5rem;
             position: relative; top: -0.8rem;
         }
         &:after {
             content: "\f10e"; font: var(--fa-font-solid);
-            display: inline-block; margin-left: 0.5rem;
+            display: inline-block; margin-left: 1.5rem;
             position: relative; top: 0.8rem;
         }
     }
