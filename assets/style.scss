@@ -76,12 +76,12 @@ img, svg {
 // header
 .header {
     height: 100%;
-    display: flex; justify-content: space-between;
+    display: flex; justify-content: space-between; align-items: center;
     .site-title {
-        &:after {
-            content: "\f4ad"; font: var(--fa-font-solid);
-            display: inline-block; width: 1.5rem;
-            position: relative; top: -0.5rem;
+        a:after {
+            content: "\f4ad"; font: var(--fa-font-regular);
+            display: inline-block; margin-left: 0.5rem;
+            position: relative; top: -0.8rem;
         }
     }
     .btn {
@@ -94,6 +94,24 @@ img, svg {
             i {
                 transform: rotate(-45deg);
             }
+        }
+    }
+}
+
+// article
+.article {
+    .article-title {
+        margin: 2rem 0;
+        text-align: center;
+        &:before {
+            content: "\f10d"; font: var(--fa-font-solid);
+            display: inline-block; margin-right: 0.5rem;
+            position: relative; top: -0.8rem;
+        }
+        &:after {
+            content: "\f10e"; font: var(--fa-font-solid);
+            display: inline-block; margin-left: 0.5rem;
+            position: relative; top: 0.8rem;
         }
     }
 }
