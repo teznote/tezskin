@@ -122,6 +122,76 @@ img, svg {
     .article-desc {
         text-align: right;
     }
+    .article-main {
+        h2 {
+            font-size: 1.5rem;
+            margin: 3rem 0 1.5rem 0;
+            &:before {
+                content: "\0023";
+                font: var(--fa-font-solid);
+                display: inline-block;
+                width: 2rem;
+            }
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 1.5rem 0;
+        }
+        img {
+            display: block;
+            margin: 1.5rem auto;
+            max-width: 100%;
+            & ~ em {
+                display: block;
+                margin: -1rem 1.5rem 1.5rem 1.5rem;
+                color: #{$c-color};
+            }
+        }
+        pre, code, kbd, samp {
+            font-family: 'Hack', 'NanumSquareRound', monospace;
+        }
+        p, pre, ul {
+            margin: 1.5rem 0;
+            & > code, kbd, samp {
+                padding: 0 !important;
+                font-weight: 400;
+                color: #{$color};
+                background-color: #{$bg-color};
+            }
+        }
+        pre > code {
+            font-size: 0.8rem;
+        }
+        p[class], pre, ul {
+            background-color: #{$bg-color};
+            padding: 1rem 1.5rem;
+            border-left-width: .5rem;
+            border-left-style: solid;
+            border-color: darken($bg-color, 10%);
+            &:before {
+                content: "\f120\00a0" attr(class);
+                font: var(--fa-font-solid);
+                font-family: 'NanumSquareRound', 'FontAwesome';
+                display: block;
+                color: #{$c-color};
+                text-transform: uppercase;
+                font-weight: 800;
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+        }
+        ul {
+            li {
+                margin-left: 1.5rem;
+                &:before {
+                    content: "\2219";
+                    display: inline-block;
+                    width: 1.5rem;
+                    margin-left: -1.5rem;
+                }
+            }
+        }
+    }
 }
 
 
