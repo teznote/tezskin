@@ -54,8 +54,7 @@ img, svg {
 
 // layout
 .pad {
-    max-width: #{$max-content-width}; height: 100%; margin: 0 auto;
-    padding: 5px;
+    max-width: #{$max-content-width}; margin: 0 auto; padding: 5px;
 }
 .f1, .f2, .f3 {
     position: fixed;
@@ -85,7 +84,7 @@ img, svg {
 
 // header
 .header {
-    height: 100%;
+    height: #{$header-gap};
     display: flex; justify-content: space-between; align-items: center;
     .site-title {
         a:after {
