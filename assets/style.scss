@@ -6,9 +6,9 @@ $color: #111111;
 $a-color: #1267da;
 $b-color: #dd672c;
 $c-color: #999999;
-$f2-background-color: #eeeeff;
+$f2-background-color: #ffffff;
 $f3-background-color: #eeeeee;
-$box-color: #eeeeee;
+$box-color: #eeeeff;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -63,7 +63,10 @@ img, svg {
 .f1 {
     top: 0; right: 0; bottom: auto; left: 0;
     height: #{$header-gap};
-    z-index: 200;
+    z-index: 200; background-color: #{$f2-background-color};
+    &.clicked {
+        background-color: #{$f3-background-color};
+    }
 }
 .f2, .f3 {
     top: 0; right: 0; bottom: 0; left: 0;

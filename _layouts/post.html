@@ -61,8 +61,10 @@ layout: default
     'use strict';
 
     var btn = document.querySelector('.btn');
+    var f1 = document.querySelector('.f3');
     var f3 = document.querySelector('.f3');
     btn.addEventListener('click', e => {
+        f1.classList.toggle('clicked');
         f3.classList.toggle('clicked');
         btn.classList.toggle('clicked');
     });
