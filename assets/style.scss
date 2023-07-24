@@ -8,6 +8,7 @@ $b-color: #dd672c;
 $c-color: #999999;
 $f2-background-color: #eeeeff;
 $f3-background-color: #eeeeee;
+$box-color: #eeeeee;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -156,18 +157,18 @@ img, svg {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
-                background-color: #{$bg-color};
+                background-color: #{$box-color};
             }
         }
         pre > code {
             font-size: 0.8rem;
         }
         p[class], pre, ul {
-            background-color: #{$bg-color};
+            background-color: #{$box-color};
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($bg-color, 10%);
+            border-color: darken($box-color, 10%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
