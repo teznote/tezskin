@@ -5,13 +5,14 @@
 $color: #111111;
 $a-color: #1267da;
 $b-color: #dd672c;
+$c-color: #999999;
 $f2-background-color: #eeeeff;
 $f3-background-color: #eeeeee;
 
 $header-gap: 60px;
 $max-content-width: 900px;
 
-// globals
+// commons
 html, body {
     width: 100vw; height: 100vh; height: -webkit-fill-available; height: fill-available;
     margin: 0; padding: 0;
@@ -45,6 +46,9 @@ h2 {
 }
 img, svg {
     max-width: 100%; vertical-align: bottom;
+}
+.updated {
+    text-color: #{$c-color};
 }
 
 // layout
@@ -114,6 +118,9 @@ img, svg {
             display: inline-block; margin-left: 1.5rem;
             position: relative; top: 0.8rem;
         }
+    }
+    .article-desc {
+        text-align: right;
     }
 }
 
