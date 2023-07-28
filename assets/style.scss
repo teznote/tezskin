@@ -8,7 +8,9 @@ $b-color: #dd672c;
 $c-color: #999999;
 $f2-background-color: #ffffff;
 $f3-background-color: #eeeeee;
-$box-color: #f4f8fa;
+$b-color: #f4f8fa;
+$r-color: #fcf8f2;
+$g-color: #f1f9f1;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -160,29 +162,45 @@ img, svg {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
-                background-color: #{$box-color};
+                background-color: #{$b-color};
             }
         }
         pre > code {
             font-size: 0.8rem;
         }
         p[class], pre, ul {
-            background-color: #{$box-color};
+            background-color: #{$b-color};
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($box-color, 30%);
-            color: darken($box-color, 70%);
+            border-color: darken($b-color, 30%);
+            color: darken($b-color, 60%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
                 font-family: 'NanumSquareRound', 'FontAwesome';
                 display: block;
-                color: darken($box-color, 70%);
+                color: darken($b-color, 60%);
                 text-transform: uppercase;
                 font-weight: 800;
                 font-style: italic;
                 margin-bottom: 1rem;
+            }
+        }
+        p.warn, p.warning, ul.warn, ul.warning {
+            background-color: #{$r-color};
+            border-color: darken($r-color, 30%);
+            color: darken($r-color, 60%);
+            &:before {
+                color: darken($r-color, 60%);
+            }
+        }
+        p.info, p.information, ul.info, ul.information {
+            background-color: #{$g-color};
+            border-color: darken($g-color, 30%);
+            color: darken($g-color, 60%);
+            &:before {
+                color: darken($g-color, 60%);
             }
         }
         ul {

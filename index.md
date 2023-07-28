@@ -8,6 +8,13 @@ tags: frontpage
 ## Teznote 는요...
 
 취미로 코딩을 하는 배불뚝이 중년 남자입니다.
+{:.info}
+
+취미로 코딩을 안하는 노년입니다.
+{:.warn}
+
+안녕하세요~
+{:.hello}
 
 ## Tezskin 소개
 
