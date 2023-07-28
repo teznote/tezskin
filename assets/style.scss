@@ -8,7 +8,7 @@ $b-color: #dd672c;
 $c-color: #999999;
 $f2-background-color: #ffffff;
 $f3-background-color: #eeeeee;
-$box-color: #eeeeff;
+$box-color: #f4f8fa;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -171,7 +171,8 @@ img, svg {
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($box-color, 10%);
+            border-color: darken($box-color, 50%);
+            color: darken($box-color, 50%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
