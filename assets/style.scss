@@ -58,6 +58,9 @@ img, svg {
 .pad {
     max-width: #{$max-content-width}; margin: 0 auto; padding: 5px;
 }
+.hidden {
+    display: none;
+}
 .f1, .f2, .f3 {
     position: fixed;
 }
