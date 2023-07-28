@@ -171,14 +171,14 @@ img, svg {
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($box-color, 50%);
-            color: darken($box-color, 50%);
+            border-color: darken($box-color, 30%);
+            color: darken($box-color, 70%);
             &:before {
                 content: "\f120\00a0" attr(class);
                 font: var(--fa-font-solid);
                 font-family: 'NanumSquareRound', 'FontAwesome';
                 display: block;
-                color: #{$c-color};
+                color: darken($box-color, 70%);
                 text-transform: uppercase;
                 font-weight: 800;
                 font-style: italic;
