@@ -220,6 +220,21 @@ img, svg {
     }
 }
 
+// nav
+.nav {
+    .nav-tags {
+        margin: 3rem 0;
+        display: flex; gap: 2rem;
+        li {
+            cursor: pointer;
+            &.current {
+                color: #{$f3-background-color};
+                background-color: #{$color};
+            }
+        }
+    }
+}
+
 
 // // vars  
 // $bg-color: #eee;
