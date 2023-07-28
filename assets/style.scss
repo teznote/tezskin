@@ -86,7 +86,7 @@ img, svg {
 
 // header
 .header {
-    height: #{$header-gap};
+    height: #{$header-gap - 10px};
     display: flex; justify-content: space-between; align-items: center;
     .site-title {
         a:after {
