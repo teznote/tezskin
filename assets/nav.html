@@ -1,33 +1,23 @@
 ---
 ---
 
-<div class="category">
-    <div class="label">
-        [ CATEGORIES ]
-    </div>
-    <ul>
-        {%- for cat in site.cats -%}
-        <li cat="{{ cat.id }}">
-            {{- cat.title -}}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-<div class="post">
-    <div class="label">
-        [ POSTS ]
-    </div>
+<ul class="nav-tags">
+    {%- for cat in site.cats -%}
+    <li cat="{{ cat.id }}">
+        {{- cat.title -}}
+    </li>
+    {% endfor %}
+</ul>
+<div class="nav-posts">
     {%- for cat in site.cats -%}
     <ul cat="{{ cat.id }}">
-        {% assign items = site.categories[cat.id] %}
+        {% assign items = site.tags[cat.id] %}
         {% if cat.order == "asc" %}
             {% assign items = items | reverse %}
         {% endif %}
-        
         {%- for post in items %}
         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             <div class="updated">Last updated:&nbsp;{{ post.updated }}</div>
-            <div class="tags">Tags:&nbsp;{%- for tag in post.tags -%}<span>#{{ tag }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</div>
         </li> 
         {% endfor %}
     </ul>
