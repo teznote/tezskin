@@ -51,7 +51,7 @@ img, svg {
     max-width: 100%; vertical-align: bottom;
 }
 .updated {
-    text-color: #{$c-color};
+    color: #{$c-color};
 }
 
 // layout
@@ -223,13 +223,22 @@ img, svg {
 // nav
 .nav {
     .nav-tags {
-        margin: 3rem 0;
-        display: flex; gap: 2rem;
+        min-height: 3rem; padding: 0.5rem 0;
+        display: flex; gap: 2rem; align-items: center; align-content: center; flex-wrap: wrap;
+        position: sticky; top: 0;
+        background-color: #{$f3-background-color};
         li {
             cursor: pointer;
             &.current {
                 color: #{$f3-background-color};
                 background-color: #{$color};
+            }
+        }
+    }
+    .nav-posts {
+        ul {
+            li {
+                margin: 1.5rem 0;
             }
         }
     }

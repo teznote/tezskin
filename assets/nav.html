@@ -16,8 +16,7 @@
             {% assign items = items | reverse %}
         {% endif %}
         {%- for post in items %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <div class="updated">Last updated:&nbsp;{{ post.updated }}</div>
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>&nbsp;&nbsp;<span class="updated">Last updated:&nbsp;{{ post.updated }}</span>
         </li> 
         {% endfor %}
     </ul>
