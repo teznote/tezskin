@@ -8,9 +8,9 @@ $b-color: #dd672c;
 $c-color: #999999;
 $f2-background-color: #ffffff;
 $f3-background-color: #eeeeee;
-$b-color: #f4f8fa;
-$r-color: #fcf8f2;
-$g-color: #f1f9f1;
+$b-box-color: #f4f8fa;
+$r-box-color: #fcf8f2;
+$g-box-color: #f1f9f1;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -165,19 +165,19 @@ img, svg {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
-                background-color: #{$b-color};
+                background-color: #{$b-box-color};
             }
         }
         pre > code {
             font-size: 0.8rem;
         }
         p[class], pre, ul {
-            background-color: #{$b-color};
+            background-color: #{$b-box-color};
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($b-color, 30%);
-            color: darken($b-color, 60%);
+            border-color: darken($b-box-color, 30%);
+            color: darken($b-box-color, 60%);
             &:before {
                 content: "# " attr(class);
                 display: block;
@@ -186,19 +186,19 @@ img, svg {
             }
         }
         p.warn, p.warning, ul.warn, ul.warning {
-            background-color: #{$r-color};
-            border-color: darken($r-color, 30%);
-            color: darken($r-color, 60%);
+            background-color: #{$r-box-color};
+            border-color: darken($r-box-color, 30%);
+            color: darken($r-box-color, 60%);
             &:before {
-                color: darken($r-color, 60%);
+                color: darken($r-box-color, 60%);
             }
         }
         p.info, p.information, ul.info, ul.information {
-            background-color: #{$g-color};
-            border-color: darken($g-color, 30%);
-            color: darken($g-color, 60%);
+            background-color: #{$g-box-color};
+            border-color: darken($g-box-color, 30%);
+            color: darken($g-box-color, 60%);
             &:before {
-                color: darken($g-color, 60%);
+                color: darken($g-box-color, 60%);
             }
         }
         ul {
