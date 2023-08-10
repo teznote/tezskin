@@ -106,7 +106,7 @@ img, svg {
         }
     }
     .btn {
-        outline: none; border: none; cursor: pointer; background-color: transparent;
+        outline: none; border: none; cursor: pointer; background-color: transparent; color: #{$color};
         font-size: 2rem;
         i {
             transition: transform 0.4s;
@@ -183,8 +183,8 @@ img, svg {
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: lighten($b-box-color, 30%);
-            color: lighten($b-box-color, 60%);
+            border-color: #{$b-box-color-border};
+            color: #{$b-box-color-text};
             &:before {
                 content: "# " attr(class);
                 display: block;
@@ -194,18 +194,18 @@ img, svg {
         }
         p.warn, p.warning, ul.warn, ul.warning {
             background-color: #{$r-box-color};
-            border-color: lighten($r-box-color, 30%);
-            color: lighten($r-box-color, 60%);
+            border-color: #{$r-box-color-border};
+            color: #{$r-box-color-text};
             &:before {
-                color: lighten($r-box-color, 60%);
+                #{$r-box-color-text};
             }
         }
         p.info, p.information, ul.info, ul.information {
             background-color: #{$g-box-color};
-            border-color: lighten($g-box-color, 30%);
-            color: lighten($g-box-color, 60%);
+            border-color: #{$g-box-color-border};
+            color: #{$g-box-color-text};
             &:before {
-                color: lighten($g-box-color, 60%);
+                color: #{$g-box-color-text};
             }
         }
         ul {
@@ -244,6 +244,9 @@ img, svg {
                 &.current {
                     color: #{$f3-background-color};
                     background-color: #{$color};
+                    .updated {
+                        color: #{$f3-background-color};
+                    }
                 }
             }
         }
