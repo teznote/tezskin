@@ -2,15 +2,22 @@
 ---
 
 // vars
-$color: #111111;
-$a-color: #1267da;
-$b-color: #dd672c;
-$c-color: #999999;
-$f2-background-color: #ffffff;
-$f3-background-color: #eeeeee;
-$b-box-color: #f4f8fa;
-$r-box-color: #fcf8f2;
-$g-box-color: #f1f9f1;
+$color: #ffffff;
+$base-background-color: #000000;
+$a-color: #6ea8fe;
+$b-color: #e685b5;
+$c-color: #dee2e6;
+$f2-background-color: #032830;
+$f3-background-color: #37474F;
+$b-box-color: #000000;
+$b-box-color-text: #0dcaf0;
+$b-box-color-border: #0dcaf0;
+$r-box-color: #000000;
+$r-box-color-text: #ffc107;
+$r-box-color-border: #ffc107;
+$g-box-color: #000000;
+$g-box-color-text: #198754;
+$g-box-color-border: #198754;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -20,7 +27,7 @@ html, body {
     width: 100vw; height: 100vh; height: -webkit-fill-available; height: fill-available;
     margin: 0; padding: 0;
     font-family: "Hack", "NanumSquareRound", monospace !important; font-size: 16px; line-height: 1.4;
-    color: #{$color}; background-color: #ffffff;
+    color: #{$color}; background-color: #{$base-background-color};
 }
 div, ul {
     -ms-overflow-style: none; scrollbar-width: none;
@@ -176,8 +183,8 @@ img, svg {
             padding: 1rem 1.5rem;
             border-left-width: .5rem;
             border-left-style: solid;
-            border-color: darken($b-box-color, 30%);
-            color: darken($b-box-color, 60%);
+            border-color: lighten($b-box-color, 30%);
+            color: lighten($b-box-color, 60%);
             &:before {
                 content: "# " attr(class);
                 display: block;
@@ -187,18 +194,18 @@ img, svg {
         }
         p.warn, p.warning, ul.warn, ul.warning {
             background-color: #{$r-box-color};
-            border-color: darken($r-box-color, 30%);
-            color: darken($r-box-color, 60%);
+            border-color: lighten($r-box-color, 30%);
+            color: lighten($r-box-color, 60%);
             &:before {
-                color: darken($r-box-color, 60%);
+                color: lighten($r-box-color, 60%);
             }
         }
         p.info, p.information, ul.info, ul.information {
             background-color: #{$g-box-color};
-            border-color: darken($g-box-color, 30%);
-            color: darken($g-box-color, 60%);
+            border-color: lighten($g-box-color, 30%);
+            color: lighten($g-box-color, 60%);
             &:before {
-                color: darken($g-box-color, 60%);
+                color: lighten($g-box-color, 60%);
             }
         }
         ul {
