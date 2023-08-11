@@ -168,15 +168,18 @@ img, svg {
         }
         p, pre, ul {
             margin: 1.5rem 0;
+        }
+        pre > code {
+            font-size: 0.8rem;
+        }
+        p, ul {
             & > code, kbd, samp {
                 padding: 0 !important;
                 font-weight: 400;
                 color: #{$color};
                 background-color: #{$b-box-color};
+                border: 1px dashed #{$color};
             }
-        }
-        pre > code {
-            font-size: 0.8rem;
         }
         p[class], pre, ul {
             background-color: #{$b-box-color};
