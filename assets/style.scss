@@ -9,13 +9,13 @@ $b-color: #e685b5;
 $c-color: #dee2e6;
 $f2-background-color: #032830;
 $f3-background-color: #032830;
-$b-box-color: #000000;
+$b-box-color: #0d1117;
 $b-box-color-text: #0dcaf0;
 $b-box-color-border: #0dcaf0;
-$r-box-color: #000000;
+$r-box-color: #0d1117;
 $r-box-color-text: #ffda6a;
 $r-box-color-border: #ffda6a;
-$g-box-color: #000000;
+$g-box-color: #0d1117;
 $g-box-color-text: #75b798;
 $g-box-color-border: #75b798;
 
@@ -171,6 +171,7 @@ img, svg {
         }
         pre > code {
             font-size: 0.8rem;
+            background-color: #{$b-box-color};
         }
         p, ul {
             & > code, kbd, samp {
