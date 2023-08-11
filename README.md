@@ -1,4 +1,6 @@
 # tezskin
+## v.6.4.0
+다크 테마 도입, post order는 asc, desc(default), title, title_desc, updated, updated_desc 로 다양하게 설정 가능
 
 ## v3.0.2
 
