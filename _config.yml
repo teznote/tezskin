@@ -10,6 +10,18 @@ cats:
   order: asc
 - id: web_develop
   title: Web Development
+- id: test
+  title: Title Order
+  order: title
+- id: test
+  title: Title Desc Order
+  order: title_desc
+- id: test
+  title: Updated Order
+  order: updated
+- id: test
+  title: Updated Desc Order
+  order: updated_desc
 
 navtags:
 - id: study

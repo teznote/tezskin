@@ -1,8 +1,8 @@
 ---
 layout: post
-updated: 2022-01-01
+updated: 2023-08-17
 categories: [test]
-title: "Nuclear Launch Detected"
+title: "Naver Never..."
 tags: [test]
 ---
 

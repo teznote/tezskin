@@ -1,8 +1,8 @@
 ---
 layout: post
-updated: 2022-01-01
+updated: 2023-08-01
 categories: [test]
-title: "Nuclear Launch Detected"
+title: "가는 말이 고와야 오는 말이 곱다"
 tags: [test]
 ---
 

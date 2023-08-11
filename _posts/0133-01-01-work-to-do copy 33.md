@@ -1,8 +1,8 @@
 ---
 layout: post
-updated: 2022-01-01
+updated: 2023-08-19
 categories: [test]
-title: "Nuclear Launch Detected"
+title: "나보기가 역겨워 가실 때에는..."
 tags: [test]
 ---
 

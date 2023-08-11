@@ -18,6 +18,17 @@
         {% if cat.order == "title" %}
             {% assign items = items | sort: 'title' %}
         {% endif %}
+        {% if cat.order == "title_desc" %}
+            {% assign items = items | sort: 'title' %}
+            {% assign items = items | reverse %}
+        {% endif %}
+        {% if cat.order == "updated" %}
+            {% assign items = items | sort: 'updated' %}
+        {% endif %}
+        {% if cat.order == "updated_desc" %}
+            {% assign items = items | sort: 'updated' %}
+            {% assign items = items | reverse %}
+        {% endif %}
         {%- for post in items %}
         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>&nbsp;&nbsp;<span class="updated">Last updated:&nbsp;{{ post.updated }}</span>
         </li> 
