@@ -203,7 +203,7 @@ img, svg {
                 color: #{$r-box-color-text};
             }
         }
-        p.info, p.information, ul.info, ul.information {
+        p.info, p.information, p.note, ul.info, ul.information, ul.note {
             background-color: #{$g-box-color};
             border-color: #{$g-box-color-border};
             color: #{$g-box-color-text};
