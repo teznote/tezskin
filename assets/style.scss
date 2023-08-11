@@ -174,12 +174,10 @@ img, svg {
             background-color: #{$b-box-color};
         }
         p, ul {
-            & > code, kbd, samp {
+            & > code, & > kbd, & > samp {
                 padding: 0 !important;
                 font-weight: 400;
-                color: #{$color};
-                background-color: #{$b-box-color};
-                border: 1px dashed #{$color};
+                border: 1px dashed;
             }
         }
         p[class], pre, ul {
