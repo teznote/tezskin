@@ -13,11 +13,11 @@ $b-box-color: #000000;
 $b-box-color-text: #0dcaf0;
 $b-box-color-border: #0dcaf0;
 $r-box-color: #000000;
-$r-box-color-text: #ffc107;
-$r-box-color-border: #ffc107;
+$r-box-color-text: #ffda6a;
+$r-box-color-border: #ffda6a;
 $g-box-color: #000000;
-$g-box-color-text: #198754;
-$g-box-color-border: #198754;
+$g-box-color-text: #75b798;
+$g-box-color-border: #75b798;
 
 $header-gap: 60px;
 $max-content-width: 900px;
@@ -181,9 +181,8 @@ img, svg {
         p[class], pre, ul {
             background-color: #{$b-box-color};
             padding: 1rem 1.5rem;
+            border: 1px solid #{$b-box-color-border};
             border-left-width: .5rem;
-            border-left-style: solid;
-            border-color: #{$b-box-color-border};
             color: #{$b-box-color-text};
             &:before {
                 content: "# " attr(class);
