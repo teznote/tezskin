@@ -197,7 +197,7 @@ img, svg {
             border-color: #{$r-box-color-border};
             color: #{$r-box-color-text};
             &:before {
-                #{$r-box-color-text};
+                color: #{$r-box-color-text};
             }
         }
         p.info, p.information, ul.info, ul.information {
