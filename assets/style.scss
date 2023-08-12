@@ -158,6 +158,7 @@ img, svg {
             margin: 1.5rem auto;
             max-width: 100%;
             & ~ em {
+                font-size: 0.8rem;
                 display: block;
                 margin: -1rem 1.5rem 1.5rem 1.5rem;
                 color: #{$c-color};

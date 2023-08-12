@@ -10,16 +10,16 @@ cats:
   order: asc
 - id: web_develop
   title: Web Development
-- id: test
+- id: test1
   title: Title Order
   order: title
-- id: test
+- id: test2
   title: Title Desc Order
   order: title_desc
-- id: test
+- id: test3
   title: Updated Order
   order: updated
-- id: test
+- id: test4
   title: Updated Desc Order
   order: updated_desc
 

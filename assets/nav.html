@@ -10,6 +10,27 @@
 </ul>
 <div class="nav-posts">
     {%- for cat in site.cats -%}
+    <div class="nav-posts-order">
+        포스트 정렬 순서:
+        {% if cat.order == "asc" %}
+            임의 지정
+        {% endif %}
+        {% if cat.order == "desc" %}
+            임의 지정
+        {% endif %}
+        {% if cat.order == "title" %}
+            제목 오름차순
+        {% endif %}
+        {% if cat.order == "title_desc" %}
+            제목 내림차순
+        {% endif %}
+        {% if cat.order == "updated" %}
+            최종 수정일 오름차순
+        {% endif %}
+        {% if cat.order == "updated_desc" %}
+            최종 수정일 내림차순
+        {% endif %}
+    </div>
     <ul cat="{{ cat.id }}">
         {% assign items = site.tags[cat.id] %}
         {% if cat.order == "asc" %}
