@@ -186,6 +186,7 @@ img, svg {
             border: 1px solid #{$b-box-color-border};
             border-left-width: .5rem;
             color: #{$b-box-color-text};
+            font-size: 0.8rem;
             &:before {
                 content: "# " attr(class);
                 display: block;
