@@ -242,6 +242,9 @@ img, svg {
     }
     .nav-posts {
         ul {
+            .nav-posts-order {
+                margin-bottom: 1.5rem;
+            }
             li {
                 margin-bottom: 1.5rem;
                 &.current {
