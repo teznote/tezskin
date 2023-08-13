@@ -11,7 +11,7 @@
 <div class="nav-posts">
     {%- for cat in site.cats -%}
     <ul cat="{{ cat.id }}">
-        <li class="nav-posts-order">
+        <div class="nav-posts-order">
             포스트 정렬 순서:
             {% if cat.order == "asc" %}
                 임의 지정
@@ -31,7 +31,7 @@
             {% if cat.order == "updated_desc" %}
                 최종 수정일 내림차순
             {% endif %}
-        </li>
+        </div>
         {% assign items = site.tags[cat.id] %}
         {% if cat.order == "asc" %}
             {% assign items = items | reverse %}
