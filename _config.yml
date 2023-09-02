@@ -1,7 +1,7 @@
 title: "Tezskin 사이트"
 desc: "이 사이트는 Jekyll 의 테마를 제작해보는 연습용 사이트 입니다."
 url: "https://github.com/teznote/tezskin"
-cats:
+navtags:
 - id: diary
   title: My Diary
   order: title
@@ -23,24 +23,6 @@ cats:
   title: Updated Desc Order
   order: updated_desc
 
-navtags:
-- id: study
-  title: Programming Study
-  subs:
-  - id: python
-    title: Python
-  - id: javascript
-    title: Javascript
-  - id: web
-    title: Web Development
-- id: diary
-  title: My Diary
-  subs:
-  - id: todo
-    title: To-do Lists
-  - id: home
-    title: Homework
-    order: desc
 
 permalink: /post/:title
 

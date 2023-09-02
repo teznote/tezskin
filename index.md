@@ -5,6 +5,17 @@ updated: 2021-02-12
 tags: frontpage
 ---
 
+## 테스트입니다.
+
+0123456789 안녕하세요 01234 !! 56789 우리집으로 가자  
+0123456789 안녕하세요 <span style="font-weight: 800">01234 !! 56789 </span>우리집으로 가자  
+안녕하세요 0123456789 우리집으로 가자 01234 !! 56789
+
+가나다라마바사아자차카타파하  
+0123456789012345678901  
+<span style="font-weight: 800">가나다라 마바사 아자차 카타</span>  
+<span style="font-weight: 800">가나다라마바사아자차카타파</span>
+
 ## Teznote 는요...
 
 취미로 코딩을 하는 배불뚝이 중년 남자입니다.
@@ -15,6 +26,10 @@ tags: frontpage
 
 안녕하세요~
 {:.hello}
+
+안녕하세요, Kim 입니다. Tez 라고도 하지요. 그렇다고요.  
+줄바꿈만 해봤습니다. English 와 잘 어울리는지 Test 해보려구요.  
+Nuclear Launch **Detected** 한때는 Lunch 인줄 알고 있었어요.  
 
 ## Tezskin 소개
 

@@ -1,7 +1,16 @@
 ---
 ---
 
-<ul class="nav-tags">
+<ul class="navtags">
+    {% for navtag in site.navtags %}
+    <li tag="navtag.id">{{ navtag.title }}</li>
+    {% endfor %}
+</ul>
+<div class="posts">
+
+</div>
+
+<!-- <ul class="nav-tags">
     {%- for cat in site.cats -%}
     <li cat="{{ cat.id }}">
         {{- cat.title -}}
@@ -56,4 +65,4 @@
         {% endfor %}
     </ul>
     {% endfor %}
-</div>
+</div> -->

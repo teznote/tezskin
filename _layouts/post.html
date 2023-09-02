@@ -2,7 +2,70 @@
 layout: default
 ---
 
-<div class="f1">
+<div class="f1 layout">
+    <div class="wrapper">
+        <div class="header">
+            <h2 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h2>
+            <div class="switch-wrapper">
+                <div class="to-article">
+                    <i class="fa-regular fa-file-lines"></i>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" />
+                    <div class="slider"></div>
+                </label>
+                <div class="to-nav">                    
+                    <i class="fa-regular fa-folder-open"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="f2 layout">
+    <div class="wrapper">
+        <div class="main">
+            <div class="article">
+                <h1 class="article-title">
+                    {{- page.title -}}
+                </h1>
+                <div class="article-desc">
+                    <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
+                </div>
+                <div class="article-main">
+                    {{- content -}}
+                </div>
+            </div>
+            <div class="nav">
+                Now Loading...
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var target = "{{ '/assets/nav.html' | relative_url  }}";
+    fetch(target).then(function(response) {
+        return response.text();
+    }).then(function(body) {
+        document.querySelector('.nav').innerHTML = body;
+        return;
+    }).then(function(body) {;
+        var btn = document.querySelector('.switch input');
+        var main = document.querySelector('.main');
+
+        btn.addEventListener('click', function(e) {
+            if (e.target.checked) {
+                main.classList.add('checked');
+            } else {
+                main.classList.remove('checked');
+            }
+        });
+    });
+</script>
+
+
+<!-- <div class="f1">
     <div class="pad">
         <div class="header">
             <h2 class="site-title">
@@ -102,4 +165,4 @@ layout: default
             }
         }
     });
-</script>
+</script> -->
