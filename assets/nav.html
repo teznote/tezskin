@@ -1,68 +1,28 @@
 ---
 ---
 
-<ul class="navtags">
-    {% for navtag in site.navtags %}
-    <li tag="navtag.id">{{ navtag.title }}</li>
-    {% endfor %}
-</ul>
-<div class="posts">
-
-</div>
-
-<!-- <ul class="nav-tags">
-    {%- for cat in site.cats -%}
-    <li cat="{{ cat.id }}">
-        {{- cat.title -}}
-    </li>
-    {% endfor %}
-</ul>
-<div class="nav-posts">
-    {%- for cat in site.cats -%}
-    <ul cat="{{ cat.id }}">
-        <div class="nav-posts-order">
-            포스트 정렬 순서:
-            {% if cat.order == "asc" %}
-                임의 지정
-            {% endif %}
-            {% if cat.order == "desc" %}
-                임의 지정
-            {% endif %}
-            {% if cat.order == "title" %}
-                제목 오름차순
-            {% endif %}
-            {% if cat.order == "title_desc" %}
-                제목 내림차순
-            {% endif %}
-            {% if cat.order == "updated" %}
-                최종 수정일 오름차순
-            {% endif %}
-            {% if cat.order == "updated_desc" %}
-                최종 수정일 내림차순
-            {% endif %}
-        </div>
-        {% assign items = site.tags[cat.id] %}
-        {% if cat.order == "asc" %}
-            {% assign items = items | reverse %}
-        {% endif %}
-        {% if cat.order == "title" %}
-            {% assign items = items | sort: 'title' %}
-        {% endif %}
-        {% if cat.order == "title_desc" %}
-            {% assign items = items | sort: 'title' %}
-            {% assign items = items | reverse %}
-        {% endif %}
-        {% if cat.order == "updated" %}
-            {% assign items = items | sort: 'updated' %}
-        {% endif %}
-        {% if cat.order == "updated_desc" %}
-            {% assign items = items | sort: 'updated' %}
-            {% assign items = items | reverse %}
-        {% endif %}
-        {%- for post in items %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>&nbsp;&nbsp;<span class="updated">Last updated:&nbsp;{{ post.updated }}</span>
-        </li> 
+<div class="navtags">
+    <ul>
+        {% for navtag in site.navtags %}
+        <li tag="{{ navtag.id }}">{{ navtag.title }}</li>
         {% endfor %}
     </ul>
-    {% endfor %}
-</div> -->
+</div>
+<div class="posts">
+    <ul>
+        {% for navtag in site.navtags %}
+        {% assign items = site.tags[navtag.id] %}
+        {% if navtag.order == "asc" %}{% assign items = items | reverse %}
+        {% elsif navtag.order == "title" %}{% assign items = items | sort: 'title' %}
+        {% elsif navtag.order == "title_desc" %}{% assign items = items | sort: 'title' | reverse %}
+        {% elsif navtag.order == "updated" %}{% assign items = items | sort: 'updated' %}
+        {% elsif navtag.order == "updated_desc" %}{% assign items = items | sort: 'updated' | reverse %}
+        {% endif %}
+        {% for post in items %}
+        <li tag="{{ navtag.id }}" class="hidden">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}<span class="updated"> || Last updated: {{ post.updated }}</span></a>
+        </li>
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</div>

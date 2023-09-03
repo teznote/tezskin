@@ -8,14 +8,13 @@ layout: default
             <h2 class="site-title">
                 <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
             </h2>
-            <div class="switch-wrapper">
+            <div class="switch">
                 <div class="to-article">
                     <i class="fa-regular fa-file-lines"></i>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" />
-                    <div class="slider"></div>
-                </label>
+                <div class="slider">
+
+                </div>
                 <div class="to-nav">                    
                     <i class="fa-regular fa-folder-open"></i>
                 </div>
@@ -50,119 +49,45 @@ layout: default
     }).then(function(body) {
         document.querySelector('.nav').innerHTML = body;
         return;
-    }).then(function(body) {;
-        var btn = document.querySelector('.switch input');
+    }).then(function() {
+        var slider = document.querySelector('.slider');
         var main = document.querySelector('.main');
 
-        btn.addEventListener('click', function(e) {
-            if (e.target.checked) {
-                main.classList.add('checked');
-            } else {
-                main.classList.remove('checked');
-            }
-        });
-    });
-</script>
-
-
-<!-- <div class="f1">
-    <div class="pad">
-        <div class="header">
-            <h2 class="site-title">
-                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-            </h2>
-            <button class="btn">
-                <i class="fa-solid fa-plus"></i>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="f2">
-    <div class="pad">
-        <div class="article">
-            <h1 class="article-title">
-                {{- page.title -}}
-            </h1>
-            <div class="article-desc">
-                <div class="updated">Last updated:&nbsp;{{ page.updated }}</div>
-            </div>
-            <div class="article-main">
-                {{- content -}}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="f3">
-    <div class="pad">
-        <div class="nav">
-            ...Now Loading
-        </div>
-    </div>
-</div>
-<script>
-    'use strict';
-
-    var btn = document.querySelector('.btn');
-    var f1 = document.querySelector('.f1');
-    var f3 = document.querySelector('.f3');
-    btn.addEventListener('click', e => {
-        f1.classList.toggle('clicked');
-        f3.classList.toggle('clicked');
-        btn.classList.toggle('clicked');
-    });
-</script>
-<script>
-    var target = "{{ '/assets/nav.html' | relative_url  }}";
-    fetch(target).then(function(response) {
-        return response.text();
-    }).then(function(body) {
-        document.querySelector('.nav').innerHTML = body;
-        return;
+        slider.addEventListener('click', function(e) {
+            e.target.classList.toggle('checked');
+            main.classList.toggle('checked');
+        });       
     }).then(function() {
-        var cats = document.querySelectorAll('.nav-tags li');
-        var posts = document.querySelectorAll('.nav-posts li');
-        var cur = document.location.href.match(/(https?:\/\/[a-zA-Z0-9.:]+)([a-zA-Z0-9\/%_.-]+)/);
-        var c = null;
-        
-        for (var el of cats) {
-            el.addEventListener('click', function(e) {
-                for (var x of cats) {
-                    if (x === e.target) {
-                        x.classList.add('current');
-                    } else {
-                        x.classList.remove('current');
-                    }
+        var cur = document.location.href.split('/').slice(-1)[0];
+        var navtags = document.querySelectorAll('.nav .navtags ul li');
+        var posts = document.querySelectorAll('.nav .posts ul li');
+
+        for (var x of navtags) {
+            x.addEventListener('click', function(e) {
+                for (var y of navtags) {
+                    (e.target === y) ? (y.classList.add('current')) : (y.classList.remove('current'));
                 }
-                for (var y of document.querySelectorAll('.nav-posts ul')) {
-                    if (y.getAttribute('cat') === e.target.getAttribute('cat')) {
-                        y.classList.remove('hidden');
-                    } else {
-                        y.classList.add('hidden');
-                    }
+                var etag = e.target.getAttribute('tag');
+                for (var y of posts) {
+                    var ytag = y.getAttribute('tag');
+                    (etag === ytag) ? (y.classList.remove('hidden')) : (y.classList.add('hidden'));
                 }
-                
             });
         }
 
         if (cur) {
-            var find = false;
-            var t = '';
-            for (var el of posts) {
-                var href = el.firstElementChild.getAttribute('href');
-                if (href === cur[2]) {
-                    c = el;
-                    c.classList.add('current');
-                    find = true;
-                    t = el.parentElement.getAttribute('cat');
+            for (var x of posts) {
+                var href = x.firstElementChild.getAttribute('href').split('/').slice(-1)[0];
+                if (href == cur) {
+                    x.classList.add('current');
+                    var t = x.getAttribute('tag');
+                    document.querySelector(`.navtags li[tag=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
+                    x.parentElement.scrollTo(0, x.offsetTop - x.clientHeight / 2 - x.parentElement.clientHeight / 2);
                     break;
                 }
             }
-            if (c) {
-                document.querySelector(`.nav-tags li[cat=${t}]`).dispatchEvent(new Event('click', {bubbles: true}));
-                document.querySelector(".f3").scrollTo(0, c.offsetTop - window.innerHeight / 2);
-            }  else {
-                document.querySelectorAll('.nav-tags li')[0].dispatchEvent(new Event('click', {bubbles: true}));
-            }
+        } else {
+            navtags[0].dispatchEvent(new Event('click', {bubbles: true}));
         }
     });
-</script> -->
+</script>

@@ -34,6 +34,7 @@ html, body, div, p, h1, h2, h3, h4, h5, h6, ul, li, pre, button, label {
 }
 a, a:link, a:visited, a:hover, a:active {
     color: var(--a-color); text-decoration: none; font-weight: 800; word-break: break-all;
+    -webkit-tap-highlight-color: transparent;
 }
 a, a:link, a:visited, a:active {
     border: 1px dashed transparent;
@@ -46,6 +47,9 @@ b, strong {
 }
 
 // layout
+.hidden {
+    display: none !important;
+}
 .layout {
     background-color: var(--bg2-color); border: 1px solid var(--bg4-color);
     margin: #{$gap}; padding: #{$gap};
@@ -73,27 +77,21 @@ b, strong {
     .site-title {
         flex: 0 0 auto;
     }
-    .switch-wrapper {
+    .switch {
         flex: 0 0 auto;
         display: flex; align-items: center; height: 100%; gap: 0.5rem;
         font-size: 1.2rem;
-        .switch {
-            position: relative; width: 60px; height: 34px;
-            input {
-                width: 0; height: 0; opacity: 0;
-                &:checked + .slider:before {
-                    transform: translateX(26px);
-                }
+        .slider {
+            position: relative; width: 60px; height: 26px;
+            background-color: var(--bg3-color); border: 1px solid var(--c-color); cursor: pointer; border-radius: 24px;
+            &:before {
+                display: inline-block; box-sizing: border-box; position: absolute;
+                content: " "; background-color: var(--c-color); border: 1px solid var(--bg4-color); border-radius: 50%;
+                width: 20px; height: 20px; left: 2px; top: 2px;
+                transition: .4s;
             }
-            .slider {
-                position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-                background-color: var(--bg3-color); border: 1px solid var(--c-color); cursor: pointer; border-radius: 34px;
-                &:before {
-                    display: inline-block; box-sizing: border-box; position: absolute;
-                    content: " "; background-color: var(--c-color); border: 1px solid var(--bg4-color); border-radius: 50%;
-                    width: 24px; height: 24px; left: 4px; top: 4px;
-                    transition: .4s;
-                }
+            &.checked:before {
+                left: 37px;
             }
         }
     }
@@ -159,6 +157,7 @@ b, strong {
         }
         pre > code {
             font-size: 0.9rem !important; background-color: var(--bg3-color) !important;
+            margin: 0 !important; padding: 0 !important;
         }
         p, ul li {
             & > code, & > kbd, & > samp {
@@ -181,11 +180,11 @@ b, strong {
         }
         ul {
             li {
-                margin-left: 1.5rem;
+                margin-left: 1.2rem;
                 &:before {
-                    content: "\2219";
+                    content: "-";
                     display: inline-block;
-                    width: 1.5rem; margin-left: -1.5rem;
+                    width: 1.2rem; margin-left: -1.2rem;
                 }
             }
         }
@@ -197,18 +196,24 @@ b, strong {
     display: flex; flex-direction: column;
     .navtags {
         flex: 0 0 auto;
-        margin: 1rem 0; max-height: 50%;
+        margin: 1rem 0; max-height: 30%;
+        ul {
+            height: 100%; overflow-x: hidden; overflow-y: scroll;
+        }
     }
     .posts {
         flex: 1 0 0;
-        margin-top: 1rem; 
+        min-height: 0; margin-top: 1rem;
+        ul {
+            height: 100%; overflow-x: hidden; overflow-y: scroll;
+        }
     }
 }
 .nav {
     .navtags {
         background-color: var(--bg3-color); border: 1px solid var(--b-color);
         padding: 1rem; position: relative;
-        font-size: 0.9rem;
+        font-size: 0.9rem; font-weight: 800;
         &:before {
             content: "[ TAGS ]";
             display: inline-block;
@@ -218,17 +223,24 @@ b, strong {
             background-color: var(--bg3-color);
             color: var(--b-color);
         }
-
-        display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
-        li {
-            cursor: pointer;
-            border: 1px dashed transparent;
-            &:before {
-                content: "\f0da"; font: var(--fa-font-solid);
-                display: inline-block; width: 1rem; text-align: left;
-            }
-            &:hover {
-                border: 1px dashed var(--c-color);
+        ul {
+            display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+            li {
+                cursor: pointer;
+                border: 1px dashed transparent;
+                &:before {
+                    content: "\f0da"; font: var(--fa-font-solid);
+                    display: inline-block; width: 1rem; text-align: left;
+                }
+                &:hover {
+                    border: 1px dashed var(--c-color);
+                }
+                &.current {
+                    color: var(--bg3-color); background-color: var(--c-color);
+                }
+                &.current:before {
+                    content: "\f0d7";
+                }
             }
         }
     }
@@ -244,265 +256,27 @@ b, strong {
             border-bottom: 1px solid var(--bg3-color);
             background-color: var(--bg3-color);
             color: var(--b-color);
-        } 
+        }
+        ul {
+            li {
+                a {
+                    display: block; padding-left: 1rem;
+                    &:before {
+                        content: "\f0da"; font: var(--fa-font-solid);
+                        margin-left: -1rem; display: inline-block; width: 1rem; text-align: left;
+                    }
+                    span {
+                        color: var(--c-color);
+                    }
+                }
+                &.current a {
+                    color: var(--bg3-color); background-color: var(--c-color);
+                    pointer-events: none;
+                    span {
+                        color: var(--bg3-color);
+                    }
+                }
+            }
+        }
     }
 }
-
-// // vars
-// $color: #dee2e6;
-// $base-background-color: #000000;
-// $a-color: #6ea8fe;
-// $b-color: #e685b5;
-// $c-color: #dee2e6;
-// $f2-background-color: #202124;
-// $f3-background-color: #202124;
-// $b-box-color: #0d1117;
-// $b-box-color-text: #0dcaf0;
-// $b-box-color-border: #0dcaf0;
-// $r-box-color: #0d1117;
-// $r-box-color-text: #ffda6a;
-// $r-box-color-border: #ffda6a;
-// $g-box-color: #0d1117;
-// $g-box-color-text: #75b798;
-// $g-box-color-border: #75b798;
-
-// $header-gap: 60px;
-// $max-content-width: 900px;
-
-// // commons
-// html, body {
-//     width: 100vw; height: 100vh; height: -webkit-fill-available; height: fill-available;
-//     margin: 0; padding: 0;
-//     font-family: "Hack", "NanumSquareNeo", monospace !important; font-size: 16px; line-height: 1.4;
-//     color: #{$color}; background-color: #{$base-background-color};
-// }
-// div, ul {
-//     -ms-overflow-style: none; scrollbar-width: none;
-//     &::-webkit-scrollbar {
-//         display: none;
-//     }
-// }
-// code, kbd, samp {
-//     font-family: "Hack", "NanumSquareRound", monospace !important;
-// }
-// a, a:link, a:visited, a:hover, a:active {
-//     color: #{$a-color}; text-decoration: none; font-weight: 800; border-bottom: 1px dotted; word-break: break-all;
-// }
-// b, strong {
-//     color: #{$b-color}; font-weight: 800; border-bottom: 1px dotted;
-// }
-// h1, h2, h3, h4, h5, h6, div, p, pre, ul, li, button {
-//     display: block; box-sizing: border-box;
-//     margin: 0; padding: 0;
-// }
-// h1 {
-//     font-size: 2rem;
-// }
-// h2 {
-//     font-size: 1.5rem;
-// }
-// img, svg {
-//     max-width: 100%; vertical-align: bottom;
-// }
-// .updated {
-//     color: #{$c-color};
-// }
-
-// // layout
-// .pad {
-//     max-width: #{$max-content-width}; margin: 0 auto; padding: 0 5px;
-// }
-// .hidden {
-//     display: none;
-// }
-// .f1, .f2, .f3 {
-//     position: fixed;
-// }
-// .f1 {
-//     top: 0; right: 0; bottom: auto; left: 0;
-//     height: #{$header-gap};
-//     z-index: 200; background-color: #{$f2-background-color};
-//     &.clicked {
-//         background-color: #{$f3-background-color};
-//     }
-// }
-// .f2, .f3 {
-//     top: 0; right: 0; bottom: 0; left: 0;
-//     padding-top: #{$header-gap};
-//     overflow-y: scroll;
-// }
-// .f2 {
-//     z-index: 100; background-color: #{$f2-background-color};
-// }
-// .f3 {
-//     z-index: 0; background-color: #{$f3-background-color};
-//     &.clicked {
-//         z-index: 150;
-//     }
-// }
-
-// // header
-// .header {
-//     height: #{$header-gap};
-//     display: flex; justify-content: space-between; align-items: center;
-//     .site-title {
-//         a:after {
-//             content: "\f4ad"; font: var(--fa-font-regular);
-//             display: inline-block; margin-left: 0.5rem;
-//             position: relative; top: -0.8rem;
-//         }
-//     }
-//     .btn {
-//         outline: none; border: none; cursor: pointer; background-color: transparent; color: #{$color};
-//         font-size: 2rem;
-//         i {
-//             transition: transform 0.4s;
-//         }
-//         &.clicked {
-//             i {
-//                 transform: rotate(-45deg);
-//             }
-//         }
-//     }
-// }
-
-// // article
-// .article {
-//     .article-title {
-//         margin: 2rem 0;
-//         text-align: center;
-//         word-wrap: break-word;
-//         &:before {
-//             content: "\f10d"; font: var(--fa-font-dashed);
-//             display: inline-block; margin-right: 1.5rem;
-//             position: relative; top: -0.8rem;
-//         }
-//         &:after {
-//             content: "\f10e"; font: var(--fa-font-dashed);
-//             display: inline-block; margin-left: 1.5rem;
-//             position: relative; top: 0.8rem;
-//         }
-//     }
-//     .article-desc {
-//         text-align: right;
-//     }
-//     .article-main {
-//         h2 {
-//             font-size: 1.5rem;
-//             margin: 3rem 0 1.5rem 0;
-//             &:before {
-//                 content: "\0023";
-//                 font: var(--fa-font-dashed);
-//                 display: inline-block;
-//                 width: 2rem;
-//             }
-//         }
-//         h3 {
-//             font-size: 1rem;
-//             margin: 1.5rem 0;
-//         }
-//         img {
-//             display: block;
-//             margin: 1.5rem auto;
-//             max-width: 100%;
-//             & ~ em {
-//                 font-size: 0.8rem;
-//                 display: block;
-//                 margin: -1rem 1.5rem 1.5rem 1.5rem;
-//                 color: #{$c-color};
-//             }
-//         }
-//         pre, code, kbd, samp {
-//             font-family: 'Hack', 'NanumSquareRound', monospace;
-//         }
-//         p, pre, ul {
-//             margin: 1.5rem 0;
-//         }
-//         pre > code {
-//             font-size: 0.8rem;
-//             background-color: #{$b-box-color};
-//         }
-//         p, ul li {
-//             & > code, & > kbd, & > samp {
-//                 padding: 0 !important;
-//                 font-weight: 400;
-//                 border: 1px dashed;
-//             }
-//         }
-//         p[class], pre, ul {
-//             background-color: #{$b-box-color};
-//             padding: 1rem 1.5rem;
-//             border: 1px dashed #{$b-box-color-border};
-//             border-left-width: .5rem;
-//             color: #{$b-box-color-text};
-//             font-size: 0.8rem;
-//             &:before {
-//                 content: "# " attr(class);
-//                 display: block;
-//                 padding-bottom: 0.5rem;
-//                 text-transform: uppercase; font-weight: 800; font-style: italic;
-//             }
-//         }
-//         p.warn, p.warning, ul.warn, ul.warning {
-//             background-color: #{$r-box-color};
-//             border-color: #{$r-box-color-border};
-//             color: #{$r-box-color-text};
-//             &:before {
-//                 color: #{$r-box-color-text};
-//             }
-//         }
-//         p.info, p.information, p.note, ul.info, ul.information, ul.note {
-//             background-color: #{$g-box-color};
-//             border-color: #{$g-box-color-border};
-//             color: #{$g-box-color-text};
-//             &:before {
-//                 color: #{$g-box-color-text};
-//             }
-//         }
-//         ul {
-//             li {
-//                 margin-left: 1.5rem;
-//                 &:before {
-//                     content: "\2219";
-//                     display: inline-block;
-//                     width: 1.5rem;
-//                     margin-left: -1.5rem;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// // nav
-// .nav {
-//     .nav-tags {
-//         min-height: 6rem; padding: 0.5rem 0;
-//         display: flex; column-gap: 2rem; align-items: center; align-content: center; flex-wrap: wrap;
-//         position: sticky; top: 0;
-//         background-color: #{$f3-background-color};
-//         li {
-//             cursor: pointer;
-//             &.current {
-//                 color: #{$f3-background-color};
-//                 background-color: #{$color};
-//             }
-//         }
-//     }
-//     .nav-posts {
-//         ul {
-//             .nav-posts-order {
-//                 margin-bottom: 1.5rem;
-//             }
-//             li {
-//                 margin-bottom: 1.5rem;
-//                 &.current {
-//                     color: #{$f3-background-color};
-//                     background-color: #{$color};
-//                     .updated {
-//                         color: #{$f3-background-color};
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
