@@ -16,6 +16,9 @@ $max-width: 900px;
 $gap : 8px;
 
 // globals
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 div, ul {
     -ms-overflow-style: none; scrollbar-width: none;
     &::-webkit-scrollbar {
@@ -34,7 +37,6 @@ html, body, div, p, h1, h2, h3, h4, h5, h6, ul, li, pre, button, label {
 }
 a, a:link, a:visited, a:hover, a:active {
     color: var(--a-color); text-decoration: none; font-weight: 800; word-break: break-all;
-    -webkit-tap-highlight-color: transparent;
 }
 a, a:link, a:visited, a:active {
     border: 1px dashed transparent;
